@@ -1,0 +1,106 @@
+/*---------------------------
+slider
+----------------------------*/
+.swiper-container {
+  width: 100%;
+  height: 420px;
+  padding: 1.5em 0 3.0em 0;
+  background: url(../img/index/mv_bg.png) repeat-x top;
+}
+
+@media screen and (max-width: 640px) {
+  .swiper-container {
+    /*sp*/
+    height: 280px;
+  }
+}
+
+.swiper-container .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  .swiper-container .swiper-slide {
+    /*sp*/
+    background-size: 150% !important;
+    background-position: center !important;
+  }
+}
+
+.swiper-container .swiper-slide .bar {
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+
+.swiper-container .swiper-slide .bar h2 {
+  width: 28%;
+  background: url(../img/index/mv_title_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0.9em 1.0em 0.9em 2.0em;
+  font-size: 1.0em;
+  color: #fff;
+  text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+  .swiper-container .swiper-slide .bar h2 {
+    /*sp*/
+    font-size: 0.8rem;
+    width: 40%;
+    padding: 0.5rem;
+  }
+}
+
+.swiper-container .swiper-slide .bar .btn {
+  width: 28%;
+  background: url(../img/index/mv_nav_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-left: auto;
+  text-align: right;
+  padding: 0.9em 2.0em 0.9em 1.0em;
+  font-size: 1.0em;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 640px) {
+  .swiper-container .swiper-slide .bar .btn {
+    /*sp*/
+    font-size: 0.8rem;
+    width: 40%;
+    padding: 0.5rem;
+  }
+}
+
+.swiper-container .swiper-slide a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*# sourceMappingURL=slider.css.map */

@@ -1,0 +1,4 @@
+/public/hot
+/public/**/*.map
+/public/**/*.scss
+.env

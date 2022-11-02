@@ -1,0 +1,178 @@
+/*---------------------------
+account
+----------------------------*/
+#account .inner dl {
+  text-align: left;
+}
+
+#account .inner dl > div,
+#account .inner dl form > div {
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#account .inner dl > div dt,
+#account .inner dl form > div dt {
+  width: 20%;
+  padding: 15px 0;
+  clear: both;
+}
+
+@media screen and (max-width: 640px) {
+  #account .inner dl > div dt,
+  #account .inner dl form > div dt {
+    /*sp*/
+    width: 100%;
+    float: none;
+  }
+}
+
+#account .inner dl > div dd,
+#account .inner dl form > div dd {
+  width: 75%;
+  padding: 15px 0;
+}
+
+@media screen and (max-width: 640px) {
+  #account .inner dl > div dd,
+  #account .inner dl form > div dd {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#account .inner dl > div dd .col,
+#account .inner dl form > div dd .col {
+  margin-bottom: 1.0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#account .inner dl > div dd .col span,
+#account .inner dl form > div dd .col span {
+  display: block;
+  width: 30%;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #account .inner dl > div dd .col span,
+  #account .inner dl form > div dd .col span {
+    /*tablet*/
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #account .inner dl > div dd .col span,
+  #account .inner dl form > div dd .col span {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#account .inner dl > div dd .col input,
+#account .inner dl form > div dd .col input {
+  width: 70%;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #account .inner dl > div dd .col input,
+  #account .inner dl form > div dd .col input {
+    /*tablet*/
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #account .inner dl > div dd .col input,
+  #account .inner dl form > div dd .col input {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#account .inner dl .txt {
+  border: 1px solid #ccc;
+  border-top: none;
+  background: #eee;
+  padding: 1.0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  margin-bottom: 1.0em;
+}
+
+#account .inner dl .txt .col:nth-of-type(1) {
+  width: 75%;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #account .inner dl .txt .col:nth-of-type(1) {
+    /*tablet*/
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #account .inner dl .txt .col:nth-of-type(1) {
+    /*sp*/
+    width: 100%;
+    margin-bottom: 1.0rem;
+  }
+}
+
+#account .inner dl .txt .col:nth-of-type(2) {
+  width: 20%;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #account .inner dl .txt .col:nth-of-type(2) {
+    /*tablet*/
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #account .inner dl .txt .col:nth-of-type(2) {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#account .inner dl .txt .col:nth-of-type(2) button[type="submit"] {
+  width: 100%;
+  background: #67BD2C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7em 0;
+}
+/*# sourceMappingURL=account.css.map */

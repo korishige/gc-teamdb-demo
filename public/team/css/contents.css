@@ -1,0 +1,111 @@
+/*---------------------------
+contents
+----------------------------*/
+#post .inner {
+  text-align: left;
+}
+
+#post .inner h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 2.0em;
+  color: #003E90;
+}
+
+#post .inner .txt {
+  line-height: 1.8em;
+}
+
+#post .inner .txt h3 {
+  padding: 1.5em 0;
+  font-size: 1.2em;
+}
+
+#post .inner .txt h3.line {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+#post .inner .txt img {
+  display: inline-block;
+  padding: 1.0em 0;
+}
+
+#terms .inner {
+  text-align: left;
+  line-height: 1.6em;
+}
+
+@media screen and (max-width: 640px) {
+  #terms .inner {
+    /*sp*/
+    max-width: 90%;
+  }
+}
+
+#terms .inner .txt {
+  margin-bottom: 2.0em;
+}
+
+#terms .inner h2.bar {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 1.5em 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+#terms .inner .sign {
+  padding-top: 4.0em;
+}
+
+#terms .inner ul {
+  list-style: disc;
+  margin-left: 1.5em;
+}
+
+#terms .inner ul.number {
+  list-style: decimal;
+}
+
+#terms .inner ul li {
+  padding: 0.3em 0;
+}
+
+#search .inner .top {
+  border: 1px solid #ccc;
+  padding: 1.5em 1.0em;
+  margin-bottom: 2.0em;
+}
+
+#search .inner .top span {
+  display: inline-block;
+  font-size: 1.6em;
+  font-weight: bold;
+  vertical-align: center;
+  margin-right: 10px;
+}
+
+#search .inner .row .col {
+  position: relative;
+  width: 100%;
+  padding: 1.0em;
+  border-bottom: 1px dotted #ccc;
+}
+
+#search .inner .row .col a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#search .inner .row .col:hover {
+  background: #eee;
+}
+/*# sourceMappingURL=contents.css.map */

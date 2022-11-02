@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ja"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+<title></title>
+
+<link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/form.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+</head>
+
+<body>
+<!-- #wrap -->
+<div id="wrap">
+
+	<header>
+		<div class="inner row">
+			<div class="logo">
+                LEAGUE MANAGEMENT TOOLS
+            </div>
+            <div class="snav">
+                <ul>
+                    <li><a href="logout.html">ログアウト</a></li>
+                </ul>
+            </div><!-- /.snav -->
+		</div>
+		<div class="sp_nav"></div>
+	</header>
+	
+	<div class="site_title">
+	    <div class="inner">
+            <span><img src="img/common/logo.png"></span>
+	        <span>〇〇高等学校　リーグ管理ツール</span>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+    <nav>
+	    <ul>
+	        <li><a href="index.html" class="on">TOP</a></li>
+	        <li><a href="team-match-create.html">チーム情報</a></li>
+	        <li><a href="team-formation.html">チーム編成</a></li>
+	        <li><a href="player.html">選手情報</a></li>
+	        <li><a href="league.html">リーグ情報</a></li>
+	        <li><a href="account.html">アカウント情報</a></li>
+	    </ul>
+	</nav>
+	
+	<div class="overlay"></div>
+
+	<main>
+	<article>
+    
+        <section>
+            <div id="news">
+                <div class="inner row">
+                    <div class="title">
+                        <h2>
+                            <span>NEWS</span>
+                            <span>運営からのお知らせ</span>
+                        </h2>
+                    </div><!-- /.title -->
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <span>August 2, 2020</span>
+                                <span>富山高体連サッカー専門部委員長　澁谷龍宏氏コメント</span>
+                                <a href="news-detail.html"></a>
+                            </li>
+                            <li>
+                                <span>August 2, 2020</span>
+                                <span>富山高体連サッカー専門部委員長　澁谷龍宏氏コメント</span>
+                                <a href="news-detail.html"></a>
+                            </li>
+                            <li>
+                                <span>August 2, 2020</span>
+                                <span>富山高体連サッカー専門部委員長　澁谷龍宏氏コメント</span>
+                                <a href="news-detail.html"></a>
+                            </li>
+                            <li>
+                                <span>August 2, 2020</span>
+                                <span>富山高体連サッカー専門部委員長　澁谷龍宏氏コメント</span>
+                                <a href="news-detail.html"></a>
+                            </li>
+                            <li>
+                                <span>August 2, 2020</span>
+                                <span>富山高体連サッカー専門部委員長　澁谷龍宏氏コメント</span>
+                                <a href="news-detail.html"></a>
+                            </li>
+                        </ul>
+                        <div class="btn">
+                            <a href="news.html">一覧はこちら</a>
+                        </div><!-- /.btn -->
+                    </div><!-- /.list -->
+                </div><!-- /.inner -->
+            </div>
+        </section>
+    
+        <section>
+            <div id="result">
+                <div class="inner">
+                    <div class="title row">
+                        <h2>
+                            <span>リーグ戦結果入力</span>
+                        </h2>
+                        <div class="select">
+                            <select name="select">
+                                <option value="2020年4月">2020年4月</option>
+                                <option value="2020年5月">2020年5月</option>
+                                <option value="2020年6月">2020年6月</option>
+                            </select>
+                        </div><!-- /.select -->
+                    </div><!-- /.title -->
+                    <div class="list">
+                        <div class="title_bar row">
+                            <span>日程</span>
+                            <span>対戦カード</span>
+                            <span>開催地</span>
+                        </div><!-- /.title_bar -->
+                        
+                        <div class="box row sm">
+                            <div class="date">
+                                7/21(日) 第3節<span class="home">HOME</span>
+                            </div><!-- /.date -->
+                            <div class="txt row">
+                                <div class="match_card row">
+                                    <span>矢坂中央高校</span>
+                                    <span></span>
+                                    <span>札幌第一高校</span>
+                                </div><!-- /.match_card -->
+                                <div class="venue row">
+                                    <span>審判 : 矢坂中央</span>
+                                    <span><a href="">金城町陸上競技場</a></span>
+                                </div><!-- /.venue -->
+                                <div class="btn">
+                                    <a href="starter_setting_create.html">スタメン登録・印刷</a>
+                                    <a href="team-match-edit.html">結果入力・編集</a>
+                                    <a href="team-match-group_photo.html">集合写真<br>投稿・編集</a>
+                                    <a href="team-match-gallery.html">ギャラリー<br>投稿・編集</a>
+                                </div><!-- /.btn -->
+                            </div><!-- /.txt -->
+                        </div><!-- /.box -->
+                        
+                        <div class="box row">
+                            <div class="date">
+                                7/21(日) 第3節<span class="away">Away</span>
+                            </div><!-- /.date -->
+                            <div class="txt row">
+                                <div class="match_card row">
+                                    <span>矢坂中央高校</span>
+                                    <span></span>
+                                    <span>札幌第一高校</span>
+                                </div><!-- /.match_card -->
+                                <div class="venue row">
+                                    <span>審判 : 矢坂中央</span>
+                                    <span><a href="">金城町陸上競技場</a></span>
+                                </div><!-- /.venue -->
+                                <div class="btn row">
+                                    <a href="team-match-edit.html">結果<br>入力・編集</a>
+                                    <a href="team-match-group_photo.html">集合写真<br>投稿・編集</a>
+                                    <a href="team-match-gallery.html">ギャラリー<br>投稿・編集</a>
+                                </div><!-- /.btn -->
+                            </div><!-- /.txt -->
+                        </div><!-- /.box -->
+                        <div class="box row">
+                            <div class="date">
+                                7/21(日) 第3節<span class="home">HOME</span>
+                            </div><!-- /.date -->
+                            <div class="txt row">
+                                <div class="match_card row">
+                                    <span>矢坂中央高校</span>
+                                    <span></span>
+                                    <span>札幌第一高校</span>
+                                </div><!-- /.match_card -->
+                                <div class="venue row">
+                                    <span>審判 : 矢坂中央</span>
+                                    <span><a href="">金城町陸上競技場</a></span>
+                                </div><!-- /.venue -->
+                                <div class="btn row">
+                                    <a href="team-match-edit.html">結果<br>入力・編集</a>
+                                    <a href="team-match-group_photo.html">集合写真<br>投稿・編集</a>
+                                    <a href="team-match-gallery.html">ギャラリー<br>投稿・編集</a>
+                                </div><!-- /.btn -->
+                            </div><!-- /.txt -->
+                        </div><!-- /.box -->
+                        <div class="box row">
+                            <div class="date">
+                                7/21(日) 第3節<span class="away">Away</span>
+                                <span>試合終了</span>
+                            </div><!-- /.date -->
+                            <div class="txt row">
+                                <div class="match_card row">
+                                    <span>矢坂中央高校</span>
+                                    <span></span>
+                                    <span>札幌第一高校</span>
+                                </div><!-- /.match_card -->
+                                <div class="venue row">
+                                    <span>審判 : 矢坂中央</span>
+                                    <span><a href="">金城町陸上競技場</a></span>
+                                </div><!-- /.venue -->
+                                <div class="btn row">
+                                    <a href="team-match-edit.html">結果<br>入力・編集</a>
+                                    <a href="team-match-group_photo.html">集合写真<br>投稿・編集</a>
+                                    <a href="team-match-gallery.html">ギャラリー<br>投稿・編集</a>
+                                </div><!-- /.btn -->
+                            </div><!-- /.txt -->
+                        </div><!-- /.box -->
+                        <div class="box row">
+                            <div class="date">
+                                7/21(日) 第3節<span class="home">HOME</span>
+                                <span>試合終了</span>
+                            </div><!-- /.date -->
+                            <div class="txt row">
+                                <div class="match_card row">
+                                    <span>矢坂中央高校</span>
+                                    <span></span>
+                                    <span>札幌第一高校</span>
+                                </div><!-- /.match_card -->
+                                <div class="venue row">
+                                    <span>審判 : 矢坂中央</span>
+                                    <span><a href="">金城町陸上競技場</a></span>
+                                </div><!-- /.venue -->
+                                <div class="btn row">
+                                    <a href="team-match-edit.html">結果<br>入力・編集</a>
+                                    <a href="team-match-group_photo.html">集合写真<br>投稿・編集</a>
+                                    <a href="team-match-gallery.html">ギャラリー<br>投稿・編集</a>
+                                </div><!-- /.btn -->
+                            </div><!-- /.txt -->
+                        </div><!-- /.box -->
+                        <div class="box row">
+                            <div class="date">
+                                7/21(日) 第3節<span class="away">Away</span>
+                                <span>試合終了</span>
+                            </div><!-- /.date -->
+                            <div class="txt row">
+                                <div class="match_card row">
+                                    <span>矢坂中央高校</span>
+                                    <span></span>
+                                    <span>札幌第一高校</span>
+                                </div><!-- /.match_card -->
+                                <div class="venue row">
+                                    <span>審判 : 矢坂中央</span>
+                                    <span><a href="">金城町陸上競技場</a></span>
+                                </div><!-- /.venue -->
+                                <div class="btn row">
+                                    <a href="team-match-edit.html">結果<br>入力・編集</a>
+                                    <a href="team-match-group_photo.html">集合写真<br>投稿・編集</a>
+                                    <a href="team-match-gallery.html">ギャラリー<br>投稿・編集</a>
+                                </div><!-- /.btn -->
+                            </div><!-- /.txt -->
+                        </div><!-- /.box -->
+                        
+                    </div><!-- /.list -->
+                </div><!-- /.inner -->
+            </div>
+            
+            <div class="pager">
+                <ul>
+                    <li><a href="" class="prev">&lsaquo; 前のページ</a></li>
+                    <li><span class="current">1</span></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="" class="next">前のページ &rsaquo;</a></li>
+                </ul>
+            </div><!-- /.pager -->
+            
+        </section>
+
+	</article>
+	</main>
+
+	<footer>
+        <div class="inner">
+            <div class="logo">LEAGUE MANAGEMENT TOOLS</div>
+            <div class="copy">&copy; Copyright 〇〇〇〇〇 all right reserved.</div>
+        </div><!-- /.inner -->
+	</footer>
+
+</div>
+<!-- /#wrap -->
+
+<div class="pagetop"></div>
+
+<script src="js/sp_nav.js"></script>
+
+</body>
+</html>

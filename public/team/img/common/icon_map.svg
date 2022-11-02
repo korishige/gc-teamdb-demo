@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2598,-634)">
+        <g id="目的地アイコン4--1-" serif:id="目的地アイコン4 (1)" transform="matrix(0.0584,0,0,0.0584,2598.39,634.765)">
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="256" height="256"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(17.1233,-0,-0,17.1233,-6.75437,-13.1073)">
+                    <use xlink:href="#_Image2" x="0.396" y="0.768" width="14.95px" height="14.95px" transform="matrix(0.996693,0,0,0.996693,0,0)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <image id="_Image2" width="15px" height="15px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB4UlEQVQokZWSwUtUARDGf9/s25foQ8q8GFT7zJcUInTtFii6EkQdIogueehUHfo7Ovk/dO3SYZM6SJcIK6qDlbQSlAeRWFtNWteZLo+IRQ/N5YOZ72NmvhlxQMzMzJiZVSUJCHfvNhqN/V6e9SampqYySdeAJxGxEhFPgRvT09ODvdxKT8ckSZJLkuaBR+7+UNKamd00s1atVvvSbDb9wM6SjgITwHJErJvZfWAnIpaAiTRNjx86dkRYRFSAX5JOSbooKQd+A5Wydqi4LekbMOrub9z9gbu/kDQKfHf3rUPFi4uLuxHxISKQdKbVaj0DTkREFhHvNjc3dw40bG5urloURQ4ckzRsZuf7+vq2JdUjYkvS1yzLkqIotldXV/2veHZ2tgJMSroNfAJ+AOeAq+W+S6UPt9x9I8/zjWazGQbg7hkwDwwA7YgQsAWsA21Je5LawICkeUkZQKX8pstmdsfdnwNHgMkS30saiohhwCLCzew6sDY2NvaxUqvVhqrV6kJEvAIWgN1y5+WIWDKzHaAfeAu8BE6b2ZVOp/PY0jS9J2lc0jIwIqkAcnfvB06WmJf5EeC1pPE0Te+qXq+vmNlZ4CewX5pYBTqAl+dMgb1/6oPu/jkBLnS73YT/DDPr/gHKmcg5nFUu4AAAAABJRU5ErkJggg=="/>
+    </defs>
+</svg>

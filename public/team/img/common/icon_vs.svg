@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2121,-638)">
+        <g transform="matrix(1,0,0,1,-11.5409,-3.81742)">
+            <g transform="matrix(0.816924,0,0,0.816924,395.425,109.192)">
+                <path d="M2155.5,655.928C2155.5,653.81 2153.78,652.091 2151.66,652.091L2130.5,652.091C2128.38,652.091 2126.66,653.81 2126.66,655.928L2126.66,663.6C2126.66,665.718 2128.38,667.437 2130.5,667.437L2151.66,667.437C2153.78,667.437 2155.5,665.718 2155.5,663.6L2155.5,655.928Z"/>
+            </g>
+            <g transform="matrix(0.616101,0,0,0.616101,1987.65,596.012)">
+                <text x="244.024px" y="89.627px" style="font-family:'GothicMB101Pro-Bold', 'A-OTF Gothic MB101 Pro', sans-serif;font-weight:700;font-size:12px;fill:white;">V<tspan x="256.444px " y="89.627px ">S</tspan></text>
+            </g>
+        </g>
+    </g>
+</svg>

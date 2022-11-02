@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="ja">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title></title>
+
+    <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+
+<body>
+    <!-- #wrap -->
+    <div id="wrap">
+
+        <header>
+            <div class="inner row">
+                <div class="logo">
+                    LEAGUE MANAGEMENT TOOLS
+                </div>
+            </div>
+            <div class="sp_nav"></div>
+        </header>
+
+        <div class="overlay"></div>
+
+        <main class="contents">
+            <article>
+                <section>
+                    <div id="login">
+                        <div class="inner">
+                            <div id="register">
+                                
+                                <h2>新規登録</h2>
+
+                                <form action="index.html">
+                                <div class="box">
+                                       <h2>メールアドレス(ログインID)<span>必須</span></h2>
+                                       
+                                       <input type="email">
+                                       
+                                       <p>お知らせが配信されますので確実に受け取れるアドレスをご登録ください</p>
+                                       
+                                       <h2>パスワード<span>必須</span>
+                                       </h2>
+                                       
+                                       <input type="password" class="w20">
+                                       
+                                       <p>6～15文字</p>
+                                       
+                                        <h2>所属リーグ<span>必須</span></h2>
+
+                                        <select name="select" class="league">
+                                            <option value="1部">1部</option>
+                                            <option value="2部A">2部A</option>
+                                            <option value="2部B">2部B</option>
+                                            <option value="3部">3部</option>
+                                        </select>
+
+                                        <h2>チーム名<span>必須</span></h2>
+
+                                        <p>※「県立」「私立」や「高校」「サッカー部」などの記載は省きます。　Ｂチームなどの場合は末尾に必ず入れてください。</p>
+
+                                        <input type="text" class="50" placeholder="チーム名をいれてください">
+
+                                        <h2>設立年</h2>
+
+                                        <div class="year_est row">
+                                            <span>西暦</span>
+                                            <input type="text" class="w20">
+                                            <span>年</span>
+                                        </div><!-- /.year_est -->
+
+                                        <h2>所在地<span>必須</span></h2>
+                                        <div class="address">
+                                            <span>都道府県</span>
+                                            <select class="form-control w30" id="id-field-pref_id" name="pref_id">
+                                                <option value="1">北海道</option>
+                                                <option value="2">青森県</option>
+                                                <option value="3">岩手県</option>
+                                                <option value="4">宮城県</option>
+                                                <option value="5">秋田県</option>
+                                                <option value="6">山形県</option>
+                                                <option value="7">福島県</option>
+                                                <option value="8">茨城県</option>
+                                                <option value="9">栃木県</option>
+                                                <option value="10">群馬県</option>
+                                                <option value="11">埼玉県</option>
+                                                <option value="12">千葉県</option>
+                                                <option value="13">東京都</option>
+                                                <option value="14">神奈川県</option>
+                                                <option value="15">新潟県</option>
+                                                <option value="16">富山県</option>
+                                                <option value="17">石川県</option>
+                                                <option value="18">福井県</option>
+                                                <option value="19">山梨県</option>
+                                                <option value="20">長野県</option>
+                                                <option value="21">岐阜県</option>
+                                                <option value="22">静岡県</option>
+                                                <option value="23">愛知県</option>
+                                                <option value="24">三重県</option>
+                                                <option value="25">滋賀県</option>
+                                                <option value="26">京都府</option>
+                                                <option value="27">大阪府</option>
+                                                <option value="28">兵庫県</option>
+                                                <option value="29">奈良県</option>
+                                                <option value="30">和歌山県</option>
+                                                <option value="31">鳥取県</option>
+                                                <option value="32">島根県</option>
+                                                <option value="33">岡山県</option>
+                                                <option value="34">広島県</option>
+                                                <option value="35">山口県</option>
+                                                <option value="36">徳島県</option>
+                                                <option value="37">香川県</option>
+                                                <option value="38">愛媛県</option>
+                                                <option value="39">高知県</option>
+                                                <option value="40" selected="selected">福岡県</option>
+                                                <option value="41">佐賀県</option>
+                                                <option value="42">長崎県</option>
+                                                <option value="43">熊本県</option>
+                                                <option value="44">大分県</option>
+                                                <option value="45">宮崎県</option>
+                                                <option value="46">鹿児島県</option>
+                                                <option value="47">沖縄県</option>
+                                            </select>
+                                        </div><!-- /.address -->
+                                        <div class="address">
+                                            <span>市区町村</span>
+                                            <input type="text" class="w30">
+                                        </div><!-- /.address -->
+                                        <div class="address">
+                                            <span>以降の住所</span>
+                                            <input type="text" class="w30">
+                                        </div><!-- /.address -->
+
+                                        <h2>電話番号<span>必須</span></h2>
+                                        <input type="tel" class="w30">
+
+                                        <h2>エンブレム画像</h2>
+                                        <input name="emblem_img" type="file">
+
+                                        <h2>集合写真（カメラ横向き撮影）</h2>
+                                        <input name="emblem_img" type="file">
+
+                                        <h2>チームの監督</h2>
+                                        <input type="text" placeholder="監督の名前を入れてください" class="w50">
+
+                                        <h2>チームコーチ</h2>
+                                        <input type="text" placeholder="コーチの名前を入れてください" class="w50">
+
+                                        <h2>指導方針や目標</h2>
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                                        <h2>過去の主な実績</h2>
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                                        <h2>学校ホームページ　URL</h2>
+                                        <input type="text">
+
+                                        <h2>チームホームページ　URL</h2>
+                                        <input type="text">
+
+                                        <h2>ブログ　URL</h2>
+                                        <input type="text">
+
+                                        <h2>Facebook　URL</h2>
+                                        <input type="text">
+
+                                        <h2>Twitter　URL</h2>
+                                        <input type="text">
+
+                                        <h2>Instagram　URL</h2>
+                                        <input type="text">
+                                
+                                </div><!-- /.box -->
+                                
+                                    <div class="btn_reg">
+                                        <input type="button" value="戻る">
+                                        <input type="submit" value="登録">
+                                    </div><!-- /.btn_reg -->
+                                
+                                </form>
+
+                            </div><!-- /#register -->
+                        </div><!-- /.inner -->
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <footer>
+            <div class="inner">
+                <div class="logo">LEAGUE MANAGEMENT TOOLS</div>
+                <div class="copy">&copy; Copyright 〇〇〇〇〇 all right reserved.</div>
+            </div><!-- /.inner -->
+        </footer>
+
+    </div>
+    <!-- /#wrap -->
+
+    <div class="pagetop"></div>
+
+    <script src="js/sp_nav.js"></script>
+
+</body>
+
+</html>

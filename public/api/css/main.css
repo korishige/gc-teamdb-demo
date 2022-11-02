@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/*---------------------------
+main
+----------------------------*/
+@media screen and (min-width: 641px) {
+  /*全順位*/
+  .tool_m {
+    width: 100%;
+    font-size: 0.9em;
+  }
+  .tool_m .top_box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tool_m .top_box h3 {
+    font-size: 1.0em;
+    margin-bottom: 5px;
+  }
+  .tool_m .top_box .update {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+  .tool_m .top_box .title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  .tool_m .bottom_box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tool_m .bottom_box:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .tool_m .bottom_box a {
+    text-decoration: none;
+    color: #000;
+  }
+  .tool_m .bottom_box a:nth-of-type(1) {
+    width: 50%;
+    float: left;
+    display: block;
+  }
+  .tool_m .bottom_box a:nth-of-type(2) {
+    width: 50%;
+    float: right;
+    display: block;
+    text-align: right;
+  }
+  .tool_m .allrank_table {
+    margin-bottom: 40px;
+  }
+  .tool_m .allrank_table table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tool_m .allrank_table table tr:nth-child(even) {
+    background: #eee;
+  }
+  .tool_m .allrank_table table th {
+    background: #000;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px dotted #ccc;
+    padding: 5px;
+  }
+  .tool_m .allrank_table table td {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px dotted #ccc;
+    padding: 5px;
+  }
+  /*top_box*/
+}
+
+/*===============================================
+smart  画面の横幅が640pxまで
+===============================================*/
+@media screen and (max-width: 640px) {
+  /*全順位*/
+  .tool_m {
+    width: 100%;
+    font-size: 1.1em;
+  }
+  .tool_m .top_box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tool_m .top_box h3 {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+  }
+  .tool_m .top_box .update {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+  .tool_m .top_box .title {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .tool_m .bottom_box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tool_m .bottom_box:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .tool_m .bottom_box a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.6em;
+  }
+  .tool_m .bottom_box a:nth-of-type(1), .tool_m .bottom_box a:nth-of-type(2) {
+    width: 100%;
+    display: block;
+  }
+  .tool_m .allrank_table {
+    width: 100%;
+    margin-bottom: 40px;
+    overflow-x: auto;
+  }
+  .tool_m .allrank_table table {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    border-collapse: collapse;
+  }
+  .tool_m .allrank_table table tr:nth-child(even) {
+    background: #eee;
+  }
+  .tool_m .allrank_table table th {
+    background: #000;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #ccc;
+    font-size: 0.8em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+  }
+  .tool_m .allrank_table table td {
+    border: 1px solid #ccc;
+    font-size: 0.8em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+  }
+  /*top_box*/
+}
+/*# sourceMappingURL=main.css.map */

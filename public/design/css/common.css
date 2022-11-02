@@ -1,0 +1,84 @@
+/*-------------------------------
+ディフォルト設定
+---------------------------------*/
+html{
+	width:100%;
+}
+
+body{
+	background:#fff;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	font-size:80%;
+	line-height:140%;
+	letter-spacing:1px;
+	color: #000000;
+	font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+	/*明朝体の場合はこっち*/
+	/*font-family:"Roboto Slab" , Garamond , "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}*/
+}
+}
+/*text link（サイト全体のメイン文字カラー）
+-------------------------------- */
+a:link {
+	color: #555555; 
+}
+a:visited {
+	color: #888888; 
+}
+a:hover {
+	color: #888888; 
+}
+a:active {
+	color: #3D2C7E; 
+}
+
+/*clear（属性解除）
+------------------------*/
+br.clear{
+	clear:both;
+	display:block;
+	line-height:1px;
+	font-size:1px;
+}
+.clear{
+	clear:both;
+	display:block;
+	line-height:1px;
+	font-size:1px;
+}
+
+.clearfix{
+
+}
+	.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/*mb
+------------------------*/
+.mb10{
+	margin-bottom:10px;
+}
+.mb20{
+	margin-bottom:20px;
+}
+.mb30{
+	margin-bottom:30px;
+}
+.mb40{
+	margin-bottom:40px;
+}
+
+/*img
+------------------------*/
+img{
+	border:none;
+	margin:0px;
+	padding:0px;
+	vertical-align:bottom;
+}

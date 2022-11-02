@@ -1,0 +1,295 @@
+@charset "UTF-8";
+/*----------------------
+form
+----------------------*/
+* input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="text"] {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* input[type="text"].w20 {
+  width: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="text"].w20 {
+    /*sp*/
+    width: 50%;
+  }
+}
+
+* input[type="text"].w30 {
+  width: 30%;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="text"].w30 {
+    /*sp*/
+    width: 50%;
+  }
+}
+
+* input[type="text"].w50 {
+  width: 50%;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="text"].w50 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* input[type="text"].w75 {
+  width: 75%;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="text"].w75 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="number"] {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* input[type="number"].w20 {
+  width: 20%;
+}
+
+* input[type="number"].w30 {
+  width: 30%;
+}
+
+* input[type="number"].w50 {
+  width: 50%;
+}
+
+* input[type="number"].w75 {
+  width: 75%;
+}
+
+* input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="password"] {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="tel"] {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* input[type="tel"].w20 {
+  width: 20%;
+}
+
+* input[type="tel"].w30 {
+  width: 30%;
+}
+
+* input[type="tel"].w50 {
+  width: 50%;
+}
+
+* input[type="tel"].w75 {
+  width: 75%;
+}
+
+* input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="email"] {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* input[type="email"].w30 {
+  width: 30%;
+}
+
+* input[type="email"].w50 {
+  width: 50%;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="email"].w50 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* input[type="email"].w75 {
+  width: 75%;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="email"].w75 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* input[type="file"] {
+  width: 100%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  * input[type="file"] {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* input[type="submit"] {
+  padding: 5px 20px;
+  border: 2px solid #2CA17D;
+  border-radius: 3px;
+  background: #2CA17D;
+  color: #fff;
+}
+
+* input[type="button"] {
+  padding: 5px 20px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: #999;
+  color: #fff;
+}
+
+/*-----------------------
+radio　labelで横並びサイズ調整
+------------------------*/
+/*-----------------------
+checkbox
+------------------------*/
+* select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  * select {
+    /*sp*/
+    font-size: 16px;
+  }
+}
+
+* select.w20 {
+  width: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  * select.w20 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* select.w30 {
+  width: 30%;
+}
+
+@media screen and (max-width: 640px) {
+  * select.w30 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* select.w50 {
+  width: 50%;
+}
+
+@media screen and (max-width: 640px) {
+  * select.w50 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* select.w75 {
+  width: 75%;
+}
+
+@media screen and (max-width: 640px) {
+  * select.w75 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+* textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  * textarea {
+    /*sp*/
+    font-size: 1.2rem;
+  }
+}
+
+* textarea.w30 {
+  width: 30%;
+}
+
+* textarea.w50 {
+  width: 50%;
+}
+
+* textarea.w75 {
+  width: 75%;
+}
+/*# sourceMappingURL=form.css.map */

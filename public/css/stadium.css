@@ -1,0 +1,144 @@
+/*---------------------------
+stadium
+----------------------------*/
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #stadium .inner {
+    /*tablet*/
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #stadium .inner {
+    /*sp*/
+    width: 90%;
+  }
+}
+
+#stadium .inner .row .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  padding: 1.0em 0;
+  position: relative;
+  text-align: left;
+}
+
+#stadium .inner .row .col:nth-of-type(even) {
+  background: #eee;
+}
+
+#stadium .inner .row .col:hover {
+  background: #ccc;
+}
+
+#stadium .inner .row .col .img {
+  width: 15%;
+}
+
+#stadium .inner .row .col .txt {
+  width: 80%;
+}
+
+#stadium .inner .row .col .txt span {
+  font-size: 1.1em;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+#stadium .inner .row .col a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #stadium_detail .inner {
+    /*tablet*/
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #stadium_detail .inner {
+    /*sp*/
+    width: 90%;
+  }
+}
+
+#stadium_detail .inner h2 {
+  font-size: 1.6em;
+  text-align: left;
+  margin-bottom: 1.5em;
+}
+
+#stadium_detail .inner .img {
+  margin-bottom: 2.0em;
+}
+
+#stadium_detail .inner .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#stadium_detail .inner .row .col {
+  width: 48%;
+  text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+  #stadium_detail .inner .row .col {
+    /*sp*/
+    width: 100%;
+    margin-bottom: 1.0em;
+  }
+}
+
+#stadium_detail .inner .row .col h3 {
+  background: #E7E7E7;
+  padding: 0.5em;
+}
+
+#stadium_detail .inner .row .col .txt {
+  padding: 1.0em 0;
+}
+
+#stadium_detail .inner .row .col .map {
+  margin-bottom: 0.5em;
+}
+
+#stadium_detail .inner .row .col .map iframe {
+  max-width: 100% !important;
+}
+
+#stadium_detail .inner .row .col.other {
+  width: 100%;
+}
+/*# sourceMappingURL=stadium.css.map */

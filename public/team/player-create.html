@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="ja">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title></title>
+
+    <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" />
+    <link href="css/player.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+
+<body>
+    <!-- #wrap -->
+    <div id="wrap">
+
+        <header>
+            <div class="inner row">
+                <div class="logo">
+                    LEAGUE MANAGEMENT TOOLS
+                </div>
+                <div class="snav">
+                    <ul>
+                        <li><a href="logout.html">ログアウト</a></li>
+                    </ul>
+                </div><!-- /.snav -->
+            </div>
+            <div class="sp_nav"></div>
+        </header>
+
+        <div class="site_title">
+            <div class="inner">
+                <span><img src="img/common/logo.png"></span>
+                <span>〇〇高等学校　リーグ管理ツール</span>
+            </div><!-- /.inner -->
+        </div><!-- /.content_title -->
+
+        <nav>
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="team-match-create.html">チーム情報</a></li>
+                <li><a href="team-formation.html">チーム編成</a></li>
+                <li><a href="player.html" class="on">選手情報</a></li>
+                <li><a href="league.html">リーグ情報</a></li>
+                <li><a href="account.html">アカウント情報</a></li>
+            </ul>
+        </nav>
+
+        <div class="content_title">
+            <div class="inner">
+                <h1>
+                    <span>選手情報</span>
+                    <span>PLAYER INFORMATION</span>
+                </h1>
+            </div><!-- /.inner -->
+        </div><!-- /.content_title -->
+
+        <div class="content_stitle">
+            <div class="inner">
+                <h2>選手新規登録</h2>
+            </div><!-- /.inner -->
+        </div><!-- /.content_stitle -->
+
+        <div class="overlay"></div>
+
+        <main class="contents">
+            <article>
+                <div id="player">
+                    <div class="inner">
+
+                        <div id="create">
+
+                            <form method="POST" action="http://ffa.tkss.xyz/cp/team/player/confirm" accept-charset="UTF-8" class="form-horizontal form-label-left" enctype="multipart/form-data"><input name="_token" type="hidden" value="khsdU8cMQUIXsLNpIDepzZSuRgTfXL2HCwSfXwXe">
+
+                                <div class="box">
+
+                                    <h2>選手名<span>必須</span></h2>
+
+                                    <input class="w30" id="id-field-name" name="name" type="text">
+
+                                    <h2>ブロック選手</h2>
+
+                                    <select class="w30" id="id-field-is_block" name="is_block">
+                                        <option value="0">非ブロック選手</option>
+                                        <option value="1">ブロック選手</option>
+                                    </select>
+
+                                    <h2>生年月日<span>必須</span></h2>
+
+                                    <input class="w30" name="birthday" type="text">
+
+
+                                    <h2>学年</h2>
+
+                                    <select class="w20" id="id-field-school_year" style="width:100px" name="school_year">
+                                        <option value="1">１年生</option>
+                                        <option value="2">２年生</option>
+                                        <option value="3">３年生</option>
+                                    </select>
+
+                                    <h2>ポジション</h2>
+
+                                    <input type='radio' name='position' id='position-0' value='0' checked>GK
+                                    <input type='radio' name='position' id='position-1' value='1'>DF
+                                    <input type='radio' name='position' id='position-2' value='2'>MF
+                                    <input type='radio' name='position' id='position-3' value='3'>FW
+
+                                    <h2>出身地</h2>
+
+                                    <select class="w20" id="id-field-birthplace" name="birthplace">
+                                        <option value="1">北海道</option>
+                                        <option value="2">青森県</option>
+                                        <option value="3">岩手県</option>
+                                        <option value="4">宮城県</option>
+                                        <option value="5">秋田県</option>
+                                        <option value="6">山形県</option>
+                                        <option value="7">福島県</option>
+                                        <option value="8">茨城県</option>
+                                        <option value="9">栃木県</option>
+                                        <option value="10">群馬県</option>
+                                        <option value="11">埼玉県</option>
+                                        <option value="12">千葉県</option>
+                                        <option value="13">東京都</option>
+                                        <option value="14">神奈川県</option>
+                                        <option value="15">新潟県</option>
+                                        <option value="16">富山県</option>
+                                        <option value="17">石川県</option>
+                                        <option value="18">福井県</option>
+                                        <option value="19">山梨県</option>
+                                        <option value="20">長野県</option>
+                                        <option value="21">岐阜県</option>
+                                        <option value="22">静岡県</option>
+                                        <option value="23">愛知県</option>
+                                        <option value="24">三重県</option>
+                                        <option value="25">滋賀県</option>
+                                        <option value="26">京都府</option>
+                                        <option value="27">大阪府</option>
+                                        <option value="28">兵庫県</option>
+                                        <option value="29">奈良県</option>
+                                        <option value="30">和歌山県</option>
+                                        <option value="31">鳥取県</option>
+                                        <option value="32">島根県</option>
+                                        <option value="33">岡山県</option>
+                                        <option value="34">広島県</option>
+                                        <option value="35">山口県</option>
+                                        <option value="36">徳島県</option>
+                                        <option value="37">香川県</option>
+                                        <option value="38">愛媛県</option>
+                                        <option value="39">高知県</option>
+                                        <option value="40" selected="selected">福岡県</option>
+                                        <option value="41">佐賀県</option>
+                                        <option value="42">長崎県</option>
+                                        <option value="43">熊本県</option>
+                                        <option value="44">大分県</option>
+                                        <option value="45">宮崎県</option>
+                                        <option value="46">鹿児島県</option>
+                                        <option value="47">沖縄県</option>
+                                        <option value="99">その他</option>
+                                    </select>
+
+                                    <h2>出身チーム</h2>
+                                    
+                                    <input class="w30" id="id-field-related_team" name="related_team" type="text">
+
+                                    <h2>利き足</h2>
+                                    
+                                    <input type='radio' name='pivot' id='pivot-0' value='0' checked>右足
+                                    <input type='radio' name='pivot' id='pivot-1' value='1'>左足
+
+                                    <h2>身長</h2>
+
+                                    <input class="w20" name="height" type="text">
+                                    <span>cm</span>
+
+                                    <h2>体重</h2>
+                                    
+                                    <input class="w20" name="weight" type="text">
+                                    <span>kg</span>
+
+                                    <h2>今年の目標</h2>
+
+                                    <input id="id-field-goal" name="goal" type="text">
+
+                                    <h2>選手写真</h2>
+                                    
+                                    <input name="img" type="file">
+
+                                    <div class="ln_solid"></div>
+
+                                </div><!-- /.box -->
+
+                                <div class="btn_reg">
+                                    <input type="button" value="戻る">
+                                    <input type="submit" value="登録">
+                                </div><!-- /.btn_reg -->
+
+                            </form>
+
+                        </div><!-- /.create -->
+
+                    </div><!-- /.inner -->
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <div class="inner">
+
+                <div class="logo">LEAGUE MANAGEMENT TOOLS</div>
+                <div class="copy">&copy; Copyright 〇〇〇〇〇 all right reserved.</div>
+            </div><!-- /.inner -->
+        </footer>
+
+    </div>
+    <!-- /#wrap -->
+
+    <div class="pagetop"></div>
+
+    <script src="js/sp_nav.js"></script>
+
+</body>
+
+</html>

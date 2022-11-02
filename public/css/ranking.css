@@ -1,0 +1,346 @@
+/*---------------------------
+ranking
+----------------------------*/
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #ranking .inner {
+    /*tablet*/
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #ranking .inner {
+    /*sp*/
+    width: 90%;
+  }
+}
+
+#ranking .inner .head {
+  margin-bottom: 2.0em;
+  text-align: left;
+}
+
+#ranking .inner .head h2 {
+  color: #064414;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+#ranking .inner .head span {
+  font-size: 0.9em;
+  display: block;
+  color: #999;
+}
+
+#ranking .inner .snav {
+  margin-bottom: 1.5em;
+}
+
+#ranking .inner .snav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  list-style: none;
+}
+
+#ranking .inner .snav ul li {
+  width: 22%;
+}
+
+#ranking .inner .snav ul li a {
+  display: block;
+  padding: 1.0em;
+  text-align: center;
+  border: 1px solid #064414;
+  color: #064414;
+  text-decoration: none;
+}
+
+#ranking .inner .snav ul li a.on {
+  background: #064414;
+  color: #fff;
+}
+
+#ranking .inner .snav ul li a:hover {
+  background: #064414;
+  color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  #ranking .inner .box {
+    /*sp*/
+    overflow: auto;
+    white-space: nowrap;
+  }
+  #ranking .inner .box::-webkit-scrollbar {
+    height: 5px;
+  }
+  #ranking .inner .box .scroll::-webkit-scrollbar-track {
+    background: #F1F1F1;
+  }
+  #ranking .inner .box .scroll::-webkit-scrollbar-thumb {
+    background: #BCBCBC;
+  }
+}
+
+#ranking .inner .box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media screen and (max-width: 640px) {
+  #ranking .inner .box table {
+    /*sp*/
+    width: 200%;
+  }
+}
+
+#ranking .inner .box table tr {
+  border-bottom: 1px dotted #fff;
+}
+
+#ranking .inner .box table tr.line {
+  border-top: 1px dotted #999;
+}
+
+#ranking .inner .box table tr:nth-of-type(odd) {
+  background: #E8EFF4;
+}
+
+#ranking .inner .box table tr th,
+#ranking .inner .box table tr td {
+  padding: 0.5em;
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+#ranking .inner .box table tr th {
+  background: #064414;
+  color: #fff;
+  font-weight: normal;
+  border-right: 1px dotted #fff;
+}
+
+#ranking .inner .box table tr th span {
+  display: block;
+  width: 8px;
+  height: 6px;
+  background: url(../img/common/icon_sort.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#ranking .inner .box table tr td {
+  text-align: left;
+  border-right: 1px dotted #ccc;
+  text-align: center;
+}
+
+#ranking .inner .box table tr td.match {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#ranking .inner .box table tr td.match span {
+  display: inline-block;
+  text-align: center;
+}
+
+#ranking .inner .box table tr td.match span:nth-of-type(1) {
+  width: 35%;
+}
+
+#ranking .inner .box table tr td.match span:nth-of-type(2) {
+  width: 30%;
+}
+
+#ranking .inner .box table tr td.match span:nth-of-type(3) {
+  width: 35%;
+}
+
+@media screen and (max-width: 640px) {
+  #ranking .inner .box.all table {
+    /*sp*/
+    width: 200%;
+  }
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(1) {
+  width: 5%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(2) {
+  width: 20%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(3) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(4) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(5) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(6) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(7) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(8) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(9) {
+  width: 8%;
+}
+
+#ranking .inner .box.all table tr th:nth-of-type(12) {
+  width: 10%;
+  border-right: none;
+}
+
+#ranking .inner .box.all table tr td {
+  padding: 1.2em 0.5em;
+}
+
+#ranking .inner .box.all table tr td:nth-of-type(2) {
+  text-align: left;
+}
+
+#ranking .inner .box.all table tr td:nth-of-type(12) {
+  border-right: none;
+}
+
+@media screen and (max-width: 640px) {
+  #ranking .inner .box.match table {
+    /*sp*/
+    width: 200%;
+  }
+}
+
+#ranking .inner .box.match table tr th:nth-of-type(1) {
+  width: 10%;
+}
+
+#ranking .inner .box.match table tr th:nth-of-type(2) {
+  width: 25%;
+  border-right: none;
+}
+
+#ranking .inner .box.match table tr th:nth-of-type(3) {
+  width: 15%;
+  border-right: none;
+}
+
+#ranking .inner .box.match table tr th:nth-of-type(4) {
+  width: 25%;
+}
+
+#ranking .inner .box.match table tr th:nth-of-type(5) {
+  width: 25%;
+}
+
+#ranking .inner .box.match table tr td:nth-of-type(2) {
+  border-right: none;
+}
+
+#ranking .inner .box.match table tr td:nth-of-type(3) {
+  border-right: none;
+}
+
+#ranking .inner .box.match table tr td span {
+  display: block;
+  background: #FFAF00;
+  color: #fff;
+  font-size: 8px;
+  line-height: 16px;
+  width: 70%;
+  margin: auto;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(1) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(2) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(3) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(4) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(5) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(6) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(7) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(8) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(9) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(10) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(11) {
+  width: 8.5%;
+}
+
+#ranking .inner .box.stats table tr:nth-of-type(1) th:nth-of-type(12) {
+  width: 6.5%;
+}
+
+#ranking .inner .box.stats table tr td.none {
+  background: #ccc;
+}
+
+#ranking .inner .box.stats table tr td:nth-of-type(12) {
+  background: #E8EFF4;
+}
+/*# sourceMappingURL=ranking.css.map */

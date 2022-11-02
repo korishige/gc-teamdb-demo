@@ -1,0 +1,87 @@
+/*---------------------------
+about
+----------------------------*/
+#about {
+  padding: 3.0em;
+}
+
+#about .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#about .inner .col {
+  width: 30%;
+  position: relative;
+  margin-bottom: 1.5em;
+  overflow: hidden;
+  margin-right: 5%;
+}
+
+@media screen and (max-width: 640px) {
+  #about .inner .col {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) and (max-width: 640px) {
+  #about .inner .col {
+    /*sp*/
+    width: 100%;
+    margin-bottom: 1.0rem;
+    margin-right: 0;
+  }
+}
+
+#about .inner .col:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+#about .inner .col .btn {
+  position: absolute;
+  display: block;
+  width: 60%;
+  height: 36px;
+  line-height: 36px;
+  background: url(../img/index/other_title_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  padding: 0 1.0em;
+  right: 0;
+  bottom: 0;
+}
+
+#about .inner .col a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#about .inner .col img {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+
+#about .inner .col:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=about.css.map */

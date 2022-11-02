@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-9291,-753)">
+        <g transform="matrix(1,0,0,0.592748,0,0)">
+            <g id="人物のアイコン素材" transform="matrix(0.0324782,0,0,0.0547926,9300.23,1284.8)">
+                <g transform="matrix(1,0,0,1,-256,-256)">
+                    <g>
+                        <path d="M255.999,250.486C325.177,250.486 381.249,194.418 381.249,125.244C381.249,56.072 325.177,0 255.999,0C186.831,0 130.759,56.072 130.759,125.244C130.759,194.418 186.831,250.486 255.999,250.486Z" style="fill:white;fill-rule:nonzero;"/>
+                        <path d="M319.313,289.033L192.685,289.033C151.396,313.808 115.615,371.613 115.615,421.162L115.615,512L396.387,512L396.387,421.162C396.386,371.613 360.603,313.808 319.313,289.033Z" style="fill:white;fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

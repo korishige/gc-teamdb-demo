@@ -1,0 +1,359 @@
+/*---------------------------
+login
+----------------------------*/
+#login .inner h2 {
+  font-size: 1.8em;
+  margin-bottom: 4.0em;
+}
+
+#login .inner .box {
+  background: #eee;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+  padding: 6.0em 2.0em 2.0em 2.0em;
+}
+
+#login .inner .box:nth-of-type(1) {
+  margin-bottom: 1.0em;
+}
+
+#login .inner .box .team_emb {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+#login .inner .box dl {
+  width: 75%;
+  margin: auto;
+}
+
+#login .inner .box dl > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#login .inner .box dl > div dt {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  font-size: 1.4em;
+}
+
+#login .inner .box dl > div dd {
+  width: 100%;
+  padding: 20px 0;
+}
+
+#login .inner .box dl > div dd input {
+  border: 2px solid #ccc;
+  padding: 1.0em;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+#login .inner .box .btn {
+  margin-bottom: 2.0em;
+}
+
+#login .inner .box .btn input[type="submit"] {
+  width: 340px;
+  border: none;
+  background-color: #63BF35;
+  padding: 1.0em;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 640px) {
+  #login .inner .box .btn input[type="submit"] {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#login .inner .box .btn a {
+  display: inline-block;
+  width: 340px;
+  padding: 1.5em 1.0em;
+  background-color: #117355;
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+#login .inner .box p {
+  font-size: 1.2em;
+}
+
+#login .inner .box:nth-of-type(2) {
+  padding: 1.0em;
+}
+
+#login .inner .box:nth-of-type(2) .btn {
+  margin-bottom: 0;
+}
+
+#login #register {
+  text-align: left;
+  padding: 1.0em;
+  max-width: 700px;
+  margin: auto;
+}
+
+#login #register > h2 {
+  text-align: center;
+  margin-bottom: 1.0em;
+}
+
+#login #register .head {
+  border: 1px solid #ccc;
+  margin-bottom: 1.0em;
+  padding: 1.0em;
+}
+
+#login #register .head a {
+  text-decoration: none;
+}
+
+#login #register .box {
+  max-width: 100%;
+  background: #eee;
+  padding-top: 1.0em;
+}
+
+@media screen and (max-width: 640px) {
+  #login #register .box {
+    /*sp*/
+    padding: 1.0rem 0.5rem;
+  }
+}
+
+#login #register .box h2 {
+  font-size: 1.0em;
+  border: 1px solid #ccc;
+  margin: 1.5em 0;
+  padding: 0.5em 1.0em;
+  background: #D9D9D9;
+}
+
+#login #register .box h2:first-child {
+  margin-top: 0;
+}
+
+#login #register .box h2 > span {
+  background: #FF8E2F;
+  padding: 0.5em;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.6em;
+  line-height: 1.0em;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#login #register .box p {
+  font-size: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#login #register .box input[type="text"],
+#login #register .box input[type="email"],
+#login #register .box input[type="password"] {
+  width: 100%;
+}
+
+#login #register .box input[type="text"].w50,
+#login #register .box input[type="email"].w50,
+#login #register .box input[type="password"].w50 {
+  width: 50%;
+}
+
+@media screen and (max-width: 640px) {
+  #login #register .box input[type="text"].w50,
+  #login #register .box input[type="email"].w50,
+  #login #register .box input[type="password"].w50 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#login #register .box input[type="text"].w20,
+#login #register .box input[type="email"].w20,
+#login #register .box input[type="password"].w20 {
+  width: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  #login #register .box input[type="text"].w20,
+  #login #register .box input[type="email"].w20,
+  #login #register .box input[type="password"].w20 {
+    /*sp*/
+    width: 50%;
+  }
+}
+
+#login #register .box .league {
+  width: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  #login #register .box .league {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#login #register .box .year_est {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+
+#login #register .box .year_est input[type="text"] {
+  border-radius: 0;
+}
+
+#login #register .box .year_est span {
+  background: #ccc;
+  color: #000;
+  padding: 0.6em;
+  display: inline-block;
+}
+
+#login #register .box .address {
+  margin-bottom: 0.3em;
+}
+
+#login #register .box .address span {
+  display: inline-block;
+  width: 80px;
+}
+
+#login #reminber {
+  max-width: 500px;
+  margin: auto;
+}
+
+#login #reminber > h2 {
+  text-align: center;
+  margin-bottom: 1.0em;
+}
+
+#login #reminber .btn {
+  padding: 1.0em 0;
+  text-align: center;
+}
+
+#login #reminber .btn input[type="submit"] {
+  border: 2px solid #2CA17D;
+  border-radius: 3px;
+  background: #2CA17D;
+  color: #fff;
+  width: 30%;
+}
+
+@media screen and (max-width: 640px) {
+  #login #reminber .btn input[type="submit"] {
+    /*sp*/
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #logout .inner {
+    /*sp*/
+    padding: 3.0rem 0;
+  }
+}
+
+#logout .inner h2 {
+  font-size: 1.6em;
+  margin-bottom: 2.0em;
+}
+
+#logout .inner .txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  width: 60%;
+  margin: auto;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #logout .inner .txt {
+    /*tablet*/
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #logout .inner .txt {
+    /*sp*/
+    width: 100%;
+    padding: 2.0rem 0;
+  }
+}
+
+#logout .inner .txt a {
+  display: block;
+  width: 300px;
+  margin: auto;
+  padding: 1.0em;
+  border: none;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#logout .inner .txt a:nth-of-type(1) {
+  background: #2CA17D;
+}
+
+#logout .inner .txt a:nth-of-type(2) {
+  background: #218E98;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #logout .inner .txt a {
+    /*tablet*/
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #logout .inner .txt a {
+    /*sp*/
+    width: 90%;
+    margin-bottom: 0.5em;
+  }
+}
+/*# sourceMappingURL=login.css.map */

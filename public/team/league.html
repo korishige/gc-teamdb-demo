@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ja"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+<title></title>
+
+<link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/form.css" rel="stylesheet" type="text/css" />
+<link href="css/league.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+</head>
+
+<body>
+<!-- #wrap -->
+<div id="wrap">
+
+	<header>
+		<div class="inner row">
+			<div class="logo">
+                LEAGUE MANAGEMENT TOOLS
+            </div>
+            <div class="snav">
+                <ul>
+                    <li><a href="logout.html">ログアウト</a></li>
+                </ul>
+            </div><!-- /.snav -->
+		</div>
+		<div class="sp_nav"></div>
+	</header>
+	
+	<div class="site_title">
+	    <div class="inner">
+            <span><img src="img/common/logo.png"></span>
+	        <span>〇〇高等学校　リーグ管理ツール</span>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+    <nav>
+	    <ul>
+	        <li><a href="index.html">TOP</a></li>
+	        <li><a href="team-match-create.html">チーム情報</a></li>
+	        <li><a href="team-formation.html">チーム編成</a></li>
+	        <li><a href="player.html">選手情報</a></li>
+	        <li><a href="league.html" class="on">リーグ情報</a></li>
+	        <li><a href="account.html">アカウント情報</a></li>
+	    </ul>
+	</nav>
+	
+	<div class="content_title">
+	    <div class="inner">
+            <h1>
+                <span>リーグ情報</span>
+                <span>LEAGUE INFORMATION</span>
+            </h1>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+	<div class="overlay"></div>
+
+	<main class="contents">
+	<article>
+        <section>
+            <div id="league">
+                <div class="inner">
+                    
+                    <div class="index">
+                    
+                        <div class="search">
+                            <h2>絞り込み検索</h2>
+                            <form method="GET" action="" accept-charset="UTF-8" class="">
+                                <div class="row">
+                                    <input placeholder="年度" name="year" type="text" value="">
+
+                                    <select name="season">
+                                    <option selected="selected" value="">期日選択</option><option value="0">前期</option><option value="1">後期</option><option value="2">通年</option>
+                                    </select>
+
+                                    <input placeholder="大会名キーワード" name="keyword" type="text" value="">
+
+                                    <div class="btn row">
+                                        <input class="btn btn-info" style="margin-top:5px" type="submit" value="検索">
+
+                                        <a href="http://ffa.tkss.xyz/cp/team/league">検索条件リセット</a>
+                                    </div><!-- /.btn -->
+                                </div><!-- /.row -->
+                            </form>
+                        </div><!-- /.search -->
+                        
+                        <div class="list">
+                            <table>
+                                <tr>
+                                    <th>年度</th>
+                                    <th>大会名称(参加チーム数)</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>１部 | aaa (2チーム)</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="league-match-all.html">全試合</a></li>
+                                            <li><a href="league-match-self.html">自チーム試合</a></li>
+                                            <li><a href="league-order.html">順位</a></li>
+                                            <li><a href="league-table.html">戦績表</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>１部 | aaa (2チーム)</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="league-match-all.html">全試合</a></li>
+                                            <li><a href="league-match-self.html">自チーム試合</a></li>
+                                            <li><a href="league-order.html">順位</a></li>
+                                            <li><a href="league-table.html">戦績表</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>１部 | aaa (2チーム)</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="league-match-all.html">全試合</a></li>
+                                            <li><a href="league-match-self.html">自チーム試合</a></li>
+                                            <li><a href="league-order.html">順位</a></li>
+                                            <li><a href="league-table.html">戦績表</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>１部 | aaa (2チーム)</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="league-match-all.html">全試合</a></li>
+                                            <li><a href="league-match-self.html">自チーム試合</a></li>
+                                            <li><a href="league-order.html">順位</a></li>
+                                            <li><a href="league-table.html">戦績表</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>１部 | aaa (2チーム)</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="league-match-all.html">全試合</a></li>
+                                            <li><a href="league-match-self.html">自チーム試合</a></li>
+                                            <li><a href="league-order.html">順位</a></li>
+                                            <li><a href="league-table.html">戦績表</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div><!-- /.list -->
+                    
+                    </div><!-- /.index -->
+                    
+                </div><!-- /.inner -->
+            </div>
+        </section>
+
+	</article>
+	</main>
+
+	<footer>
+        <div class="inner">
+            <div class="logo">LEAGUE MANAGEMENT TOOLS</div>
+            <div class="copy">&copy; Copyright 〇〇〇〇〇 all right reserved.</div>
+        </div><!-- /.inner -->
+	</footer>
+
+</div>
+<!-- /#wrap -->
+
+<div class="pagetop"></div>
+
+<script src="js/sp_nav.js"></script>
+
+</body>
+</html>

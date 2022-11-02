@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2822,-12)">
+        <g transform="matrix(1,0,0,9.24866,1177.6,0)">
+            <g transform="matrix(0.840152,0,0,0.317948,-10382.5,-1.13216)">
+                <g transform="matrix(1,0,0,0.315217,11000.5,0.630435)">
+                    <rect x="3331" y="32" width="23" height="3" style="fill:white;"/>
+                </g>
+                <g transform="matrix(1,0,0,0.315217,11000.5,2.89096)">
+                    <rect x="3331" y="32" width="23" height="3" style="fill:white;"/>
+                </g>
+                <g transform="matrix(1,0,0,0.315217,11000.5,5.28027)">
+                    <rect x="3331" y="32" width="23" height="3" style="fill:white;"/>
+                </g>
+            </g>
+            <g transform="matrix(1.19524,0,0,0.129234,-2324.75,-2.73798)">
+                <text x="3328.18px" y="67.534px" style="font-family:'MidashiGoPro-MB31', 'A-OTF Midashi Go MB31 Pro', sans-serif;font-weight:600;font-size:8px;fill:white;">M<tspan x="3335.3px 3340.93px 3347.17px " y="67.534px 67.534px 67.534px ">ENU</tspan></text>
+            </g>
+        </g>
+    </g>
+</svg>

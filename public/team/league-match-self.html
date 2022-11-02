@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ja"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+<title></title>
+
+<link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/form.css" rel="stylesheet" type="text/css" />
+<link href="css/league.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+</head>
+
+<body>
+<!-- #wrap -->
+<div id="wrap">
+
+	<header>
+		<div class="inner row">
+			<div class="logo">
+                LEAGUE MANAGEMENT TOOLS
+            </div>
+            <div class="snav">
+                <ul>
+                    <li><a href="logout.html">ログアウト</a></li>
+                </ul>
+            </div><!-- /.snav -->
+		</div>
+		<div class="sp_nav"></div>
+	</header>
+	
+	<div class="site_title">
+	    <div class="inner">
+            <span><img src="img/common/logo.png"></span>
+	        <span>〇〇高等学校　リーグ管理ツール</span>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+    <nav>
+	    <ul>
+	        <li><a href="index.html">TOP</a></li>
+	        <li><a href="team-match-create.html">チーム情報</a></li>
+	        <li><a href="team-formation.html">チーム編成</a></li>
+	        <li><a href="player.html">選手情報</a></li>
+	        <li><a href="league.html" class="on">リーグ情報</a></li>
+	        <li><a href="account.html">アカウント情報</a></li>
+	    </ul>
+	</nav>
+	
+	<div class="content_title">
+	    <div class="inner">
+            <h1>
+                <span>リーグ情報</span>
+                <span>LEAGUE INFORMATION</span>
+            </h1>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+	<div class="overlay"></div>
+	
+	<div class="year_list">
+        <div class="inner">
+            <ul>
+                <li class="on"><a href="">年　度</a></li>
+                <li><a href="">前　期</a></li>
+                <li><a href="">後　期</a></li>
+            </ul>
+	    </div><!-- /.inner -->
+	</div><!-- /.year_list -->
+
+	<main class="contents">
+	<article>
+        <section>
+            <div id="league">
+               
+                <div class="inner">
+                   
+                    <div class="league_list">
+                        <ul>
+                            <li><a href="league-order.html">リーグ順位</a></li>
+                            <li><a href="league-match-all.html">全試合</a></li>
+                            <li class="on"><a href="league-match-self.html">自チーム試合</a></li>
+                            <li><a href="league-table.html">戦績表</a></li>
+                        </ul>
+                    </div><!-- /.league_list -->
+                    
+                    <div class="match-all">
+                    
+                    <div class="sp_note">&lt;&lt;　スワイプでご覧いただけます。　&gt;&gt;</div>
+                    
+                        <div class="box">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <th>キックオフ</th>
+                                    <th></th>
+                                    <th>試合状況</th>
+                                    <th></th>
+                                    <th>試合会場</th>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/06 (日)
+                                    </td>
+                                    <td class="team">
+                                        東海大福岡
+                                    </td>
+                                    <td class="score">
+                                        5&nbsp;-&nbsp;2
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        筑陽学園
+                                    </td>
+                                    <td>タイガーフィールド</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/06
+                                        (
+                                        日
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        東福岡
+                                    </td>
+                                    <td class="score">
+                                        0&nbsp;-&nbsp;1
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        大津
+                                    </td>
+                                    <td>東福岡高校</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/06
+                                        (
+                                        日
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        九国大付属
+                                    </td>
+                                    <td class="score">
+                                        3&nbsp;-&nbsp;0
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        日章学園
+                                    </td>
+                                    <td>九州国際大学</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/06
+                                        (
+                                        日
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        熊本国府
+                                    </td>
+                                    <td class="score">
+                                        0&nbsp;-&nbsp;1
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        長崎総附
+                                    </td>
+                                    <td>タイガーフィールド</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/06
+                                        (
+                                        日
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        神村学園
+                                    </td>
+                                    <td class="score">
+                                        3&nbsp;-&nbsp;1
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        宮崎日大
+                                    </td>
+                                    <td>東福岡高校</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/05
+                                        (
+                                        土
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        東海大福岡
+                                    </td>
+                                    <td class="score">
+                                        2&nbsp;-&nbsp;3
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        宮崎日大
+                                    </td>
+                                    <td>タイガーフィールド</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/05
+                                        (
+                                        土
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        神村学園
+                                    </td>
+                                    <td class="score">
+                                        1&nbsp;-&nbsp;1
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        日章学園
+                                    </td>
+                                    <td>東福岡高校</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/05
+                                        (
+                                        土
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        大津
+                                    </td>
+                                    <td class="score">
+                                        3&nbsp;-&nbsp;1
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        長崎総附
+                                    </td>
+                                    <td>東福岡高校</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/05
+                                        (
+                                        土
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        九国大付属
+                                    </td>
+                                    <td class="score">
+                                        0&nbsp;-&nbsp;3
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        熊本国府
+                                    </td>
+                                    <td>九州国際大学</td>
+                                </tr>
+                                <tr>
+                                    <td class="textC">
+                                        10/05
+                                        (
+                                        土
+                                        )
+                                    </td>
+                                    <td class="team">
+                                        東福岡
+                                    </td>
+                                    <td class="score">
+                                        4&nbsp;-&nbsp;2
+                                        <span>試合終了</span>
+                                    </td>
+                                    <td class="team">
+                                        筑陽学園
+                                    </td>
+                                    <td>東福岡高校</td>
+                                </tr>
+                            </table>
+                        </div><!-- /.box -->
+                    
+                    </div><!-- /.order -->
+                    
+                </div><!-- /.inner -->
+            </div>
+        </section>
+
+	</article>
+	</main>
+
+	<footer>
+        <div class="inner">
+            <div class="logo">LEAGUE MANAGEMENT TOOLS</div>
+            <div class="copy">&copy; Copyright 〇〇〇〇〇 all right reserved.</div>
+        </div><!-- /.inner -->
+	</footer>
+
+</div>
+<!-- /#wrap -->
+
+<div class="pagetop"></div>
+
+<script src="js/sp_nav.js"></script>
+
+</body>
+</html>

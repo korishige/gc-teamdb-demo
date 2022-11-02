@@ -1,0 +1,472 @@
+@charset "UTF-8";
+/*---------------------------
+starter setting
+----------------------------*/
+/*生成・編集*/
+#starter_create .head {
+  margin-bottom: 2.0em;
+  text-align: left;
+}
+
+#starter_create .head h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .head h1 {
+    /*sp*/
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 1.6rem;
+  }
+}
+
+#starter_create .head .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  font-size: 1.1em;
+}
+
+#starter_create .head .row .date {
+  width: 100%;
+  padding: 1.0em 0;
+  border-bottom: 1px solid #000;
+}
+
+#starter_create .head .row .opp {
+  width: 49%;
+  padding: 1.0em 0;
+  border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .head .row .opp {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#starter_create .head .row .team {
+  width: 49%;
+  padding: 1.0em 0;
+  border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .head .row .team {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#starter_create h2 {
+  padding: 1.0em 0;
+  text-align: left;
+}
+
+#starter_create .row {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#starter_create .row .box {
+  width: 48%;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #starter_create .row .box {
+    /*tablet*/
+    width: 100%;
+  }
+  #starter_create .row .box:nth-of-type(1) {
+    margin-bottom: 1.0em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .row .box {
+    /*sp*/
+    width: 100%;
+  }
+  #starter_create .row .box:nth-of-type(1) {
+    margin-bottom: 1.0em;
+  }
+}
+
+#starter_create .row .box table {
+  width: 100%;
+}
+
+#starter_create .row .box table tr {
+  border-bottom: 1px dotted #ccc;
+}
+
+#starter_create .row .box table tr th {
+  padding: 0.5em 0;
+}
+
+#starter_create .row .box table tr td {
+  padding: 0.5em;
+  text-align: center;
+}
+
+#starter_create .row .box:nth-of-type(1) table {
+  border: 1px solid #2CA17D;
+}
+
+#starter_create .row .box:nth-of-type(1) table th {
+  background: #2CA17D;
+  color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .row .box:nth-of-type(1) table th {
+    /*sp*/
+    font-size: 0.8rem;
+  }
+}
+
+#starter_create .row .box:nth-of-type(1) table th:nth-of-type(1) {
+  width: 30%;
+}
+
+#starter_create .row .box:nth-of-type(1) table th:nth-of-type(2) {
+  width: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .row .box:nth-of-type(1) table th:nth-of-type(2) {
+    /*sp*/
+    width: 13%;
+  }
+}
+
+#starter_create .row .box:nth-of-type(1) table th:nth-of-type(3) {
+  width: 15%;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .row .box:nth-of-type(1) table th:nth-of-type(3) {
+    /*sp*/
+    width: 19%;
+  }
+}
+
+#starter_create .row .box:nth-of-type(1) table th:nth-of-type(4) {
+  width: 10%;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .row .box:nth-of-type(1) table th:nth-of-type(4) {
+    /*sp*/
+    width: 13%;
+  }
+}
+
+#starter_create .row .box:nth-of-type(1) table th:nth-of-type(5) {
+  width: 10%;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .row .box:nth-of-type(1) table th:nth-of-type(5) {
+    /*sp*/
+    width: 35%;
+  }
+}
+
+#starter_create .row .box:nth-of-type(1) table th:nth-of-type(6) {
+  width: 10%;
+}
+
+#starter_create .row .box:nth-of-type(2) table {
+  border: 1px solid #218E98;
+}
+
+#starter_create .row .box:nth-of-type(2) table th {
+  background: #218E98;
+  color: #fff;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(1) {
+  margin-bottom: 1.0em;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(1) th:nth-of-type(1) {
+  width: 30%;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(1) th:nth-of-type(2) {
+  width: 70%;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(2) th:nth-of-type(1) {
+  width: 10%;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(2) th:nth-of-type(2) {
+  width: 30%;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(2) th:nth-of-type(3) {
+  width: 30%;
+}
+
+#starter_create .row .box:nth-of-type(2) table:nth-of-type(2) th:nth-of-type(4) {
+  width: 30%;
+}
+
+#starter_create .btn {
+  padding-top: 4.0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #starter_create .btn {
+    /*tablet*/
+    padding-top: 2.0rem;
+  }
+}
+
+#starter_create .btn a {
+  display: block;
+  width: 30%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background-image: url(../img/common/icon_print.png);
+  background-size: 8%;
+  background-repeat: no-repeat;
+  background-position: 5% center;
+  background-color: #2CA17D;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  font-family: 'Noto Sans JP',sans-serif;
+}
+
+#starter_create .btn a:hover {
+  background-color: #154E3C;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .btn a {
+    /*sp*/
+    width: 45%;
+    font-size: 1.0rem;
+    background-size: 12%;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+#starter_create .btn input[type="text"] {
+  width: 30%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #2CA17D;
+  background-image: url(../img/common/icon_save.png);
+  background-size: 8%;
+  background-repeat: no-repeat;
+  background-position: 5% center;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: 'Noto Sans JP',sans-serif;
+}
+
+#starter_create .btn input[type="text"]:hover {
+  background-color: #154E3C;
+}
+
+@media screen and (max-width: 640px) {
+  #starter_create .btn input[type="text"] {
+    /*sp*/
+    width: 45%;
+    font-size: 1.0rem;
+    background-size: 12%;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+#starter_create select {
+  width: 100%;
+  padding: 0.2em;
+  border: 1px solid #999;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#starter_create input[type="text"] {
+  width: 100%;
+  padding: 0.35em;
+  border: 1px solid #999;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*印刷*/
+
+/*印刷*/
+@media print {
+  #starter {
+      zoom: 75% !important; 
+  }
+}
+
+#starter {
+  padding: 1.0em 1.0em 0 1.0em;
+}
+
+#starter .head {
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+#starter .head h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+#starter .head .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  font-size: 1.1em;
+}
+
+#starter .head .row .date {
+  width: 49%;
+  padding: 0.3em 0;
+  border-bottom: 1px solid #000;
+}
+
+#starter .head .row .opp {
+  width: 49%;
+  margin-left: auto;
+  padding: 0.3em 0;
+  border-bottom: 1px solid #000;
+}
+
+#starter .head .row .team {
+  width: 100%;
+  margin-top: 1.0em;
+  padding: 0.3em 0;
+  border-bottom: 1px solid #000;
+}
+
+#starter .head .note {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+#starter table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+#starter table th,
+#starter table td {
+  border: 1px solid #000;
+  padding: 0.2em 0.3em;
+  font-size: 0.8em;
+}
+
+#starter table th.sign,
+#starter table td.sign {
+  text-align: left;
+  vertical-align: center;
+}
+
+#starter table th {
+  background: #2CA17D;
+  color: #fff;
+  font-size: 0.8em;
+}
+
+#starter table:nth-of-type(1) {
+  margin-bottom: 0.2em;
+}
+
+#starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(1) {
+  width: 3%;
+}
+
+#starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(2), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(3), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(4), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(6), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(7) {
+  width: 5%;
+}
+
+#starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(5) {
+  width: 20%;
+}
+
+#starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(8), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(9), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(10), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(11), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(12), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(13), #starter table:nth-of-type(1) tr:nth-of-type(2) th:nth-of-type(14) {
+  width: 5%;
+}
+
+#starter table:nth-of-type(2) tr th {
+  background: #218E98;
+}
+
+#starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(1) {
+  width: 4%;
+}
+
+#starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(2) {
+  width: 13%;
+}
+
+#starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(3) {
+  width: 31%;
+}
+
+#starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(4) {
+  width: 7%;
+}
+
+#starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(5), #starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(6), #starter table:nth-of-type(2) tr:nth-of-type(2) th:nth-of-type(7) {
+  width: 15%;
+}
+/*# sourceMappingURL=starter_setting.css.map */

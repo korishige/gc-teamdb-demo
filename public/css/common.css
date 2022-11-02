@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/*-------------------------------
+ディフォルト設定
+---------------------------------*/
+html {
+  width: 100%;
+}
+
+body {
+  background: #fff;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  color: #000000;
+  font-family: 'Noto Sans JP',sans-serif;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  body {
+    /*tablet*/
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    /*sp*/
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+}
+
+/*text link（サイト全体のメイン文字カラー）
+-------------------------------- */
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:active {
+  color: #000;
+}
+
+/*mb
+------------------------*/
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+/*img
+------------------------*/
+* img {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-items: center;
+}
+/*# sourceMappingURL=common.css.map */

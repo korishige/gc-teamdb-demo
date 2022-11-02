@@ -1,0 +1,139 @@
+/*---------------------------
+news
+----------------------------*/
+#news .inner > h2 {
+  font-size: 1.8em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+#news .inner .row .col {
+  width: 100%;
+  padding: 1.0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+  position: relative;
+  border: 1px solid #fff;
+  padding: 2.0 1.0em;
+}
+
+#news .inner .row .col:nth-of-type(even) {
+  background: #eee;
+}
+
+#news .inner .row .col span {
+  display: block;
+  width: 10%;
+  text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+  #news .inner .row .col span {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#news .inner .row .col h2 {
+  width: 90%;
+  text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+  #news .inner .row .col h2 {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#news .inner .row .col a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#news .inner .row .col:hover {
+  background: #2CA17D;
+  color: #fff;
+}
+
+#news_detail .inner {
+  text-align: left;
+}
+
+@media screen and (max-width: 640px) {
+  #news_detail .inner {
+    /*sp*/
+    width: 90%;
+  }
+}
+
+#news_detail .inner h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  color: #002960;
+  border-bottom: 1px solid #002960;
+}
+
+@media screen and (max-width: 640px) {
+  #news_detail .inner h2 {
+    /*sp*/
+    font-size: 1.2rem;
+  }
+}
+
+#news_detail .inner .date {
+  margin-bottom: 2.0em;
+  padding-bottom: 1.0em;
+  border-bottom: 1px dotted #ccc;
+}
+
+#news_detail .inner .content {
+  line-height: 1.6em;
+}
+
+#news_detail .inner .content > h3 {
+  padding: 1.5em 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+
+@media screen and (max-width: 640px) {
+  #news_detail .inner .content > h3 {
+    /*sp*/
+    font-size: 1.0rem;
+  }
+}
+
+#news_detail .inner .btn {
+  margin-top: 2.0em;
+  padding-top: 2.0em;
+  text-align: center;
+  border-top: 1px dotted #ccc;
+}
+
+#news_detail .inner .btn a {
+  display: inline-block;
+}
+/*# sourceMappingURL=news.css.map */

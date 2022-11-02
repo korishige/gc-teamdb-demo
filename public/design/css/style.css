@@ -1,0 +1,354 @@
+/*---------------------------
+/*container
+----------------------------*/
+#container{
+	width:100%;
+	background:url(../img/common/back_img_common.jpg) repeat-x;
+	margin:0px;
+	padding:0px;
+}
+
+/*---------------------------
+header
+----------------------------*/
+header{
+	width:100%;
+	margin: 0px;
+	padding:0px;
+	background:#FFD326;
+	font-size:10px;
+	text-align:left;
+	border-bottom:6px solid #000;
+}
+header .inner{
+	width:1200px;
+	margin:0px auto;
+	padding:20px 50px;
+	background:#fff;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header .inner:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+header .inner .header_logo{
+	width:50%;
+	float:left;
+}
+header .inner .header_nav{
+	width:40%;
+	float:right;
+}
+header .inner .header_nav .nav_create{
+	width:48%;
+	float:left;
+}
+header .inner .header_nav .nav_create a,
+header .inner .header_nav .nav_create a:link,
+header .inner .header_nav .nav_create a:visited{
+	height:32px;
+	line-height:32px;
+	display:block;
+	background:#FFD328;
+	color:#000;
+	text-align:center;
+	text-decoration:none;
+	font-size:14px;
+}
+header .inner .header_nav .nav_edit{
+	width:48%;
+	float:right;
+}
+header .inner .header_nav .nav_edit a,
+header .inner .header_nav .nav_edit a:link,
+header .inner .header_nav .nav_edit a:visited{
+	height:32px;
+	line-height:32px;
+	display:block;
+	background:#43A1D4;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	font-size:14px;
+}
+
+/*---------------------------
+footer
+---------------------------*/
+footer{
+	width:100%;
+	margin:0px;
+	font-size:10px;
+	/*•¶ŽšˆÊ’uŽw’è*/
+	text-align:center;
+	clear:both;
+	background:#333333;
+	color:#fff;
+}
+footer .footer_nav{
+	width:100%;
+	padding:40px 0px;
+	background:#666666;
+}
+footer .footer_nav ul li{
+	display:inline-block;
+	margin-right:10px;
+}
+footer .footer_nav a{
+	color:#fff;
+}
+footer .footer_logo{
+	width:100%;
+	padding:40px 0px;
+}
+
+/*----------------------
+pagetop
+-------------------------*/
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+}
+.pagetop a {
+    display: block;
+    background-color: #333;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 14px 20px;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	border:1px solid #ccc;
+}
+.pagetop a:hover {
+    display: block;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 14px 20px;
+	filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+
+/*----------------------
+main
+------------------------*/
+main.index{
+	width:100%;
+	margin:0px 0px 0px 0px;
+	text-align:left;
+	clear:both;
+	float:left;
+	background:#ccc;
+}
+main.index .wbox{
+	width:1200px;
+	margin:0px auto 0px auto;
+	background:#fff;
+	padding:40px 60px 0px 60px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+main.index .inner{
+	width:1200px;
+	margin:0px auto;
+	background:#fff;
+	padding:40px 100px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+main{
+	width:640px;
+	float:left;
+	text-align:left;
+}
+
+/*----------------------
+aside
+------------------------*/
+aside{
+	width:310px;
+	float:right;
+}
+
+aside .bnr_box{
+	width:100%;
+	margin-bottom:20px;
+}
+aside .bnr_box img{
+	margin-bottom:10px;
+}
+
+aside .search_box{
+	width:310px;
+	border:10px solid #ccc;
+	margin-bottom:20px;
+	padding:20px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+aside .search_box h2{
+	width:100%;
+	margin-bottom:20px;
+}
+aside .search_box dl{
+	width:96%;
+	margin:0px auto;
+}
+aside .search_box dl:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+aside .search_box dl dt{
+	width:25%;
+	float:left;
+	padding:16px 0px;
+	clear:both;
+}
+aside .search_box dl dd{
+	width:70%;
+	float:right;
+	padding:8px 0px;
+}
+aside .search_box dl dd select{
+	width:100%;
+	border:2px solid #ccc;
+	background:#eee;
+	padding:5px;
+}
+aside .search_box input[type="button"]{
+	width:92%;
+	background:#000;
+	color:#fff;
+	text-align:center;
+	margin-top:10px;
+	padding:10px 0px;
+	border:none;
+}
+
+/*----------------------
+content
+------------------------*/
+#content{
+	width:100%;
+	background:#ccc;
+}
+#content .inner{
+	width:1200px;
+	background:#fff;
+	margin:0px auto;
+	padding:50px 100px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*---------------------------
+nav
+-----------------------------*/
+nav{
+	clear:both;
+}
+nav ul{
+	display:block;  
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+}
+nav li{
+	list-style:none;
+	display:block; 
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+}
+
+/*nav home
+-----------------------*/
+nav .nav_home{
+	width:152px;
+	height:46px;
+	float:left;
+}
+nav li.nav_home a:link,
+nav li.nav_home a:visited{
+	width:152px;
+	height:46px;
+	float:left;
+	display:block; 
+	background:url(../img/navi/nav_home.jpg) no-repeat;
+}
+nav li.nav_home a:hover,
+nav li.nav_home a:active{
+	background-position:0px -50px;
+}
+
+/*-----------------------------
+contents
+-------------------------------*/
+#content_title{
+	width:100%;
+	background:#000;
+}
+#content_title .inner{
+	width:1200px;
+	background:#FFD326;
+	margin:0px auto;
+	padding:50px 100px;
+	text-align:left;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#content_title .inner h1{
+	font-size:20px;
+	font-weight:bold;
+	padding:0px;
+	margin:0px;
+}
+
+h2.bar{
+	width:100%;
+	margin-bottom:20px;
+	padding-bottom:20px;
+	background:url(../img/common/title_bar_bg.png) no-repeat left bottom;
+	font-size:18px;
+	font-weight:bold;
+}
+#title_sub_box{
+	width:90%;
+	margin-bottom:40px;
+	padding:5%;
+	background:#000;
+	color:#FFFFFF;
+	font-size:18px;
+}
+#refine_box{
+	width:100%;
+	margin-bottom:40px;
+}
+#refine_box select{
+	width:200px;
+	border:1px solid #ccc;
+	padding:5px 10px;
+}

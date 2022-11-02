@@ -1,0 +1,178 @@
+/*都道府県*/
+.region_box{
+	width:100%;
+	margin-bottom:40px;
+}
+.region_box .sbox{
+	padding:3px 3px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.region_box .sbox:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.region_box .sbox .name_box{
+	width:100px;
+	float:left;
+	border:1px solid #ccc;
+	padding:3px 0px;
+	text-align:center;
+	font-size:12px;
+	background:#fff;
+}
+.region_box .sbox .list_box{
+	width:500px;
+	float:right;
+	padding:3px 0px;
+}
+.region_box .sbox .list_box a,
+.region_box .sbox .list_box a:link,
+.region_box .sbox .list_box a:visited{
+	margin-right:20px;
+	color:#000;
+}
+.region_box .sbox:nth-child(even){
+	background:#eee;
+}
+
+/*年齢別*/
+.age_box{
+	width:100%;
+	margin-bottom:40px;
+}
+.age_box:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.age_box .sbox a,
+.age_box .sbox a:link,
+.age_box .sbox a:visited{
+	width:150px;
+	float:left;
+	margin-right:10px;
+	border:1px solid #ccc;
+	padding:20px 20px 20px 40px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background:url(../img/common/icon_age_arrow.png) no-repeat 10% 50%;
+	display:block;
+}
+.age_box .sbox:nth-child(4n){
+	margin-right:0px;
+}
+
+/*最新リーグ情報*/
+.new_box{
+	width:100%;
+	margin-bottom:40px;
+}
+.new_box .sbox{
+	width:100%;
+	padding:2% 1%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.new_box .sbox:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.new_box .sbox .ibox{
+	width:18%;
+	float:left;
+	border:1px solid #FF9900;
+	color:#FF9900;
+	text-align:center;
+	font-size:10px;
+	background:#fff;
+	margin-right:2%;
+}
+.new_box .sbox .tbox{
+	width:60%;
+	float:left;
+}
+.new_box .sbox .time_box{
+	width:18%;
+	float:right;
+	text-align:right;
+}
+.new_box .sbox:nth-child(even){
+	background:#eee;
+}
+
+
+
+/*人気*/
+.pop_box{
+	width:100%;
+	margin-bottom:20px;
+}
+.pop_box .sbox{
+	width:315px;
+	float:left;
+	margin-right:10px;
+	marbin-bottom:20px;
+}
+.sbox:nth-child(even){
+	margin-right:0px;
+}
+.pop_box .sbox h4{
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:14px;
+}
+.pop_box .sbox .ibox{
+	width:100%;
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding:5%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pop_box .sbox .ibox tr.title{
+	font-size:10px;
+	background:#ccc;
+}
+.pop_box .sbox .ibox td{
+	border-bottom:1px solid #ccc;
+	padding:5px 0px;
+	font-size:10px;
+}
+.pop_box .sbox .nav_box{
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding:1% 5% 1% 5%;
+	text-align:center;
+}
+.pop_box .sbox .nav_box a{
+	margin-right:10px;
+}
+.pop_box .sbox .nav_box img{
+	margin-right:5px;
+}
+.pop_box .sbox .day_box{
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding:2% 5% 5% 5%;
+	text-align:center;
+}
+.pop_box .sbox .genre_box{
+	width:100%;
+	padding:3% 10%;
+	background:#000;
+	color:#fff;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

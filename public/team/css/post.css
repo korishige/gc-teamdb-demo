@@ -1,0 +1,167 @@
+.post {
+  text-align: left;
+}
+
+.post .inner .main {
+  width: 75%;
+  float: left;
+}
+
+@media screen and (max-width: 640px) {
+  .post .inner .main {
+    /*sp*/
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+}
+
+.post .inner .main .title {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  font-size: 1.6em;
+}
+
+.post .inner .main .date {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.post .inner .main .bottom_nav {
+  margin-top: 40px;
+  padding: 20px 0px;
+  border-top: 1px solid #ccc;
+}
+
+.post .inner .main .bottom_nav:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.post .inner .main .bottom_nav .prev {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+.post .inner .main .bottom_nav .next {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+.post .inner .main .box {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.post .inner .main .box:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.post .inner .main .box .img {
+  width: 15%;
+  float: left;
+}
+
+.post .inner .main .box .img img {
+  border-radius: 100px;
+}
+
+.post .inner .main .box .text {
+  width: 80%;
+  float: right;
+}
+
+.post .inner .main .box .text span {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.post .inner .main .box .text a {
+  text-decoration: none;
+}
+
+.post .inner .main .pager {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.post .inner .main .pager ul {
+  list-style: none;
+}
+
+.post .inner .main .pager ul li {
+  display: inline-block;
+}
+
+.post .inner .main .pager ul li a {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  display: block;
+}
+
+.post .inner .main .pager ul li a:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.post .inner .main .pager ul li span.current {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 8px 10px;
+  display: block;
+}
+
+.post .inner .side {
+  width: 20%;
+  float: right;
+}
+
+@media screen and (max-width: 640px) {
+  .post .inner .side {
+    /*sp*/
+    width: 100%;
+    float: none;
+  }
+}
+
+.post .inner .side .box h2 {
+  background: #F78EA6;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
+
+.post .inner .side .box ul {
+  list-style: none;
+}
+
+.post .inner .side .box ul li {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.post .inner .side .box ul li span {
+  font-size: 0.8em;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.post .inner .side .box ul li a {
+  display: block;
+  text-decoration: none;
+}
+/*# sourceMappingURL=post.css.map */

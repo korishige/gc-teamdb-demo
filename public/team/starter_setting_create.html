@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="ja">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title></title>
+
+    <link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/starter_setting.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+
+<body>
+    <!-- #wrap -->
+    <div id="wrap">
+        
+        <header>
+		<div class="inner row">
+			<div class="logo">
+                LEAGUE MANAGEMENT TOOLS
+            </div>
+            <div class="snav">
+                <ul>
+                    <li><a href="logout.html">ログアウト</a></li>
+                </ul>
+            </div><!-- /.snav -->
+		</div>
+		<div class="sp_nav"></div>
+	</header>
+	
+	<div class="site_title">
+	    <div class="inner">
+            <span><img src="img/common/logo.png"></span>
+	        <span>〇〇高等学校　リーグ管理ツール</span>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+    <nav>
+	    <ul>
+	        <li><a href="index.html" class="on">TOP</a></li>
+	        <li><a href="team-match-create.html">チーム情報</a></li>
+	        <li><a href="team-formation.html">チーム編成</a></li>
+	        <li><a href="player.html">選手情報</a></li>
+	        <li><a href="league.html">リーグ情報</a></li>
+	        <li><a href="account.html">アカウント情報</a></li>
+	    </ul>
+	</nav>
+	
+    <div class="content_stitle">
+	    <div class="inner">
+	        <h2>スタメン登録</h2>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_stitle -->
+	
+	<div class="overlay"></div>
+
+        <main class="contents">
+            <div id="starter_create">
+                <div class="inner">
+                
+                <form action="">
+                
+                    <div class="head">
+                        <h1>高円宮杯JFAU-18サッカーリーグ2020福岡</h1>
+                        <div class="row">
+                            <div class="date">
+                                開催日：2020年1月1日
+                            </div><!-- /.date -->
+                            <div class="opp">
+                                対戦相手：Bチーム
+                            </div><!-- /.opp -->
+                            <div class="team">
+                                チーム名：Aチーム
+                            </div><!-- /.team -->
+                        </div><!-- /.row -->
+                    </div><!-- /.head -->
+                    
+                    <div class="row">
+                        <div class="box">
+                            <h2>スタメン</h2>
+                            <table>
+                                <tr>
+                                    <th>選手名</th>
+                                    <th>Pos</th>
+                                    <th>背番号</th>
+                                    <th>Cap</th>
+                                    <th>先発</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(1年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(2年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                            <option value="">山田太郎(3年)</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="MF">MF</option>
+                                            <option value="FW">FW</option>
+                                            <option value="DF">DF</option>
+                                            <option value="GK">GK</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="cap">
+                                            <span></span>
+                                        </label>
+                                        
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="box">
+                            <h2>ベンチ入りスタッフ</h2>
+
+                            <table>
+                                <tr>
+                                    <th>役職</th>
+                                    <th>スタッフ名</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>シャツ</th>
+                                    <th>ショーツ</th>
+                                    <th>ソックス</th>
+                                </tr>
+                                <tr>
+                                    <td>FP(正)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>FP(副)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>GK(正)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>GK(副)</td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                        
+                    </div><!-- /.row -->
+                    
+                    <div class="btn">
+                        <input type="text" value="保存する">
+                        <a href="">印刷する</a>
+                    </div><!-- /.btn -->
+                
+                </form>
+                
+                </div><!-- /.inner -->
+            </div><!-- /#starter_create -->
+
+        </main>
+        
+        <footer>
+        <div class="inner">
+            <div class="logo">LEAGUE MANAGEMENT TOOLS</div>
+            <div class="copy">&copy; Copyright 〇〇〇〇〇 all right reserved.</div>
+        </div><!-- /.inner -->
+	</footer>
+
+<div class="pagetop"></div>
+<script src="js/sp_nav.js"></script>
+
+    </div>
+    <!-- /#wrap -->
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+/*共通*/
+#title_box{
+	width:100%;
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:2px solid #ccc;
+}
+#title_box h3{
+	width:50%;
+	float:left;
+	font-size:18px;
+	font-weight:bold;
+	line-height:24px;
+}
+#title_box #nav_box{
+	width:35%;
+	float:right;
+}
+/*コメント*/
+#title_box h3.comment,
+#title_box h3.edit{
+	width:70%;
+	float:left;
+	font-size:18px;
+	font-weight:bold;
+}
+#title_box #nav_box.comment,
+#title_box #nav_box.edit{
+	width:25%;
+	float:right;
+}
+
+#title_box #nav_box:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+#title_box #nav_box #nav_top{
+	width:40%;
+	float:left;
+}
+#title_box #nav_box #nav_top a,
+#title_box #nav_box #nav_top a:link,
+#title_box #nav_box #nav_top a:visited{
+	height:24px;
+	line-height:24px;
+	background:#000;
+	color:#fff;
+	text-align:center;
+	display:block;
+	font-size:12px;
+	text-decoration:none;
+}
+#title_box #nav_box #nav_create{
+	width:50%;
+	float:right;
+}
+#title_box #nav_box #nav_create a,
+#title_box #nav_box #nav_create a:link,
+#title_box #nav_box #nav_create a:visited{
+	height:24px;
+	line-height:24px;
+	background:#FFD326;
+	color:#000;
+	text-align:center;
+	display:block;
+	font-size:12px;
+	text-decoration:none;
+}
+
+p.update{
+	margin-bottom:20px;
+}
+
+.rank_list_title{
+	margin-bottom:40px;
+}
+.rank_list_title h3{
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:14px;
+}
+.rank_list_title .rank_list_title_btn{
+	width:100px;
+	float:left;
+	margin-right:10px;
+}
+.rank_list_title .rank_list_title_btn a,
+.rank_list_title .rank_list_title_btn a:link,
+.rank_list_title .rank_list_title_btn a:visited{
+	height:24px;
+	line-height:24px;
+	background:#000;
+	color:#fff;
+	text-align:center;
+	display:block;
+	font-size:12px;
+	text-decoration:none;
+}
+.rank_list_title .rank_list_title_btn a.on,
+.rank_list_title .rank_list_title_btn a.on:link,
+.rank_list_title .rank_list_title_btn a.on:visited{
+	height:24px;
+	line-height:24px;
+	background:#FFD326;
+	color:#000;
+	text-align:center;
+	display:block;
+	font-size:12px;
+	text-decoration:none;
+}
+
+h3.rank_comment_title{
+	margin-bottom:30px;
+	padding-bottom:20px;
+	border-bottom:2px solid #ccc;
+}
+
+span.btn{
+	background:#2F8EF0;
+	color:#fff;
+	text-align:center;
+	font-size:10px;
+	text-decoration:none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding:8px;
+}
+
+/*全順位*/
+.allrank_table{
+	margin-bottom:40px;
+}
+.allrank_table table{
+	width:100%;
+}
+.allrank_table table tr:nth-child(even){
+	background:#eee;
+}
+.allrank_table table th{
+	background:#eee;
+	text-align:center;
+}
+.allrank_table table th,
+.allrank_table table td{
+	border-bottom:1px solid #ccc;
+	border-right:1px dotted #ccc;
+	padding:10px;
+}
+
+
+.league_input{
+	margin-bottom:40px;
+}
+
+.league_input .form-group{
+	width:100%;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #ccc;
+}
+.league_input .form-group:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.league_input .form-group .league_label{
+	width:14%;
+	float:left;
+}
+.league_input .form-group .input_area{
+	width:85%;
+	float:right;
+}
+.league_input .form-group .input_area input[type="text"]{
+	width:100%;
+	border:1px solid #ccc;
+	padding:6px;
+	-moz-box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-box-shadow: inset 0px 0px 5px #ccc;
+	box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.league_input .form-group .input_area select{
+	width:100%;
+	border:1px solid #ccc;
+	padding:6px;
+	-moz-box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-box-shadow: inset 0px 0px 5px #ccc;
+	box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.league_input .form-group .input_area textarea{
+	width:100%;
+	border:1px solid #ccc;
+	padding:6px;
+	-moz-box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-box-shadow: inset 0px 0px 5px #ccc;
+	box-shadow: inset 0px 0px 5px #ccc;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.league_input .form-group .input_area.result select{
+	width:190px;
+}
+.league_input .form-group .input_area.result input[type="text"]{
+	width:50px;
+}
+
+/*試合*/
+.match_table{
+	margin-bottom:40px;
+}
+.match_table table{
+	width:100%;
+}
+.match_table table tr:nth-child(even){
+	background:#eee;
+}
+.match_table table th{
+	background:#eee;
+	text-align:center;
+}
+.match_table table th,
+.match_table table td{
+	border-bottom:1px solid #ccc;
+	border-right:1px dotted #ccc;
+	padding:10px;
+}
+.match_table table td.last a.btn,
+.match_table table td.last a.btn:link,
+.match_table table td.last a.btn:visited{
+	width:100%;
+	height:18px;
+	line-height:18px;
+	background:#2F8EF0;
+	color:#fff;
+	text-align:center;
+	display:block;
+	font-size:10px;
+	text-decoration:none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/*戦績表*/
+.vod_table{
+	margin-bottom:40px;
+}
+.vod_table table{
+	width:100%;
+}
+.vod_table table tr:nth-child(even){
+	background:#eee;
+}
+.vod_table table th{
+	background:#eee;
+	text-align:center;
+}
+.vod_table table th,
+.vod_table table td{
+	border-bottom:1px solid #ccc;
+	border-right:1px dotted #ccc;
+	padding:10px;
+}
+.vod_table table th.last{
+	background:#FFD326;
+}

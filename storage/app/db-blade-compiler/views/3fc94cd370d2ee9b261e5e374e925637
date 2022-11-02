@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="ja"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="ja"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="ja"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ja"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+
+<title>関連情報 ｜ Blue Wave U-17リーグ~Boost~ | 2022</title>
+
+<link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/about.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162177859-20"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162177859-20');
+</script>
+
+
+</head>
+
+<body>
+<!-- #wrap -->
+<div id="wrap">
+
+	<header>
+		<div class="inner row">
+			<div class="logo">
+				<a href="/">
+                    <h1>
+                        <span><img src="img/common/logo.png"></span>
+                        <span>Blue Wave U-17リーグ~Boost~2022 公式サイト</span>
+                    </h1>
+				</a>
+			</div>
+			<div class="snav">
+                <ul>
+                    <li><a href="contact">お問合せ</a></li>
+                    <li><a href="login">ログイン</a></li>
+                </ul>
+			</div><!--/.menu-->
+		</div>
+		<div class="sp_nav"></div>
+	</header>
+	
+	<nav>
+        <div class="snav">
+            <ul>
+                <li><a href="contact">お問合せ</a></li>
+                <li><a href="login">ログイン</a></li>
+            </ul>
+        </div><!-- /.login -->
+	    <ul>
+	        <li><a href="/">TOP</a></li>
+	        <li><a href="schedule/groups">日　程</a></li>
+	        <li><a href="order/groups">順　位</a></li>
+	        <li><a href="teams/period">参加チーム</a></li>
+	        <li><a href="news">お知らせ</a></li>
+	        <li><a href="result/groups">結果速報</a></li>
+	        <li><a href="gallery/groups">ギャラリー</a></li>
+	        <li><a href="about" class="on">関連情報</a></li>
+	    </ul>
+	</nav>
+	
+	
+	<div class="overlay"></div>
+	
+	<div class="content_title">
+	    <div class="inner">
+	        <h1>関連情報</h1>
+	    </div><!-- /.inner -->
+	</div><!-- /.content_title -->
+	
+    <div class="bc">
+	    <span><a href="/">TOP</a></span>
+	    <span><a href="about">関連情報</a></span>
+	</div><!-- /.bc -->
+
+	<main class="content">
+
+        <article>
+            <div id="about">
+                <div class="inner">
+
+                        <div class="col">
+                            <img src="img/index/other_stadium2.png">
+                            <div class="btn">
+                                会場一覧
+                            </div><!-- /.btn -->
+                            <a href="venue"></a>
+                        </div><!-- /.col -->
+
+                        <div class="col">
+                            <img src="img/index/other_schedule.png">
+                            <div class="btn">
+                                大会日程
+                            </div><!-- /.btn -->
+                            <a href="schedule/groups"></a>
+                        </div><!-- /.col -->
+
+                        <div class="col">
+                            <img src="img/index/other_outline.png">
+                            <div class="btn">
+                                大会概要
+                            </div><!-- /.btn -->
+                            <a href="abstract"></a>
+                        </div><!-- /.col -->
+
+                        <div class="col">
+                            <img src="img/index/other_team.png">
+                            <div class="btn">
+                                チーム紹介
+                            </div><!-- /.btn -->
+                            <a href="teams/period"></a>
+                        </div><!-- /.col -->
+
+                        <div class="col">
+                            <img src="img/index/other_live.png">
+                            <div class="btn">
+                                LIVE配信
+                            </div><!-- /.btn -->
+                            <a href="live"></a>
+                        </div><!-- /.col -->
+
+			<div class="col">
+                            
+                        </div><!-- /.col -->
+
+                </div><!-- /.inner -->
+            </div>
+        </article>
+
+	</main>
+
+    <footer>
+        <div class="snav">
+            <div class="inner">
+                <ul>
+                    <li><a href="personal">個人情報保護方針</a></li>
+                    <li><a href="kiyaku">利用規約</a></li>
+                    <li><a href="pp">プライバシーポリシー</a></li>
+                </ul>
+            </div><!-- /.inner -->
+        </div><!-- /.snav -->
+        <div class="copy">© Copyright Blue Wave U-17リーグ~Boost~</div>
+	</footer>
+
+</div>
+<!-- /#wrap -->
+
+<div class="pagetop"></div>
+
+<script src="js/sp_nav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+/*---------------------------
+contact
+----------------------------*/
+@media screen and (max-width: 640px) {
+  #contact .inner {
+    /*sp*/
+    max-width: 90%;
+  }
+}
+
+#contact .inner dl > div {
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+}
+
+#contact .inner dl > div:last-child {
+  border-bottom: none;
+}
+
+#contact .inner dl > div dt {
+  width: 25%;
+  padding: 15px 0;
+  clear: both;
+}
+
+@media screen and (max-width: 640px) {
+  #contact .inner dl > div dt {
+    /*sp*/
+    width: 100%;
+    float: none;
+  }
+}
+
+#contact .inner dl > div dt span {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  padding: 0.3em;
+  margin-left: 10px;
+  font-size: 0.8em;
+  line-height: 1.0em;
+}
+
+#contact .inner dl > div dd {
+  width: 70%;
+  padding: 15px 0;
+}
+
+@media screen and (max-width: 640px) {
+  #contact .inner dl > div dd {
+    /*sp*/
+    width: 100%;
+  }
+}
+
+#contact .inner dl > div dd input[type="text"],
+#contact .inner dl > div dd input[type="email"] {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 0.5em;
+}
+
+#contact .inner dl > div dd textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #999;
+}
+
+#contact .inner .btn {
+  padding: 2.0em 0;
+}
+
+#contact .inner .btn input[type="submit"] {
+  border: none;
+  background: #003E90;
+  padding: 1.0em;
+  color: #fff;
+  width: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  #contact .inner .btn input[type="submit"] {
+    /*sp*/
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

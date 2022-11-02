@@ -1,0 +1,168 @@
+/*---------------------------
+schedule
+----------------------------*/
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  #schedule .inner {
+    /*tablet*/
+    max-width: 94%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #schedule .inner {
+    /*sp*/
+    max-width: 90%;
+  }
+}
+
+#schedule .inner .head {
+  margin-bottom: 2.0em;
+  text-align: left;
+}
+
+#schedule .inner .head h2 {
+  color: #064414;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+#schedule .inner .head span {
+  font-size: 0.9em;
+  display: block;
+  color: #999;
+}
+
+@media screen and (max-width: 640px) {
+  #schedule .inner .box {
+    /*sp*/
+    overflow: auto;
+    white-space: nowrap;
+  }
+  #schedule .inner .box::-webkit-scrollbar {
+    height: 5px;
+  }
+  #schedule .inner .box .scroll::-webkit-scrollbar-track {
+    background: #F1F1F1;
+  }
+  #schedule .inner .box .scroll::-webkit-scrollbar-thumb {
+    background: #BCBCBC;
+  }
+}
+
+#schedule .inner .box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media screen and (max-width: 640px) {
+  #schedule .inner .box table {
+    /*sp*/
+    width: 200%;
+  }
+}
+
+#schedule .inner .box table tr {
+  border-bottom: 1px dotted #fff;
+}
+
+#schedule .inner .box table tr.line {
+  border-top: 1px dotted #999;
+}
+
+#schedule .inner .box table tr:nth-of-type(odd) {
+  background: #E8EFF4;
+}
+
+#schedule .inner .box table tr th,
+#schedule .inner .box table tr td {
+  padding: 0.5em;
+  font-size: 0.6em;
+}
+
+#schedule .inner .box table tr th {
+  background: #064414;
+  color: #fff;
+  font-weight: normal;
+}
+
+#schedule .inner .box table tr th:nth-of-type(1) {
+  width: 5%;
+}
+
+#schedule .inner .box table tr th:nth-of-type(2) {
+  width: 10%;
+}
+
+#schedule .inner .box table tr th:nth-of-type(3) {
+  width: 10%;
+}
+
+#schedule .inner .box table tr th:nth-of-type(4) {
+  width: 45%;
+}
+
+#schedule .inner .box table tr th:nth-of-type(5) {
+  width: 30%;
+  border-right: none;
+}
+
+#schedule .inner .box table tr td {
+  text-align: left;
+  border-right: 1px dotted #ccc;
+}
+
+#schedule .inner .box table tr td:nth-of-type(1) {
+  text-align: center;
+  background: #E8EFF4;
+}
+
+#schedule .inner .box table tr td:nth-of-type(2) {
+  text-align: center;
+}
+
+#schedule .inner .box table tr td:nth-of-type(3) {
+  text-align: center;
+}
+
+#schedule .inner .box table tr td:nth-of-type(4) {
+  text-align: center;
+}
+
+#schedule .inner .box table tr td:nth-of-type(5) {
+  text-align: left;
+  border-right: none;
+}
+
+#schedule .inner .box table tr td.match {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#schedule .inner .box table tr td.match span {
+  display: inline-block;
+  text-align: center;
+}
+
+#schedule .inner .box table tr td.match span:nth-of-type(1) {
+  width: 35%;
+}
+
+#schedule .inner .box table tr td.match span:nth-of-type(2) {
+  width: 30%;
+}
+
+#schedule .inner .box table tr td.match span:nth-of-type(3) {
+  width: 35%;
+}
+/*# sourceMappingURL=schedule.css.map */

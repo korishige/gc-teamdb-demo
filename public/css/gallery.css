@@ -1,0 +1,88 @@
+/*---------------------------
+gallery
+----------------------------*/
+@media screen and (max-width: 640px) {
+  #gallery .inner {
+    /*sp*/
+    max-width: 90%;
+  }
+}
+
+#gallery .inner .col {
+  text-align: left;
+  margin-bottom: 1.5em;
+  border-bottom: 1px dotted #ccc;
+}
+
+#gallery .inner .col h2 {
+  font-size: 1.4em;
+  margin-bottom: 1.0em;
+  color: #002C65;
+}
+
+@media screen and (max-width: 640px) {
+  #gallery .inner .col h2 {
+    /*sp*/
+    font-size: 1.1rem;
+  }
+}
+
+#gallery .inner .col .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+#gallery .inner .col .img a {
+  display: block;
+  width: 23.5%;
+  margin-right: 2%;
+}
+
+@media screen and (max-width: 640px) {
+  #gallery .inner .col .img a {
+    /*sp*/
+    width: 48%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+#gallery .inner .col .img a:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+#gallery .inner .col .btn {
+  text-align: right;
+  padding-top: 1.0em;
+}
+
+#gallery .inner .col .btn a {
+  width: 25%;
+  display: inline-block;
+  background: url(../img/common/slash_bg02.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 0.5em;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  #gallery .inner .col .btn a {
+    /*sp*/
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=gallery.css.map */
