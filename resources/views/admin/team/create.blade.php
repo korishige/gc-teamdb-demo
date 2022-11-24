@@ -38,10 +38,14 @@ $(function(){
 			{!!Form::textField('name','チーム名',old('name'))!!}
 
 			<?php
-			$groups = \App\Groups::get()->lists('name', 'id');
+			$groups = \App\Groups::where('id', '<>', 28)->get()->lists('name', 'id');
+			foreach ($groups as $key => $group) {
+				$g = \App\Groups::find($key);
+				$gs[$key] = $group . '(' . config('app.conventionAry')[$g->convention] . ')';
+			}
 			?>
 			
-			{!!Form::selectField('group_id','所属グループ',$groups, ['style'=>'width:200px'])!!}
+			{!!Form::selectField('group_id','所属グループ',$gs, ['style'=>'width:200px'])!!}
 
 			{!!Form::textField('email','ID',old('email'))!!}
 
