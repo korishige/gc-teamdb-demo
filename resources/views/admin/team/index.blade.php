@@ -30,6 +30,7 @@
       <table id="myTable" class="table table-striped jambo_table">
         <thead>
           <tr>
+            <th>大会</th>
             <th width=130>所属リーグ</th>
             <th>チーム名</th>
             {{-- <th>ブロック選手数</th> --}}
@@ -43,6 +44,7 @@
           @foreach($teams as $i=>$team)
           <?php $cards = \App\Cards::where('team_id', $team->id)->get(); ?>
           <tr class="pointer">
+            <td>{{config('app.conventionAry')[$team->group->convention]}}</td>
             <td>{{$team->group->name or ''}}</td>
             <td>{{$team->name}} @if(!$team->user->is_active)<span class="btn btn-xs btn-danger">未認証</span>@endif</td>
             {{-- <td>{{$team->block_players()}}</td> --}}
