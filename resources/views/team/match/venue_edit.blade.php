@@ -30,7 +30,15 @@
         {!!Form::open(['url'=>route('team.match.venue.update'),'class'=>"form-horizontal form-label-left"])!!}
         {!!Form::hidden('id',$match->id)!!}
 
-       <h1 style="color: red; font-size: 18px;">※選択肢に目的の会場がない場合は<a style="color: red" href="{{ route('front.contact.post') }}">こちら</a>からお問合せください。</h1>
+       <h1 style="color: red; font-size: 18px;">※選択肢に目的の会場がない場合は
+        @if($match->leagueOne->convention == 0)
+        <a style="color: red" href="https://www.bluewave-boost.com/contact">こちら</a>
+        @elseif($match->leagueOne->convention == 1)
+        <a style="color: red" href="https://www.bluewave-netto.com/contact">こちら</a>
+        @else
+        <a style="color: red" href="https://www.bluewave-shudo.com/contact">こちら</a>
+        @endif
+        からお問合せください。</h1>
         <br><br>
 
           <div class="match_card row" style="font-size: 20px">
