@@ -14,7 +14,7 @@
   <section>
     <div id="login">
       <div class="inner">
-        <h2>Blue Wave League {{config('app.nendo')}} ～熱冬～</h2>
+        <h2>Green Card Team DB</h2>
         {!! Form::open(['url'=>'/login','method'=>'post'])!!}
           {!!Form::hidden('flag',0)!!}
           <div class="box">
