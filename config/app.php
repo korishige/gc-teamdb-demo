@@ -24,7 +24,7 @@ return [
 
     'sortAry' => ['new' => '新着', 'pv' => '表示回数'],
 
-    'conventionAry' => ['boost', '熱冬', '九蹴道'],
+    'conventionAry' => ['boost', '熱冬', '蹴道'],
     'convention' => 1,
     'conventionArea' => ['5' => '九州', '6' => '関西', '4' => '中四国'],
 

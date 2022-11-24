@@ -52,9 +52,13 @@
 
 		<?php
 		$vpoints = \App\Vpoint::get()->lists('name','id');
-		$groups = \App\Groups::get()->lists('name', 'id');
+		$groups = \App\Groups::where('id', '<>', 28)->get()->lists('name', 'id');
+		foreach ($groups as $key => $group) {
+			$g = \App\Groups::find($key);
+			$gs[$key] = $group . '(' . config('app.conventionAry')[$g->convention] . ')';
+		}
 		?>
-		{!!Form::selectField('group_id','グループ',$groups, $league->group_id,['style'=>'width:200px'])!!}
+		{!!Form::selectField('group_id','グループ',$gs, $league->group_id,['style'=>'width:200px'])!!}
 
 		<!-- {!!Form::selectField('v_point_settings_id','勝ち点方式',$vpoints,$league->v_point_settings_id,['style'=>'width:200px'])!!} -->
 
