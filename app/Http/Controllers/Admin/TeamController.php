@@ -22,10 +22,7 @@ class TeamController extends Controller
 
   public function index()
   {
-    $teams = Teams::select(['teams.*', 'team_yearly_group.group_id'])->with('user', 'group', 'players')->leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy', config('app.nendo_backend'))
-      ->where(function ($q) {
-        $q->whereNull('period')->orWhere('period', config('app.period'));
-      })->orderBy('group_id', 'asc');
+    $teams = Teams::select(['teams.*', 'team_yearly_group.group_id'])->with('user', 'group', 'players')->leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy', config('app.nendo_backend'))->orderBy('group_id', 'asc');
 
     if (\Input::has('keyword'))
       $teams = $teams->where('name', 'like', '%' . \Input::get('keyword') . '%');
