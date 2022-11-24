@@ -21,10 +21,14 @@
 		<input type="hidden" name="id" value="{{$team->id}}">
 
 		<?php
-		$groups = \App\Groups::get()->lists('name', 'id');
+			$groups = \App\Groups::where('id', '<>', 28)->get()->lists('name', 'id');
+			foreach ($groups as $key => $group) {
+				$g = \App\Groups::find($key);
+				$gs[$key] = $group . '(' . config('app.conventionAry')[$g->convention] . ')';
+			}
 		?>
         {{-- {!!Form::staticField('group_id','所属リーグ',array_get($groups, $team->group_id),['style'=>'width:200px'])!!} --}}
-		{!!Form::selectField('group_id','所属リーグ',$groups, $team->group_id,['style'=>'width:200px'])!!}
+		{!!Form::selectField('group_id','所属リーグ',$gs, $team->group_id,['style'=>'width:200px'])!!}
 
 
 		<?php
