@@ -309,12 +309,15 @@ class LeagueController extends Controller
 
 		// TODO : グループごとにソートしてあげる
 		// TODO : 大会を追加する際に、変更する
-		$_teams = Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy', config('app.nendo_backend'))->where(function ($q) {
-			$q->whereNull('period')->orWhere('period', config('app.period'));
-		})->orderByRaw("FIELD(group_id, " . $group_ids . ")")->get();
+		// $_teams = Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy', config('app.nendo_backend'))->where(function ($q) {
+		// 	$q->whereNull('period')->orWhere('period', config('app.period'));
+		// })->orderByRaw("FIELD(group_id, " . $group_ids . ")")->get();
+
+		$_teams = Teams::get();
+
 		$teams = array();
 		foreach ($_teams as $team) {
-			$teams[$team->id] = $team->name . '@' . $team->group->name;
+			$teams[$team->id] = $team->name;
 		}
 		// dd($teams);
 		return view('admin.league.create', compact('teams'));

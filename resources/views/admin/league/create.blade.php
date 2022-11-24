@@ -81,18 +81,18 @@
 		--}}
 
 		<div class="form-group">
-			<label class="control-label col-md-2 col-sm-2 col-xs-12">参加チーム @ {{ date('Y') }}年度</label>
+			<label class="control-label col-md-2 col-sm-2 col-xs-12">参加チーム</label>
 			<div class="col-md-10 col-sm-10 col-xs-12">
-				<span style="color:red">{{config('app.nendo_backend')}}年度のグループ別に並んでおります</span>
+				{{-- <span style="color:red">{{config('app.nendo_backend')}}年度のグループ別に並んでおります</span>s --}}
 				<?php
 				$data = old('teams')?old('teams'):[];
 				$_group = '1部';
 				foreach($teams as $key=>$val):
-					$aaa = explode("@", $val);
-					if($_group != $aaa[1]){
-						print("<br>");
-						$_group = $aaa[1];
-					}
+					// $aaa = explode("@", $val);
+					// if($_group != $aaa[1]){
+					// 	print("<br>");
+					// 	$_group = $aaa[1];
+					// }
 				?>
 				<label class='checkbox-inline'>
 				{!!Form::checkbox('teams[]', $key.":".$val, (array_search($key,$data)!==false)?1:0, ['class' => 'field'])!!} {!!$val!!}
