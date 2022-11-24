@@ -114,8 +114,8 @@ class AuthController extends Controller
   {
     if (session('role') == 'team') {
       Session::flush();
-      return view('team/logout');
-      // return \Redirect::route('login');
+      //return view('team/logout');
+      return \Redirect::route('login');
     } else {
       Session::flush();
       return \Redirect::route('login');
