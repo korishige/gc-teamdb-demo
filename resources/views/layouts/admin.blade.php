@@ -72,7 +72,7 @@
                 <li><a href="{{route('admin.warning.index')}}"><i class="fa fa-shield"></i> 警告者</a></li>
                 <li><a href="{{route('admin.venue.index')}}"><i class="fa fa-building-o"></i> 会場</a></li>
                 <li><a href="{{route('admin.option.index')}}"><i class="fa fa-cog"></i>大会設定</a></li>
-                <li><a href="{{route('admin.template.edit')}}"><i class="fa fa-pencil"></i>ページデザイン</a></li>
+                <li><a href="{{route('admin.template.index')}}"><i class="fa fa-pencil"></i>ページデザイン</a></li>
                 {{--
                 <li><a href="{{route('admin.config')}}"><i class="fa fa-cog"></i>サイト設定</a></li>
                 <li><a href="{{route('admin.vpoint.index')}}"><i class="fa fa-thumbs-up"></i>勝ち点管理</a></li>

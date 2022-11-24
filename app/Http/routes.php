@@ -350,8 +350,9 @@ Route::get('admin/sports/delete/{id}', ['uses' => 'Admin\SportsController@delete
 
 // Route::post('admin/memo',['uses'=>'Admin\MemoController@index','as'=>'admin.memo.store']);
 
-Route::get('admin/template', ['uses' => 'Admin\TemplateController@edit', 'as' => 'admin.template.edit']);
-Route::post('admin/template', ['uses' => 'Admin\TemplateController@update', 'as' => 'admin.template.update']);
+Route::get('admin/template', ['uses' => 'Admin\TemplateController@index', 'as' => 'admin.template.index']);
+Route::get('admin/template/edit/{id}', ['uses' => 'Admin\TemplateController@edit', 'as' => 'admin.template.edit']);
+Route::post('admin/template/update/{id}', ['uses' => 'Admin\TemplateController@update', 'as' => 'admin.template.update']);
 
 Route::get('admin/option', ['uses' => 'Admin\OptionController@index', 'as' => 'admin.option.index']);
 Route::post('admin/option', ['uses' => 'Admin\OptionController@store', 'as' => 'admin.option.store']);

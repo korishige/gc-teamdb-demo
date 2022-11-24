@@ -11,8 +11,10 @@
 		<li class="active">ページデザイン編集</li>
 	</ol>	
 
+	<a href="{{route('admin.template.index')}}" class="btn btn-primary">戻る</a>
+
 	<div class="x_content">
-		{!!Form::open(['url'=>route('admin.template.update'),'class'=>'form-horizontal form-label-left'])!!}
+		{!!Form::open(['url'=>route('admin.template.update', ['id' => $template->id]),'class'=>'form-horizontal form-label-left'])!!}
 
 		<div>
 			<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
