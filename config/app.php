@@ -6,8 +6,8 @@ return [
     'debug' => true,
 
     //	'nendo' => date('Y', strtotime('-4 month')),
-    'nendo' => 2022,
-    'nendo_backend' => 2022,
+    'nendo' => 2023,
+    'nendo_backend' => 2023,
     'user_reg_nendo' => date('Y'),    # ユーザ登録された年で一旦登録する
 
     'period' => (date('md') >= '1001' or date('md') <= '0320') ? 'second' : 'first',
