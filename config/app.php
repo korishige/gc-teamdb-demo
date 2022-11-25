@@ -37,7 +37,7 @@ return [
     'genreAry' => ['soccer' => 'サッカー', 'futsal' => 'フットサル'],
 
     'cardsAry' => ['yellow' => '警告', 'red' => '退場'],
-    'seasonAry' => ['1st stage', '2nd stage', '通年'],
+    'seasonAry' => ['1st stage', '2nd stage', '通年', ''],
     'positionAry' => ['GK', 'DF', 'MF', 'FW'],
     'pivotAry' => ['右足', '左足'],
     'pivotAlphabetAry' => ['R', 'L'],
