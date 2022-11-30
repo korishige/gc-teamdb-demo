@@ -21,10 +21,18 @@
     <link href="/team/css/common.css" rel="stylesheet" type="text/css" />
     <link href="/team/css/style.css" rel="stylesheet" type="text/css" />
     <link href="/team/css/index.css" rel="stylesheet" type="text/css" />
-    <link href="/team/css/starter_setting.css?d=20210403" rel="stylesheet" type="text/css" />
+    <link href="/team/css/starter_setting.css" rel="stylesheet" type="text/css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/team/js/common.js"></script>
+
+    <style>
+        @media print{
+            #starter th {
+                color: black !important;
+            }
+        }
+    </style>
 
 </head>
 
@@ -35,90 +43,100 @@
         <main>
             <div id="starter">
                 <div class="head">
-                    <h1>Blue Wave U-17リーグ~Boost~{{config('app.nendo')}}</h1>
-					<?php
-					if($match->away_id == \Session::get('team_id')){
-						$away = $match->home0->name;
-						$home = $match->away0->name;
-					}else{
-						$away = $match->away0->name;
-						$home = $match->home0->name;
-					}
-					?>
-                    <div class="row">
-                        <div class="date">
-                            開催日：{{date('Y年n月j日',strtotime($match->match_date))}}
-                        </div><!-- /.date -->
-                        <div class="opp">
-                            対戦相手：{{$away}}
-                        </div><!-- /.opp -->
-                        <div class="team">
-                            チーム名：{{$home}}
-                        </div><!-- /.team -->
-                    </div><!-- /.row -->
-                    <div class="note">
-                        先発選手 〇　交代選手 IN △ OUT ×
-                    </div><!-- /.note -->
-                </div><!-- /.head -->
+                    <h1>{{$match->leagueOne->name}}</h1>
+                </div>
 
-                <table>
+                <table style="width: 50%; margin: 0 auto;">
                     <tr>
-                        <th colspan="7"></th>
-                        <th colspan="7">交代</th>
+                        <th style="width: 30%;">チーム名</th>
+                        <td>{{$pop['staff_name'][0]}}</td>
                     </tr>
                     <tr>
-                        <th></th>
-                        <th>Cap</th>
-                        <th>背番号</th>
-                        <th>Pos</th>
-                        <th>選手名</th>
-                        <th>学年</th>
-                        <th>先発</th>
-                        <th>①</th>
-                        <th>②</th>
-                        <th>③</th>
-                        <th>④</th>
-                        <th>⑤</th>
-                        <th>⑥</th>
-                        <th>⑦</th>
+                        <th>監督名</th>
+                        <td>{{ $team->name }}</td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <table>
+                    {{-- <tr>
+                        <th colspan="8"></th>
+                        <th colspan="2">交代</th>
+                    </tr> --}}
+                    <tr>
+                        <th style="width: 10%;">選手名</th>
+                        <th style="width: 8%;">学年</th>
+                        <th style="width: 3%;">Pos</th>
+                        <th style="width: 4%;">身長</th>
+                        <th style="width: 3%;">背番号</th>
+                        <th style="width: 6%;">スタート</th>
+                        <th style="width: 6%;">リザーブ</th>
                     </tr>
                     @for($i=0;$i<25;$i++)
                     <tr>
-					<?php
-					if($i == $pop['cap']){
-						$checked = '○';
-					}else{
-						$checked = '';
-					}
-					$player = \App\Players::where('id', $pop['player_id'][$i])->first();
-					?>
-                        <td>{{$i+1}}</td>
-                        <td>{{$checked}}</td>
-                        <td>{{$pop['number'][$i]}}</td>
-                        <td>{{array_get(config('app.positionAry'),$pop['position'][$i],null)}}</td>
-                        <td>{{array_get($players, $pop['player_id'][$i], null)}}</td>
+                        <?php
+                        if($i == $pop['cap']){
+                            $checked = '○';
+                        }else{
+                            $checked = '';
+                        }
+                        $player = \App\Players::where('id', $pop['player_id'][$i])->first();
+
+                        $s_or_b = '';
+                        if(isset($pop['is_bench']) and $pop['is_starter'][$i]){
+                        $s_or_b = 'S';
+                        }elseif(isset($pop['is_bench']) and $pop['is_bench'][$i]){
+                        $s_or_b = 'B';
+                        }
+                        ?>
+                        <td>
+                            @if(isset($pop['position']))
+                                {{array_get($players, $pop['player_id'][$i], null)}}
+                            @endif
+                            &nbsp;
+                        </td>
                         <td>
                             <?php
                             if($player !== null){
-                        	    print(array_get(config('app.schoolYearAry'),$player->school_year));
+                                print(array_get(config('app.schoolYearAry'),$player->school_year));
                             }else{
-                            	print("");
+                                print("");
                             }
                             ?>
                         </td>
-                        <td>{{($pop['is_starter'][$i])?'○':''}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @if(isset($pop['position']))
+                                {{array_get(config('app.positionAry'),$pop['position'][$i],null)}}
+                            @endif
+                        </td>
+                        <td>
+                            <?php
+                            if($player !== null){
+                                if($player->height != 0.0){
+                                    print($player->height);
+                                }
+                            }else{
+                                print("");
+                            }
+                            ?>
+                        </td>
+                        <td>{{$checked}}{{$pop['number'][$i]}}</td>
+                        <td>
+                            @if($s_or_b == 'S')
+                            ○
+                            @endif
+                        </td>
+                        <td>
+                            @if($s_or_b == 'B')
+                            ○
+                            @endif
+                        </td>
                     </tr>
                     @endfor
                 </table>
 
-                <table>
+                {{-- <table>
                     <tr>
                         <th colspan="3">ベンチ入りスタッフ</th>
                         <th colspan="4">ユニフォーム色</th>
@@ -179,7 +197,7 @@
                         <td>{{$pop['staff_role'][5]}}</td>
                         <td>{{$pop['staff_name'][5]}}</td>
                     </tr>
-                </table>
+                </table> --}}
             </div><!-- /#starter -->
 
         </main>

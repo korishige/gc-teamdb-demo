@@ -214,6 +214,8 @@ Route::post('cp/team/match/day/update/{id}', ['uses' => 'Team\MatchController@da
 Route::post('cp/team/match/update', ['uses' => 'Team\MatchController@update', 'as' => 'team.match.update']);
 Route::get('cp/team/match/venue/edit/{id}', ['uses' => 'Team\MatchController@venue_edit', 'as' => 'team.match.venue.edit']);
 Route::post('cp/team/match/venue/update/{id}', ['uses' => 'Team\MatchController@venue_update', 'as' => 'team.match.venue.update']);
+Route::get('cp/team/match/mom_mov/edit/{id}', ['uses' => 'Team\MatchController@mom_mov_edit', 'as' => 'team.match.mom_mov.edit']);
+Route::post('cp/team/match/mom_mov/update', ['uses' => 'Team\MatchController@mom_mov_update', 'as' => 'team.match.mom_mov.update']);
 
 Route::get('cp/team/match/group_photo/edit/{id}', ['uses' => 'Team\MatchGroupPhotoController@edit', 'as' => 'team.match.group_photo.edit']);
 Route::post('cp/team/match/group_photo/update', ['uses' => 'Team\MatchGroupPhotoController@update', 'as' => 'team.match.group_photo.update']);

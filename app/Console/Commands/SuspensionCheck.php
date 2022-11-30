@@ -2,12 +2,12 @@
 
 namespace App\Console\Commands;
 
+use App\PlayerSuspend;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 
 use App\Players;
 use App\Cards;
-use Carbon\Carbon;
 
 
 class SuspensionCheck extends Command
@@ -21,19 +21,22 @@ class SuspensionCheck extends Command
 		$start = microtime(true);
 
 		//		$players = Players::whereNotNull('suspension_at')->where('suspension_at','<=',date('Y-m-d H:i:s'))->get();
-		$players = Players::whereNotNull('suspension_at')->get();
+		$suspends = PlayerSuspend::where('is_suspend', 1)->where('suspension', '<=', date('Y-m-d H:i:s'))->get();
+		//		$players = Players::whereNotNull('suspension_at')->get();
 
 		//		dd($players);
 
-		$today = new Carbon();
+		foreach ($suspends as $suspend) {
+			//			Cards::where('player_id', $player->id)->where('color', 'yellow')->where('is_cleared', 0)->update(['is_cleared' => 1]);
+			//			Cards::where('player_id', $player->id)->where('color', 'red')->where('is_cleared', 0)->update(['is_cleared' => 1]);
+			Players::where('id', $suspend->player_id)->where('team_id', $suspend->team_id)->update(['suspension_at' => NULL]);
+			// 出場停止解除となる選手のチームIDのみを解除
+			// 場合によっては、suspension を消したほうがいいのかもしれない
+			PlayerSuspend::where('id', $suspend->id)->update(['suspension' => null, 'is_suspend' => 0, 'suspended' => $suspend->suspention]);
 
-		foreach ($players as $player) {
-			$suspension_at = new Carbon($player->suspension_at);
-			if ($suspension_at->lt($today)) {
-				Cards::where('player_id', $player->id)->where('color', 'yellow')->where('is_cleared', 0)->update(['is_cleared' => 1]);
-				Cards::where('player_id', $player->id)->where('color', 'red')->where('is_cleared', 0)->update(['is_cleared' => 1]);
-				Players::where('id', $player->id)->update(['suspension_at' => NULL]);
-			}
+			//2022/9/20 バッチ処理でクリアをするように変更
+			Cards::where('player_id', $suspend->player_id)->where('team_id', $suspend->team_id)->where('color', 'red')->where('is_cleared', 0)->update(['is_cleared' => 1]);
+			Cards::where('player_id', $suspend->player_id)->where('team_id', $suspend->team_id)->where('color', 'yellow')->where('is_cleared', 0)->update(['is_cleared' => 1]);
 		}
 
 		$duration = microtime(true) - $start;

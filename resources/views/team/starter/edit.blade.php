@@ -25,9 +25,7 @@ $(function(){
 <link href="/team/css/reset.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/team/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/team/css/style.css" rel="stylesheet" type="text/css" />
-{{-- <link href="/team/css/starter_setting.css" rel="stylesheet" type="text/css" /> --}}
-<link href="{{ asset('/team/css/starter_setting.css') }}" rel="stylesheet" type="text/css" />
-
+<link href="/team/css/starter_setting.css" rel="stylesheet" type="text/css" />
 <style>
 	#starter_create .btn input {
     display: block;
@@ -64,9 +62,19 @@ $(function(){
 @include('layouts.parts.error')
 <div id="starter_create">
 	<div class="inner">
+		{!! Form::open(['url'=>route('team.starter.edit',['id'=>$match_id]),'method'=>'GET','class'=>"form-horizontal form-label-left"]) !!}
+		{!! Form::select('starting_member_id', $match_histories, (\Input::has('starting_member_id'))?\Input::get('starting_member_id'):'', ['placeholder'=>'過去スタメン選択','class'=>'form-control','style'=>"width:220px"])!!}
+			<input type="submit" value="選択">
+		<br><div style="color:red">過去スタメン選択後は保存してください</div>
+		<br><div style="color:red">選択した過去スタメンに出場停止選手がいた場合は選手名が表示されません</div>
+		{!! Form::close() !!}
+
+		<div style="margin-top:20px"></div>
+		{!! Form::close() !!}
 		{!!Form::open(['url'=>route('team.starter.update'),'class'=>"form-horizontal form-label-left"])!!}
+		{!! Form::hidden('match_id', $match_id) !!}
 			<div class="head">
-				<h1>Blue Wave U-17リーグ~Boost~{{config('app.nendo')}}</h1>
+				<h1>{{$match->leagueOne->name}}</h1>
 				<div class="row">
 					<div class="date">
 						開催日：{{date('Y年n月j日',strtotime($match->match_date))}}
@@ -99,6 +107,7 @@ $(function(){
 							<th>背番号</th>
 							<th>Cap</th>
 							<th>先発</th>
+							<th>ベンチ入り</th>
 						</tr>
 						@for($i=0;$i<25;$i++)
 						<tr>
@@ -143,6 +152,13 @@ $(function(){
 									?>
 									{!!Form::checkbox('is_starter['.$i.']',1, ($aaa==1)?'true':'')!!}
 								</td>
+								<td>
+									{!!Form::hidden('is_bench['.$i.']',0)!!}
+									<?php
+									$bbb = isset($pop['is_bench'][$i])?$pop['is_bench'][$i]:'';
+									?>
+									{!!Form::checkbox('is_bench['.$i.']',1, ($bbb==1)?'true':'')!!}
+								</td>
 							@endif
 						</tr>
 						@endfor
@@ -179,27 +195,27 @@ $(function(){
 						</tr>
 						<tr>
 							<td>FP(正)</td>
-							<td>{!!Form::text('fp_pri_shirt',isset($pop['fp_pri_shirt'])?$pop['fp_pri_shirt']:$team->fp_pri_shirt)!!}</td>
-							<td>{!!Form::text('fp_pri_shorts',isset($pop['fp_pri_shorts'])?$pop['fp_pri_shorts']:$team->fp_pri_shorts)!!}</td>
-							<td>{!!Form::text('fp_pri_socks',isset($pop['fp_pri_socks'])?$pop['fp_pri_socks']:$team->fp_pri_socks)!!}</td>
+							<td>{!!Form::text('fp_pri_shirt',isset($pop['fp_pri_shirt'])?$pop['fp_pri_shirt']:'')!!}</td>
+							<td>{!!Form::text('fp_pri_shorts',isset($pop['fp_pri_shorts'])?$pop['fp_pri_shorts']:'')!!}</td>
+							<td>{!!Form::text('fp_pri_socks',isset($pop['fp_pri_socks'])?$pop['fp_pri_socks']:'')!!}</td>
 						</tr>
 						<tr>
 							<td>FP(副)</td>
-							<td>{!!Form::text('fp_sub_shirt',isset($pop['fp_sub_shirt'])?$pop['fp_sub_shirt']:$team->fp_sub_shirt)!!}</td>
-							<td>{!!Form::text('fp_sub_shorts',isset($pop['fp_sub_shorts'])?$pop['fp_sub_shorts']:$team->fp_sub_shorts)!!}</td>
-							<td>{!!Form::text('fp_sub_socks',isset($pop['fp_sub_socks'])?$pop['fp_sub_socks']:$team->fp_sub_socks)!!}</td>
+							<td>{!!Form::text('fp_sub_shirt',isset($pop['fp_sub_shirt'])?$pop['fp_sub_shirt']:'')!!}</td>
+							<td>{!!Form::text('fp_sub_shorts',isset($pop['fp_sub_shorts'])?$pop['fp_sub_shorts']:'')!!}</td>
+							<td>{!!Form::text('fp_sub_socks',isset($pop['fp_sub_socks'])?$pop['fp_sub_socks']:'')!!}</td>
 						</tr>
 						<tr>
 							<td>GK(正)</td>
-							<td>{!!Form::text('gk_pri_shirt',isset($pop['gk_pri_shirt'])?$pop['gk_pri_shirt']:$team->gk_pri_shirt)!!}</td>
-							<td>{!!Form::text('gk_pri_shorts',isset($pop['gk_pri_shorts'])?$pop['gk_pri_shorts']:$team->gk_pri_shorts)!!}</td>
-							<td>{!!Form::text('gk_pri_socks',isset($pop['gk_pri_socks'])?$pop['gk_pri_socks']:$team->gk_pri_socks)!!}</td>
+							<td>{!!Form::text('gk_pri_shirt',isset($pop['gk_pri_shirt'])?$pop['gk_pri_shirt']:'')!!}</td>
+							<td>{!!Form::text('gk_pri_shorts',isset($pop['gk_pri_shorts'])?$pop['gk_pri_shorts']:'')!!}</td>
+							<td>{!!Form::text('gk_pri_socks',isset($pop['gk_pri_socks'])?$pop['gk_pri_socks']:'')!!}</td>
 						</tr>
 						<tr>
 							<td>GK(副)</td>
-							<td>{!!Form::text('gk_sub_shirt',isset($pop['gk_sub_shirt'])?$pop['gk_sub_shirt']:$team->gk_sub_shirt)!!}</td>
-							<td>{!!Form::text('gk_sub_shorts',isset($pop['gk_sub_shorts'])?$pop['gk_sub_shorts']:$team->gk_sub_shorts)!!}</td>
-							<td>{!!Form::text('gk_sub_socks',isset($pop['gk_sub_socks'])?$pop['gk_sub_socks']:$team->gk_sub_socks)!!}</td>
+							<td>{!!Form::text('gk_sub_shirt',isset($pop['gk_sub_shirt'])?$pop['gk_sub_shirt']:'')!!}</td>
+							<td>{!!Form::text('gk_sub_shorts',isset($pop['gk_sub_shorts'])?$pop['gk_sub_shorts']:'')!!}</td>
+							<td>{!!Form::text('gk_sub_socks',isset($pop['gk_sub_socks'])?$pop['gk_sub_socks']:'')!!}</td>
 						</tr>
 					</table>
 

@@ -33,6 +33,21 @@ class Players extends Model
         return $this->hasMany('App\Cards', 'player_id', 'id')->where('color', 'red')->where('is_cleared', 0)->count();
     }
 
+    public function suspend_per_team($team_id)
+    {
+        return $this->hasOne('App\PlayerSuspend', 'player_id', 'id')->where('team_id', $team_id)->where('is_suspend', 1);
+    }
+
+    public function yellow_cards_per_team($team_id)
+    {
+        return $this->hasMany('App\Cards', 'player_id', 'id')->where('team_id', $team_id)->where('color', 'yellow')->where('is_cleared', 0)->count();
+    }
+
+    public function red_cards_per_team($team_id)
+    {
+        return $this->hasMany('App\Cards', 'player_id', 'id')->where('team_id', $team_id)->where('color', 'red')->where('is_cleared', 0)->count();
+    }
+
     public function point()
     {
         return $this->hasMany('App\Goals', 'goal_player_id', 'id');
@@ -44,20 +59,6 @@ class Players extends Model
         return "{$this->name}({$hoge})";
         //        return "{$this->name} | {$this->school_year}年生";
         // return "{$this->name} | {$this->school_year}年生 | 警告：".count($this->yellow_cards)."枚";
-    }
-
-    public function front_show($team, $orderby)
-    {
-        return $this->select('players.id', 'players.team_id', 'players.name', 'players.school_year', 'players.position', 'players.height', 'players.related_team', 'teams.id as team_id', 'teams.name as team_name')
-            ->join('teams', function ($join) {
-                $join->on('teams.id', '=', 'players.team_id')
-                    ->whereNull('teams.deleted_at');
-            })
-            ->join('laravel_local.goals', function ($join) {
-                $join->on('goals.goal_player_id', '=', 'players.id')
-                    ->whereNull('goals.deleted_at');
-            })
-            ->first();
     }
 
     //	public function getCurrentGradeAttribute(){

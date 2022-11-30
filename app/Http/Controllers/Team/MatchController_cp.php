@@ -14,7 +14,6 @@ use App\Players;
 use App\Goals;
 use App\Cards;
 use App\Options;
-use App\PlayerSuspend;
 
 use Input;
 use Cache;
@@ -35,19 +34,8 @@ class MatchController extends Controller
 		// dd($match);
 		$teams = LeagueTeams::where('leagues_id', $match->leagues_id)->orderBy('id', 'asc')->lists('name', 'team_id');
 
-		// サブチーム間で選手移動があるので、サブチーム全員の選手情報を取得する、また、論理削除された選手も選手情報として利用するように変更。
-		$team1 = \App\Teams::where('id', $match->home_id)->first();
-		$team2 = \App\Teams::where('id', $match->away_id)->first();
-		$sub_teams1 = \App\Teams::where('organizations_id', $team1->organizations_id)->lists('id');
-		$sub_teams2 = \App\Teams::where('organizations_id', $team2->organizations_id)->lists('id');
-
-		if ($match->match_at > config('app.nendo') . '-04-01') {
-			$players1 = Players::with('team')->whereIn('school_year', [1, 2, 3])->whereIn('team_id', $sub_teams1)->get();
-			$players2 = Players::with('team')->whereIn('school_year', [1, 2, 3])->whereIn('team_id', $sub_teams2)->get();
-		} else {
-			$players1 = Players::with('team')->whereIn('team_id', $sub_teams1)->withTrashed()->get();
-			$players2 = Players::with('team')->whereIn('team_id', $sub_teams2)->withTrashed()->get();
-		}
+		$players1 = Players::with('team')->where('team_id', $match->home_id)->where('school_year', '<', 2000)->get();
+		$players2 = Players::with('team')->where('team_id', $match->away_id)->where('school_year', '<', 2000)->get();
 
 		// 選手が登録されていないと例外が発生する
 		$all_players_home['name'] = array();
@@ -55,19 +43,18 @@ class MatchController extends Controller
 		$players_home['name'] = array();
 		$players_away['name'] = array();
 
-		// 該当チームで累積したカード数のみ取得するように変更
 		foreach ($players1 as $player) {
 			$all_players_home['name'][$player->id] = $player->team->name . ' | ' . $player->name;
 			$players_home['name'][$player->id] = $player->name;
-			if ($player->yellow_cards_per_team($match->home_id) != 0) $players_home['name'][$player->id] . ' | 警告:' . $player->yellow_cards_per_team($match->home_id);
-			if ($player->red_cards_per_team($match->home_id) != 0) $players_home['name'][$player->id] . ' | 退場:' . $player->red_cards_per_team($match->home_id);
+			if ($player->yellow_cards() != 0) $players_home['name'][$player->id] . ' | 警告:' . $player->yellow_cards();
+			if ($player->red_cards() != 0) $players_home['name'][$player->id] . ' | 退場:' . $player->red_cards();
 		}
 
 		foreach ($players2 as $player) {
 			$all_players_home['name'][$player->id] = $player->team->name . ' | ' . $player->name;
 			$players_away['name'][$player->id] = $player->name;
-			if ($player->yellow_cards_per_team($match->away_id) != 0) $players_away['name'][$player->id] . ' | 警告:' . $player->yellow_cards_per_team($match->away_id);
-			if ($player->red_cards_per_team($match->away_id) != 0) $players_away['name'][$player->id] . ' | 退場:' . $player->red_cards_per_team($match->away_id);
+			if ($player->yellow_cards() != 0) $players_away['name'][$player->id] . ' | 警告:' . $player->yellow_cards();
+			if ($player->red_cards() != 0) $players_away['name'][$player->id] . ' | 退場:' . $player->red_cards();
 		}
 
 		foreach ($players2 as $player) {
@@ -99,8 +86,7 @@ class MatchController extends Controller
 		$match = Matches::find($id);
 
 		if ($match->home_id == $req->session()->get('team_id')) {
-			$input_match = $req->only('home_pt', 'away_pt', 'home_pk', 'away_pk', 'note', 'home_comment', 'away_comment', 'mom_home', 'mom_away');
-
+			$input_match = $req->only('home_pt', 'away_pt', 'home_pk', 'away_pk', 'note', 'home_comment', 'mom_home', 'mom_away');
 
 			$rules = array(
 				'home_pt' => 'required|integer',
@@ -258,16 +244,12 @@ class MatchController extends Controller
 
 			//大会設定のイエロカードの出場停止枚数を取得
 			$option = Options::where('option_number', 2)->first();
-
 			// カードが出された選手のみイエロー２枚 or レッド１枚にならないかチェック
 			foreach (array_unique($_players) as $p) {
 				$player = Players::find($p);
 				// 該当選手のイエローカードが２枚 or レッドカードが１枚の場合、次の試合開始日時＋２時間まで、出場停止期間を設定する。
-				// サブチームがあるので、所属チームで集計が必要
-				$y_count = Cards::where('player_id', $p)->where('team_id', $player->team_id)->where('color', 'yellow')->where('is_cleared', 0)->where('nendo', config('app.nendo'))->count();
-				$r_count = Cards::where('player_id', $p)->where('team_id', $player->team_id)->where('color', 'red')->where('is_cleared', 0)->where('nendo', config('app.nendo'))->count();
-
-				// 2021年特殊ルールで、警告３枚で次試合出場停止
+				$y_count = Cards::where('player_id', $p)->where('color', 'yellow')->where('is_cleared', 0)->where('nendo', config('app.nendo'))->count();
+				$r_count = Cards::where('player_id', $p)->where('color', 'red')->where('is_cleared', 0)->where('nendo', config('app.nendo'))->count();
 				if ($y_count == $option->value) {
 					$next_match = Matches::selectRaw('match_at')->with('leagueOne', 'home0', 'away0', 'place')->where('is_filled', 0)->where(function ($q) use ($player) {
 						return $q->where('home_id', $player->team_id)->orWhere('away_id', $player->team_id);
@@ -275,11 +257,10 @@ class MatchController extends Controller
 
 					$next_match_after_2h = date('Y-m-d H:i', strtotime($next_match['match_at'] . " +2 hours"));
 					Players::where('id', $player->id)->update(['suspension_at' => $next_match_after_2h]);
-					PlayerSuspend::create(['is_suspend' => 1, 'player_id' => $player->id, 'team_id' => $player->team_id, 'suspension' => $next_match_after_2h]);
 
-					// イエロー規定枚数のあとは、既存のイエローカードをリフレッシュ→この処理はバッチで。
-					//2022/9/20 バッチ処理でクリアをするように変更
-					//Cards::where('player_id', $p)->where('team_id', $player->team_id)->where('color', 'yellow')->where('is_cleared', 0)->update(['is_cleared' => 1]);
+					// イエロー２枚のあとは、既存のイエローカードをリフレッシュ
+					// Cards::where('player_id', $p)->where('color', 'yellow')->where('is_cleared',0)->update(['is_cleared'=>1]);
+
 				}
 
 				if ($r_count == 1) {
@@ -288,13 +269,10 @@ class MatchController extends Controller
 					})->where('match_at', '>', date('Y-m-d H:i'))->orderBy('match_at', 'asc')->take(1)->first();
 
 					$next_match_after_2h = date('Y-m-d H:i', strtotime($next_match['match_at'] . " +2 hours"));
-					PlayerSuspend::create(['is_suspend' => 1, 'player_id' => $player->id, 'team_id' => $player->team_id, 'suspension' => $next_match_after_2h]);
 					Players::where('id', $player->id)->update(['suspension_at' => $next_match_after_2h]);
 
-					// レッド後、出場停止期間を設定後は、リセット→この処理はバッチで。(所属チームのもののみリセット）
-					//2022/9/20 バッチ処理でクリアをするように変更
-					//  Cards::where('player_id', $p)->where('team_id',$player->team_id)->where('color', 'red')->where('is_cleared',0)->update(['is_cleared'=>1]);
-					Cards::where('player_id', $p)->where('team_id', $player->team_id)->where('color', 'yellow')->where('is_cleared', 0)->update(['is_cleared' => 1]);
+					// レッド後、出場停止期間を設定後は、リセット
+					// Cards::where('player_id', $p)->where('color', 'red')->where('is_cleared',0)->update(['is_cleared'=>1]);
 				}
 			}
 			// return "hoge";
@@ -309,12 +287,6 @@ class MatchController extends Controller
 
 		return redirect()->route('team.top')->with('msg', '保存しました');
 	}
-
-	// public function delete($id){
-	//   Matches::where('id',$id)->delete();
-	//   // Comments::where('match_id',$id)->delete();
-	//   return redirect()->route('admin.match.index')->with('msg','削除しました');
-	// }
 
 	public function day_edit($id)
 	{
@@ -368,49 +340,13 @@ class MatchController extends Controller
 		return redirect()->route('team.top')->with('msg', '会場を変更しました');
 	}
 
+	// public function delete($id){
+	//   Matches::where('id',$id)->delete();
+	//   // Comments::where('match_id',$id)->delete();
+	//   return redirect()->route('admin.match.index')->with('msg','削除しました');
+	// }
+
 	public function mom_mov_edit($id)
 	{
-		$match = Matches::find($id);
-
-		// $image = \Input::file('captain_mov');
-		// if ($image != '') {
-		// 	$sInfoFile = uploadMovie($image);
-		// 	$input['captain_mov'] = $sInfoFile['name_file'];
-		// }
-
-		// // 実ファイル削除＆フォーム内容削除
-
-		// $del = \Input::has('captain_mov_delete') ? \Input::get('captain_mov_delete') : 0;
-		// if ($del == 1) {
-		// 	upmovieDelete($team->captain_mov);
-		// 	$input['captain_mov'] = '';
-		// }
-		return view('team.match.mom_mov_edit')->with(compact('match'));
-	}
-
-	public function mom_mov_update(Request $req)
-	{
-		$id = $req->get('id');
-
-		$match = Matches::find($id);
-
-		// 実ファイル削除＆フォーム内容削除
-
-		$del = \Input::has('mom_mov_delete') ? \Input::get('mom_mov_delete') : 0;
-		if ($del == 1) {
-			upmovieDelete($match->mom_mov);
-			$input['mom_mov'] = '';
-		}
-
-		$image = \Input::file('mom_mov');
-		if ($image != '') {
-			$sInfoFile = uploadMovie($image);
-			$input['mom_mov'] = $sInfoFile['name_file'];
-		}
-
-		if (count($input) > 0)
-			$match->update($input);
-
-		return redirect()->route('team.match.mom_mov.edit', ['id' => $id])->with('msg', '保存しました');
 	}
 }
