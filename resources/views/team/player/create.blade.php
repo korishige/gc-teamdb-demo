@@ -51,9 +51,9 @@
 						<h2>選手名<span>必須</span></h2>
 						{!!Form::text('name',old('name'),['class'=>'w30'])!!}
 
-						<h2>ブロック選手</h2>
+						{{-- <h2>ブロック選手</h2>
 						
-						{!!Form::select('is_block',config('app.is_block'), old('is_block'),['class'=>'w30'])!!}
+						{!!Form::select('is_block',config('app.is_block'), old('is_block'),['class'=>'w30'])!!} --}}
 
 						<h2>生年月日<span>必須</span></h2>
 

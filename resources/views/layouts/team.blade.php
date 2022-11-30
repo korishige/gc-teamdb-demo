@@ -43,17 +43,17 @@
           {{-- <span><img src="/team/img/common/logo.png"></span> --}}
           <span></span>
           <?php
-          $team = \App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo'))->find(session('team_id'));
-          $sub_teams = \App\Teams::where('organizations_id', $team->organizations_id)->lists('name', 'user_id');
+          // $team = \App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo'))->find(session('team_id'));
+          // $sub_teams = \App\Teams::where('organizations_id', $team->organizations_id)->lists('name', 'user_id');
           ?>
           <span>{{$team->name}}　チーム管理ツール</span>
-          @if(count($sub_teams) > 1)
+          {{-- @if(count($sub_teams) > 1)
             &nbsp;&nbsp;
             {!!Form::open(['url'=>route('login'),'method'=>'post','class'=>'row form-inline'])!!}
               {!!Form::hidden('flag',1)!!}
               {!!Form::select('user_id',$sub_teams,\Input::has('user_id')?\Input::get('user_id'):'',['class'=>'form-control','style'=>'width:200px','placeholder'=>'アカウント変更','onchange'=>'submit(this.form)'])!!}
             {!!Form::close()!!}
-          @endif
+          @endif --}}
       </div><!-- /.inner -->
   </div><!-- /.content_title -->
   

@@ -72,7 +72,7 @@
             <a href="{{route('admin.league.closing',['leagues_id'=>$league->id])}}" class="btn btn-danger btn-xs">大会締め処理</a>
 
             <!-- <a href="{{route('admin.league.show',['id'=>$league->id])}}" class="btn btn-success btn-xs">順位表表示</a> -->
-            <!-- <a href="{{route('admin.league.delete',['id'=>$league->id])}}" class="confirm btn btn-danger btn-xs">削除</a> -->
+           <a href="{{route('admin.league.delete',['id'=>$league->id])}}" class="confirm btn btn-danger btn-xs">削除</a>
 
 <!--                   <a href="{{route('admin.match.create',['leagues_id'=>$league->id])}}" class="btn btn-warning btn-xs">試合結果追加</a>
             <a href="{{route('admin.match.index',['leagues_id'=>$league->id])}}" class="btn btn-warning btn-xs">試合結果表示</a>

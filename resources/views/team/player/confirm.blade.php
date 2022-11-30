@@ -13,7 +13,7 @@
 
 		{!!Form::open(['url'=>route('team.player.store'),'class'=>'form-horizontal form-label-left'])!!}
 			{!!Form::staticField('name','選手名',$player->name)!!}
-			{!!Form::staticField('is_block','ブロック選手',array_get(config('app.is_block'), $player->is_block))!!}
+			{{-- {!!Form::staticField('is_block','ブロック選手',array_get(config('app.is_block'), $player->is_block))!!} --}}
 			{!!Form::staticField('school_year','学年',array_get(config('app.schoolYearAry'),$player->school_year))!!}
 			{!!Form::staticField('birthday','生年月日',$player->birthday)!!}
 			{!!Form::staticField('position','ポジション',array_get(config('app.positionAry'), $player->position))!!}
