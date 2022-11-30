@@ -40,6 +40,7 @@
 						<li><a href="{{route('team.league.goals',['id'=>$league->id])}}">得点</a></li>
 						{{-- <li><a href="{{route('team.league.block',['id'=>$league->id])}}">ブロック選手</a></li> --}}
             <li><a href="{{route('team.league.warning',['id'=>$league->id, 'nendo'=>$league->year])}}">警告者</a></li>
+            <li></li>
 						<li></li>
 					</ul>
 				</div><!-- /.league_list -->
