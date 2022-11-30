@@ -151,10 +151,8 @@
                       <a href="{{route('team.match.group_photo.edit',['id'=>$match->id])}}">集合写真<br><span>投稿・編集</span></a>
                       <a href="{{route('team.match.gallery.edit',['id'=>$match->id])}}">ギャラリー<br><span>投稿・編集</span></a>
                       <a href="{{route('team.check',['id'=>$match->id])}}">累積を確認する</a>
-                      @if($home == 'home')
                       <a href="{{route('team.match.day.edit',['id'=>$match->id])}}" style="background: #ad3952;">試合日を変更する</a>
                       <a href="{{route('team.match.venue.edit',['id'=>$match->id])}}" style="background: #ad3952;">会場を変更する</a>
-                      @endif
                     </div><!-- /.btn -->
                   </div><!-- /.txt -->
                 </div><!-- /.box -->
