@@ -43,7 +43,7 @@
           {{-- <span><img src="/team/img/common/logo.png"></span> --}}
           <span></span>
           <?php
-          // $team = \App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo'))->find(session('team_id'));
+          $team = \App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo'))->find(session('team_id'));
           // $sub_teams = \App\Teams::where('organizations_id', $team->organizations_id)->lists('name', 'user_id');
           ?>
           <span>{{$team->name}}　チーム管理ツール</span>
