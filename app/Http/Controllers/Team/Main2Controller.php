@@ -14,6 +14,7 @@ use App\Teams;
 use App\Matches;
 use App\Cfg;
 use App\Players;
+use App\StartingMembers;
 
 class Main2Controller extends Controller
 {
@@ -70,24 +71,83 @@ class Main2Controller extends Controller
 		return view('team.check')->with(compact('match', 'home_players', 'away_players'));
 	}
 
-	public function starter_edit($id)
+	public function starter_edit($id, $starting_member_id = '')
 	{
+		$starting_member_id = \Input::has('starting_member_id') ? \Input::get('starting_member_id') : '';
+		$match_id = $id;
+		if (session('role') != 'team') return "権限がありません";
+
+		// 過去のスタメン情報を引っ張ってきておく
+		$match_histories = [];
+		foreach (StartingMembers::where('team_id', \Session::get('team_id'))->where('match_id', '<>', $match_id)->orderby('match_at', 'desc')->get() as $row) {
+			$_tmp = Matches::find($row->match_id);
+			if ($_tmp->home_id == \Session::get('team_id')) {
+				$vs_team = Teams::find($_tmp->away_id);
+			} else {
+				$vs_team = Teams::find($_tmp->home_id);
+			}
+			$match_histories[$row->match_id] = $row->match_at . ' vs ' . $vs_team->name;
+		}
+		//			$match_histories = StartingMembers::where('team_id',\Session::get('team_id'))->orderby('match_at','desc')->lists('match_at','id');
+
+		if ($starting_member_id != '') {
+			// 過去のスタメン情報を利用する場合
+			$stm = StartingMembers::where('match_id', $starting_member_id)->where('team_id', \Session::get('team_id'))->first();
+			$pop = unserialize($stm->body);
+		} else {
+			// 該当試合のスタメンを持ってくる。ないときは一旦空としておき、必要に応じてスタメン情報を引っ張ってもらって、保存してもらう
+			$stm = StartingMembers::where('match_id', $id)->where('team_id', \Session::get('team_id'))->first();
+			if ($stm == null) {
+				$pop = unserialize(serialize(null));
+				// ここは一旦やめておく（過去データを勝手に引っ張ると、保存したかどうか判断できなさそうなので）
+				if (0) {
+					// 前回の試合を引っ張る
+					$stm = StartingMembers::where('team_id', \Session::get('team_id'))->orderby('match_at', 'desc')->first();
+					if ($stm == null) {
+						// それでもなければ空で読み込み
+						$pop = unserialize(serialize(null));
+					} else {
+						$pop = unserialize($stm->body);
+					}
+				}
+			} else {
+				$pop = unserialize($stm->body);
+			}
+		}
+
 		$team = Teams::findOrFail(\Session::get('team_id'));
-		$pop = unserialize($team->starter_data);
 		$match = Matches::where(function ($q) {
 			$q->where('home_id', \Session::get('team_id'))->orWhere('away_id', \Session::get('team_id'));
 		})->findOrFail($id);
-		$players = Players::where('team_id', \Session::get('team_id'))->whereNull('suspension_at')->get()->lists('name_year', 'id');
-		return view('team.starter.edit')->with(compact('match', 'players', 'team', 'pop'));
+		if (0) {
+			$players = Players::where('team_id', \Session::get('team_id'))->whereNull('suspension_at')->get()->lists('name_year', 'id');
+		} else {
+			$players = [];
+			$playerObj = \DB::select("select players.id,players.name,players.school_year from players 
+    left join player_suspend on player_suspend.player_id = players.id and player_suspend.team_id = " . \Session::get('team_id') . " 
+    where players.deleted_at is null and players.team_id = " . \Session::get('team_id') . " and player_suspend.suspension is null");
+			//			$players = Players::where('players.team_id',\Session::get('team_id'))->leftjoin('player_suspend',function($join) {
+			//				$join->on('player_suspend.player_id', '=', 'players.id')->where('player_suspend.team_id', '=', \Session::get('team_id'));
+			//			})->whereNull('player_suspend.suspension')->get()->lists('name_year','players.id');
+			foreach ($playerObj as $p) {
+				$players[$p->id] = sprintf("%s(%s)", $p->name, array_get(config('app.schoolYearAry'), $p->school_year));
+			}
+		}
+		return view('team.starter.edit')->with(compact('match', 'players', 'team', 'pop', 'match_id', 'match_histories'));
 	}
 
 	public function starter_update(Request $req)
 	{
-		// dd(serialize($req->except('_token')));
+		if (session('role') != 'team') return "権限がありません";
+		//		dd(serialize($req->except('_token')));
 
 		$input = $req->only('cap');
-
-		$input['starter_data'] = serialize($req->except('_token'));
+		$match_id = $req->get('match_id');
+		$input['team_id'] = \Session::get('team_id');
+		$matchObj = Matches::where('id', $match_id)->first();
+		$input['match_at'] = $matchObj->match_date;
+		$input['match_id'] = $match_id;
+		$input['body'] = serialize($req->except('_token'));
 
 		// 2020-07-26
 		// memo : 必要に応じて、player_idが全て現在のチームに属するかチェックしたほうがよいかも。
@@ -98,7 +158,6 @@ class Main2Controller extends Controller
 
 		$messages = array(
 			'cap.required' => 'キャプテンを設定してください',
-			'birthplace.required' => '誕生日を入力してください',
 		);
 
 		//バリデーション処理
@@ -109,14 +168,30 @@ class Main2Controller extends Controller
 
 		unset($input['cap']);
 
-		Teams::where('id', \Session::get('team_id'))->update($input);
+		//		Teams::where('id',\Session::get('team_id'))->update($input);
+		if (StartingMembers::where('team_id', \Session::get('team_id'))->where('match_id', $match_id)->count() != 1) {
+			StartingMembers::create($input);
+		} else {
+			unset($input['team_id']);
+			unset($input['match_at']);
+			unset($input['match_id']);
+			StartingMembers::where('team_id', \Session::get('team_id'))->where('match_id', $match_id)->update($input);
+		}
 		return redirect()->back()->with('msg', '保存しました');
 	}
 
 	public function starter_print($id)
 	{
+		if (session('role') != 'team') return "権限がありません";
+		$stm = StartingMembers::where('match_id', $id)->where('team_id', \Session::get('team_id'))->first();
+		if ($stm == null) {
+			$pop = unserialize(serialize(null));
+		} else {
+			$pop = unserialize($stm->body);
+		}
+
 		$team = Teams::findOrFail(\Session::get('team_id'));
-		$pop = unserialize($team->starter_data);
+		//		$pop = unserialize($team->starter_data);
 
 		$match = Matches::find($id);
 		$players = Players::where('team_id', \Session::get('team_id'))->get()->lists('name', 'id');

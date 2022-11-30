@@ -208,8 +208,7 @@
                       <span>
                         @if($match->home_pt == $match->away_pt) (PK{{$match->away_pk}})@endif
                         {{$match->away_pt}}
-                        <a href="#"
-                                                   target="_blank">{{$match->away0->name}}</a>
+                        <a href="#" target="_blank">{{$match->away0->name}}</a>
                       </span>
                     </div><!-- /.match_card -->
                     <div class="venue row">
@@ -220,6 +219,7 @@
                       <a href="{{route('team.match.edit',['id'=>$match->id])}}">結果<br><span>入力・編集</span></a>
                       <a href="{{route('team.match.group_photo.edit',['id'=>$match->id])}}">集合写真<br><span>投稿・編集</span></a>
                       <a href="{{route('team.match.gallery.edit',['id'=>$match->id])}}">ギャラリー<br><span>投稿・編集</span></a>
+                      <a href="{{route('team.match.mom_mov.edit',['id'=>$match->id])}}">MOMコメント動画<br><span>投稿・編集</span></a>
                       @if(0 && config('app.debug'))
                         <a href="{{route('team.check',['id'=>$match->id])}}">累積を確認する</a>
                       @endif
