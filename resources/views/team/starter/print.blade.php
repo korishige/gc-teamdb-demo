@@ -49,11 +49,11 @@
                 <table style="width: 50%; margin: 0 auto;">
                     <tr>
                         <th style="width: 30%;">チーム名</th>
-                        <td>{{$pop['staff_name'][0]}}</td>
+                        <td>{{ $team->name }}</td>
                     </tr>
                     <tr>
                         <th>監督名</th>
-                        <td>{{ $team->name }}</td>
+                        <td>{{$pop['staff_name'][0]}}</td>
                     </tr>
                 </table>
 
