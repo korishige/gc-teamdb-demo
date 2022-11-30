@@ -200,7 +200,7 @@ class Main2Controller extends Controller
 
 	public function edit()
 	{
-		$team = Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy', config('app.nendo'))->findOrFail(session('team_id'));
+		$team = Teams::findOrFail(session('team_id'));
 		return view('team.info.edit')->with(compact('team'));
 	}
 

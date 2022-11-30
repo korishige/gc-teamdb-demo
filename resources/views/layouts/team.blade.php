@@ -11,10 +11,43 @@
 
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 <title>@if(isset($title)){{$title}} | @endif{{env('ASPNAME',config('app.aspnameK'))}} ver.{{Config::get('app.version')}}</title>
 
 @yield('css')
+<style>
+  .stamen{
+      border: 1px solid #0051ff;
+      color: #0051ff !important;
+      display: inline-block;
+      background: #e8eff4;
+      margin: 0 0 0 auto;
+      margin-top: 0.5em;
+      padding: 10px 10px;
+      border-radius: 3px;
+      font-size: 0.8em;
+      line-height: 0.8em;
+      text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px){
+      .stamen{
+          border: 1px solid #0051ff;
+          color: #0051ff !important;
+          display: block;
+          background: #e8eff4;
+          margin: 0 0 0 0;
+          margin-top: 0.5em;
+          padding: 8px 6px;
+          border-radius: 3px;
+          font-size: 0.5em;
+          line-height: 0.8em;
+          text-decoration: none;
+          width: 50%;
+      }
+  }
+</style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/team/js/common.js"></script>
@@ -43,17 +76,30 @@
           {{-- <span><img src="/team/img/common/logo.png"></span> --}}
           <span></span>
           <?php
-          $team = \App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo'))->find(session('team_id'));
-          // $sub_teams = \App\Teams::where('organizations_id', $team->organizations_id)->lists('name', 'user_id');
+          // $team = \App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo'))->find(session('team_id'));
+          $team = \App\Teams::find(session('team_id'));
+          $sub_teams = [];
+          if(\Session::get('admin')){
+            $sub_teams = \App\Teams::lists('name', 'user_id');
+            // $sub_teams = \App\Teams::where('organizations_id', $team->organizations_id)->lists('name', 'user_id');
+          }
           ?>
           <span>{{$team->name}}　チーム管理ツール</span>
-          {{-- @if(count($sub_teams) > 1)
+          @if(count($sub_teams) > 1)
             &nbsp;&nbsp;
-            {!!Form::open(['url'=>route('login'),'method'=>'post','class'=>'row form-inline'])!!}
+            {!!Form::open(['url'=>route('login.post'),'method'=>'post','class'=>'row form-inline'])!!}
               {!!Form::hidden('flag',1)!!}
               {!!Form::select('user_id',$sub_teams,\Input::has('user_id')?\Input::get('user_id'):'',['class'=>'form-control','style'=>'width:200px','placeholder'=>'アカウント変更','onchange'=>'submit(this.form)'])!!}
             {!!Form::close()!!}
-          @endif --}}
+
+            &nbsp;&nbsp;
+            {!!Form::open(['url'=>route('login.post'),'method'=>'post','class'=>'row form-inline', 'name' => 'form1'])!!}
+              {!!Form::hidden('flag',1)!!}
+              {!!Form::hidden('user_id',1)!!}
+              {{-- <button type="submit" class="stamen"><i class="fa-solid fa-file-pen"></i> 管理者ページへ</button> --}}
+              <a href="javascript:form1.submit()" class="stamen"><i class="fa-solid fa-file-pen"></i> 管理者ページへ</a>
+            {!!Form::close()!!}
+          @endif
       </div><!-- /.inner -->
   </div><!-- /.content_title -->
   

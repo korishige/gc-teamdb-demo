@@ -111,7 +111,13 @@
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                  <li><a href="{{Config::get('app.url')}}" target="_blank">  サイト確認</a> </li>
+                  <li>
+                    {!!Form::open(['url'=>route('login.post'),'method'=>'post','class'=>'row form-inline', 'name' => 'form1'])!!}
+                      {!!Form::hidden('flag',1)!!}
+                      {!!Form::hidden('user_id',83)!!}
+                      <a href="javascript:form1.submit()" class="stamen"><i class="fa-solid fa-file-pen"></i> チームページへ</a>
+                    {!!Form::close()!!}
+                  </li>
                   <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> ログアウト</a> </li>
                 </ul>
               </li>

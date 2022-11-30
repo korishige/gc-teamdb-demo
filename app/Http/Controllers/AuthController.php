@@ -61,20 +61,40 @@ class AuthController extends Controller
     //flag == 1のときはサブチームにアカウント切り替え
     if ($request->flag == 1) {
       $res = User::where('id', $request->user_id)->first();
-      //dd($res);
+      // dd($res);
       if ($res->is_active == 0) {
         return \Redirect::to('/cp/team');
       } else {
-        $team = Teams::where('user_id', $res->id)->first();  // join不要
-        Session::put('userid', $res->id);
-        Session::put('role', $res->role);
-        Session::put('authType', $res->authType);
-        Session::put('avatar', $res->avatar);
-        Session::put('email', $res->email);
-        $team = \App\Teams::where('user_id', $res->id)->first();
-        Session::put('org_id', $team->organizations_id);
-        Session::put('team_id', $team->id);
-        return \Redirect::to('/cp/team');
+        if ($res->role == 'admin') {
+          Session::put('userid', $res->id);
+          Session::put('role', $res->role);
+          Session::put('authType', $res->authType);
+          Session::put('avatar', $res->avatar);
+          Session::put('email', $res->email);
+          return \Redirect::to('/admin');
+        } elseif ($res->email == 'admin_team') {
+          $team = \App\Teams::first();
+          Session::put('userid', $res->id);
+          Session::put('role', $res->role);
+          Session::put('authType', $res->authType);
+          Session::put('avatar', $res->avatar);
+          Session::put('email', $res->email);
+          Session::put('org_id', $team->organizations_id);
+          Session::put('team_id', $team->id);
+          Session::put('admin', true);
+          return \Redirect::to('/cp/team');
+        } else {
+          $team = Teams::where('user_id', $res->id)->first();  // join不要
+          Session::put('userid', $res->id);
+          Session::put('role', $res->role);
+          Session::put('authType', $res->authType);
+          Session::put('avatar', $res->avatar);
+          Session::put('email', $res->email);
+          $team = \App\Teams::where('user_id', $res->id)->first();
+          Session::put('org_id', $team->organizations_id);
+          Session::put('team_id', $team->id);
+          return \Redirect::to('/cp/team');
+        }
       }
     } else {
 
@@ -97,11 +117,20 @@ class AuthController extends Controller
         Session::put('avatar', $res->avatar);
         Session::put('email', $res->email);
         if ($res->role == 'team') {
-          $team = \App\Teams::where('user_id', $res->id)->first();
-          Session::put('org_id', $team->organizations_id);
-          Session::put('team_id', $team->id);
+          //全権限アカウントかどうか
+          if ($res->email == 'admin_team') {
+            $team = \App\Teams::first();
+            Session::put('org_id', $team->organizations_id);
+            Session::put('team_id', $team->id);
+            Session::put('admin', true);
+          } else {
+            $team = \App\Teams::where('user_id', $res->id)->first();
+            Session::put('org_id', $team->organizations_id);
+            Session::put('team_id', $team->id);
+          }
           return \Redirect::to('/cp/team');
         } else {
+          Session::put('admin', true);
           return \Redirect::to('/admin');
         }
       } else {

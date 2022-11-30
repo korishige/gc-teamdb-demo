@@ -365,7 +365,7 @@ Route::get('authorize', ['uses' => 'AuthController@authorized']);
 Route::get('email_update', ['uses' => 'AuthController@email_update']);
 
 Route::get('/', ['uses' => 'AuthController@getLogin', 'as' => 'login']);
-Route::post('login', 'AuthController@postLogin');
+Route::post('login', ['uses' => 'AuthController@postLogin', 'as' => 'login.post']);
 Route::get('logout', ['uses' => 'AuthController@getLogout', 'as' => 'logout']);
 
 Route::get('register', ['uses' => 'AuthController@getRegister', 'as' => 'register']);
