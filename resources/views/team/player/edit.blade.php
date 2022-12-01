@@ -52,14 +52,13 @@
             <h2>選手名<span>必須</span></h2>
             {!!Form::text('name',$player->name,['class'=>'w30'])!!}
 
-            <h2>ブロック選手</h2>
+            {{-- <h2>ブロック選手</h2>
             @if($block_term == 0)
               {!!Form::select('is_block',config('app.is_block'), $player->is_block,['class'=>'w30', 'disabled'])!!}
               {!!Form::hidden('is_block',$player->is_block)!!}
             @else
               {!!Form::select('is_block',config('app.is_block'), $player->is_block,['class'=>'w30'])!!}
-              {{--!!Form::select('is_block',config('app.is_block'), $player->is_block,['class'=>'w30','disabled'=>true])!!--}}
-            @endif
+            @endif --}}
 
             <h2>生年月日<span>必須</span></h2>
 
