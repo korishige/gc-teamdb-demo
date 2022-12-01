@@ -15,8 +15,8 @@ class AuthTeam
    */
   public function handle($request, Closure $next)
   {
-      if (\Session::get('role')!='team')
-        return \Redirect::to('/login');
-      return $next($request);
+    if (\Session::get('role') != 'team')
+      return \Redirect::to('/');
+    return $next($request);
   }
 }

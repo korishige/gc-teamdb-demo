@@ -15,8 +15,8 @@ class AuthAdmin
    */
   public function handle($request, Closure $next)
   {
-      if (\Session::get('role')!='admin')
-        return \Redirect::to('/login');
-      return $next($request);
+    if (\Session::get('role') != 'admin')
+      return \Redirect::to('/');
+    return $next($request);
   }
 }
