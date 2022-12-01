@@ -33,11 +33,11 @@
                         {!!Form::open(['files'=>true,'url'=>route('team.info.update'),'class'=>"form-horizontal form-label-left"])!!}
                         <input type="hidden" name="id" value="{{$team->id}}">
 
-                        <h2>所属リーグ<span>必須</span></h2>
+                        {{-- <h2>所属リーグ<span>必須</span></h2>
                         <?php
-                        $groups = \App\Groups::get()->lists('name', 'id');
+                        // $groups = \App\Groups::get()->lists('name', 'id');
                         ?>
-                        {!!Form::select('group_id',$groups, $team->group_id,['class'=>'league','disabled'=>true])!!}
+                        {!!Form::select('group_id',$groups, $team->group_id,['class'=>'league','disabled'=>true])!!} --}}
 
                         <h2>チーム名<span>必須</span></h2>
 
