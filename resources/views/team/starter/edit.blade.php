@@ -195,27 +195,27 @@ $(function(){
 						</tr>
 						<tr>
 							<td>FP(正)</td>
-							<td>{!!Form::text('fp_pri_shirt',isset($pop['fp_pri_shirt'])?$pop['fp_pri_shirt']:'')!!}</td>
-							<td>{!!Form::text('fp_pri_shorts',isset($pop['fp_pri_shorts'])?$pop['fp_pri_shorts']:'')!!}</td>
-							<td>{!!Form::text('fp_pri_socks',isset($pop['fp_pri_socks'])?$pop['fp_pri_socks']:'')!!}</td>
+							<td>{!!Form::text('fp_pri_shirt',isset($pop['fp_pri_shirt'])?$pop['fp_pri_shirt']:$team->fp_pri_shirt)!!}</td>
+							<td>{!!Form::text('fp_pri_shorts',isset($pop['fp_pri_shorts'])?$pop['fp_pri_shorts']:$team->fp_pri_shorts)!!}</td>
+							<td>{!!Form::text('fp_pri_socks',isset($pop['fp_pri_socks'])?$pop['fp_pri_socks']:$team->fp_pri_socks)!!}</td>
 						</tr>
 						<tr>
 							<td>FP(副)</td>
-							<td>{!!Form::text('fp_sub_shirt',isset($pop['fp_sub_shirt'])?$pop['fp_sub_shirt']:'')!!}</td>
-							<td>{!!Form::text('fp_sub_shorts',isset($pop['fp_sub_shorts'])?$pop['fp_sub_shorts']:'')!!}</td>
-							<td>{!!Form::text('fp_sub_socks',isset($pop['fp_sub_socks'])?$pop['fp_sub_socks']:'')!!}</td>
+							<td>{!!Form::text('fp_sub_shirt',isset($pop['fp_sub_shirt'])?$pop['fp_sub_shirt']:$team->fp_sub_shirt)!!}</td>
+							<td>{!!Form::text('fp_sub_shorts',isset($pop['fp_sub_shorts'])?$pop['fp_sub_shorts']:$team->fp_sub_shorts)!!}</td>
+							<td>{!!Form::text('fp_sub_socks',isset($pop['fp_sub_socks'])?$pop['fp_sub_socks']:$team->fp_sub_socks)!!}</td>
 						</tr>
 						<tr>
 							<td>GK(正)</td>
-							<td>{!!Form::text('gk_pri_shirt',isset($pop['gk_pri_shirt'])?$pop['gk_pri_shirt']:'')!!}</td>
-							<td>{!!Form::text('gk_pri_shorts',isset($pop['gk_pri_shorts'])?$pop['gk_pri_shorts']:'')!!}</td>
-							<td>{!!Form::text('gk_pri_socks',isset($pop['gk_pri_socks'])?$pop['gk_pri_socks']:'')!!}</td>
+							<td>{!!Form::text('gk_pri_shirt',isset($pop['gk_pri_shirt'])?$pop['gk_pri_shirt']:$team->gk_pri_shirt)!!}</td>
+							<td>{!!Form::text('gk_pri_shorts',isset($pop['gk_pri_shorts'])?$pop['gk_pri_shorts']:$team->gk_pri_shorts)!!}</td>
+							<td>{!!Form::text('gk_pri_socks',isset($pop['gk_pri_socks'])?$pop['gk_pri_socks']:$team->gk_pri_socks)!!}</td>
 						</tr>
 						<tr>
 							<td>GK(副)</td>
-							<td>{!!Form::text('gk_sub_shirt',isset($pop['gk_sub_shirt'])?$pop['gk_sub_shirt']:'')!!}</td>
-							<td>{!!Form::text('gk_sub_shorts',isset($pop['gk_sub_shorts'])?$pop['gk_sub_shorts']:'')!!}</td>
-							<td>{!!Form::text('gk_sub_socks',isset($pop['gk_sub_socks'])?$pop['gk_sub_socks']:'')!!}</td>
+							<td>{!!Form::text('gk_sub_shirt',isset($pop['gk_sub_shirt'])?$pop['gk_sub_shirt']:$team->gk_sub_shirt)!!}</td>
+							<td>{!!Form::text('gk_sub_shorts',isset($pop['gk_sub_shorts'])?$pop['gk_sub_shorts']:$team->gk_sub_shorts)!!}</td>
+							<td>{!!Form::text('gk_sub_socks',isset($pop['gk_sub_socks'])?$pop['gk_sub_socks']:$team->gk_sub_socks)!!}</td>
 						</tr>
 					</table>
 

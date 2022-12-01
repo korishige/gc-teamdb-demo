@@ -69,6 +69,7 @@
                         <th style="width: 8%;">学年</th>
                         <th style="width: 3%;">Pos</th>
                         <th style="width: 4%;">身長</th>
+                        <th style="width: 10%;">前所属チーム</th>
                         <th style="width: 3%;">背番号</th>
                         <th style="width: 6%;">スタート</th>
                         <th style="width: 6%;">リザーブ</th>
@@ -115,6 +116,17 @@
                             if($player !== null){
                                 if($player->height != 0.0){
                                     print($player->height);
+                                }
+                            }else{
+                                print("");
+                            }
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            if($player !== null){
+                                if($player->related_team != null){
+                                    print($player->related_team);
                                 }
                             }else{
                                 print("");
