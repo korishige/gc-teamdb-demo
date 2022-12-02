@@ -52,6 +52,7 @@ class AuthController extends Controller
   public function getLogin()
   {
     $cookie = json_decode(Cookie::get(Config::get('app.aspname')), true);
+
     return view('auth/login', compact("cookie"));
   }
 

@@ -25,13 +25,13 @@
               <div>
                 <dt>ログイン</dt>
                 <dd>
-                  <input name="email" type="text" class="form-control" placeholder="E-mail" required="" @if($cookie != null) value="{{$cookie['email']}} @endif"/>
+                  <input name="email" type="text" class="form-control" placeholder="E-mail" required="" @if($cookie != null) value="{{$cookie['email']}}" @endif/>
                 </dd>
               </div>
               <div>
                 <dt>パスワード</dt>
                 <dd>
-                  <input name="password" type="password" class="form-control" placeholder="Password" required="" @if($cookie != null) value="{{$cookie['password']}} @endif"/>
+                  <input name="password" type="password" class="form-control" placeholder="Password" required="" @if($cookie != null) value="{{$cookie['password']}}" @endif/>
                 </dd>
               </div>
               <dd style="margin: 20px;">
