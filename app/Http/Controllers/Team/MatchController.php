@@ -302,7 +302,7 @@ class MatchController extends Controller
 			// 入力済みフラグをセット
 			$input_match['is_filled'] = 1;
 		} else {
-			$input_match = $req->only('away_comment', 'away_note');
+			$input_match = $req->only('away_comment');
 		}
 
 		Matches::where('id', $id)->update($input_match);

@@ -196,10 +196,10 @@
                          {!!Form::textarea('home_comment',$match->home_comment,['size'=>'3x3'])!!}
                     </div><!-- /.comment -->
                     
-                    <div class="comment">
+                    {{-- <div class="comment">
                         <h2>{{array_get($teams,$match->away_id).'チームからの得点・警告・退場連絡'}}</h2>
                         {!!nl2br($match->away_note)!!}
-                    </div><!-- /.comment -->
+                    </div><!-- /.comment --> --}}
                   @elseif($match->away_id==\Session::get('team_id'))
                     <div class="match_card row">
                         <div class="col">
@@ -311,10 +311,10 @@
                         </div><!-- /.col -->
                     </div><!-- /.row -->
 
-                    <div class="remarks">
+                    {{-- <div class="remarks">
                         <h2>{{array_get($teams,$match->away_id).'得点・警告・退場 連絡'}}</h2>
                         {!!Form::textarea('away_note',$match->away_note,['size'=>'3x3'])!!}
-                    </div><!-- /.remarks -->
+                    </div><!-- /.remarks --> --}}
                     
                     <div class="comment">
                         <h2>{{array_get($teams,$match->away_id).'コメント'}}</h2>
