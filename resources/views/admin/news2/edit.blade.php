@@ -37,7 +37,7 @@
 			<div class="form-group">
 				<label class="control-label col-md-2 col-sm-2 col-xs-12">大会</label>
 				<div class="col-md-10 col-sm-10 col-xs-12">
-					{!!Form::select('convention',Config::get('app.conventionAry'),Input::old('convention'),['class'=>'form-control','style'=>'width:200px'])!!}
+					{!!Form::select('convention',Config::get('app.conventionAry'),$obj->convention,['class'=>'form-control','style'=>'width:200px'])!!}
 				</div>
 			</div>
 

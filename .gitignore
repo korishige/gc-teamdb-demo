@@ -1,4 +1,6 @@
 /public/hot
 /public/**/*.map
 /public/**/*.scss
+storage/uploads/
+storage/app/db-blade-compiler/views/
 .env
