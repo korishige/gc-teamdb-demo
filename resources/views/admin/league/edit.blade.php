@@ -71,7 +71,7 @@
 				foreach($prefs as $key=>$val):
 				?>
 				<label class='checkbox-inline'>
-				{!!Form::checkbox('pref[]',  $key, (array_search($key,$data)!==false)?1:0, ['class'=>'field', 'disabled'=>'disabled'])!!}{!!$val!!}
+				{!!Form::checkbox('prefs[]',  $key, (array_search($key,$data)!==false)?1:0, ['class'=>'field', 'disabled'=>'disabled'])!!}{!!$val!!}
 				</label>
 				<?php
 				endforeach;

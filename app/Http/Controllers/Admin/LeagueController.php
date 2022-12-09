@@ -325,7 +325,7 @@ class LeagueController extends Controller
 		foreach ($_prefs as $pref) {
 			$prefs[$pref->id] = $pref->name;
 		}
-		
+
 		return view('admin.league.create', compact('teams', 'prefs'));
 	}
 
@@ -354,17 +354,17 @@ class LeagueController extends Controller
 
 		// $array = [1,2,3];
 
-// $array[] = 4;
+		// $array[] = 4;
 
-// $array['prefs'] = [1,2,3];
+		// $array['prefs'] = [1,2,3];
 
 		$prefs = Input::get('prefs');
 
-		foreach($prefs as $pref){
-		$ps[] = explode(':',$pref)[0];
-		$prefec = implode(",", $ps);
+		foreach ($prefs as $pref) {
+			$ps[] = explode(':', $pref)[0];
+			$prefec = implode(",", $ps);
 		}
-		
+
 		$input['pref'] = $prefec;
 		$league = Leagues::create($input);
 
@@ -400,12 +400,12 @@ class LeagueController extends Controller
 	public function update()
 	{
 		// dd(Input::all());
-		$input = Input::except('_token', 'id', 'teams','prefs');
+		$input = Input::except('_token', 'id', 'teams', 'prefs');
 		$prefs = Input::get('prefs');
-		foreach($prefs as $pref){
-		$ps[] = explode(':',$pref)[0];
-	}
-		
+		foreach ($prefs as $pref) {
+			$ps[] = explode(':', $pref)[0];
+		}
+
 		$id = Input::get('id');
 
 		$rules = array(
@@ -428,17 +428,17 @@ class LeagueController extends Controller
 		}
 
 		Leagues::where('id', $id)->update($input);
-		
+
 		// TODO: 開始されたら変更できないようにしたい
 		// LeagueTeams::where('leagues_id',$id)->delete();
 		// foreach(Input::get('teams') as $team){
-			//   $tmp = explode(':',$team);
-			//   LeagueTeams::create(['leagues_id'=>$league->id,'team_id'=>$tmp[0], 'name'=>$tmp[1]]);      
-			// }
-			
-			// foreach(explode('/',Input::get('team')) as $team){
-				//   LeagueTeams::create(['leagues_id'=>$id,'name'=>$team]);
-				// }
+		//   $tmp = explode(':',$team);
+		//   LeagueTeams::create(['leagues_id'=>$league->id,'team_id'=>$tmp[0], 'name'=>$tmp[1]]);      
+		// }
+
+		// foreach(explode('/',Input::get('team')) as $team){
+		//   LeagueTeams::create(['leagues_id'=>$id,'name'=>$team]);
+		// }
 		// $league = Leagues::create($input);
 
 		// foreach (Input::get('teams') as $team) {
