@@ -404,8 +404,16 @@ class LeagueController extends Controller
 		$prefs = Input::get('prefs');
 		foreach ($prefs as $pref) {
 			$ps[] = explode(':', $pref)[0];
+			$prefec = implode(",", $ps);
 		}
+		$input['pref'] = $prefec;
+		// dd($input);
+		// foreach ($prefs as $pref) {
+		// 	$ps[] = explode(':', $pref)[0];
+		// 	$prefec = implode(",", $ps);
+		// }
 
+		
 		$id = Input::get('id');
 
 		$rules = array(
@@ -426,6 +434,8 @@ class LeagueController extends Controller
 				->withInput()
 				->with('messages');
 		}
+		
+		
 
 		Leagues::where('id', $id)->update($input);
 
