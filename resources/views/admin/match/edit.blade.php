@@ -72,7 +72,9 @@
           </div>
         </div>
 
-        {!!Form::selectField('place_id','試合会場',\App\Venue::all()->lists('name','id'),$match->place_id,['style'=>'width:300px'])!!}
+        {{-- {!!Form::selectField('place_id','試合会場',\App\Venue::all()->lists('name','id'),$match->place_id,['style'=>'width:300px'])!!} --}}
+
+        {!!Form::selectField('place_id','試合会場',\App\Venue::whereIn('pref_id', $prefs)->lists('name','id'),old('place_id'),['style'=>'width:300px'])!!}
 
         {!!Form::selectField('judge_id','審判',\App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo_backend'))->get()->lists('name','id'),$match->judge_id,['style'=>'width:300px','placeholder'=>'その他'])!!}
 

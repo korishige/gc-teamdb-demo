@@ -10,6 +10,7 @@ use App\Leagues;
 use App\LeagueTeams;
 use App\Matches;
 use App\Comments;
+use App\Venue;
 
 use Input;
 use Cache;
@@ -31,15 +32,22 @@ class MatchController extends Controller
 
 	public function create($league_id)
 	{
+		
+		// $pref = Leagues::where('id', $league_id)->select('pref')->first();
 		$league = Leagues::where('id', $league_id)->first();
+		// dd($league->pref);
+		$prefs = explode(",", $league->pref);
+		$prefs[] = 0;
 		$teams = LeagueTeams::where('leagues_id', $league_id)->orderBy('id', 'asc')->lists('name', 'team_id');
 		$matchObj = Matches::where('leagues_id', $league_id)->orderBy('id', 'asc')->get();
-		return view('admin.match.create', compact('league', 'teams', 'matchObj', 'league_id'));
+		return view('admin.match.create', compact('league', 'teams', 'matchObj', 'league_id', 'prefs'));
 	}
 
 	public function store()
-	{
-		//     dd(\Input::all());
+	{	
+		
+		// $items = \App\Leagues::select('pref')->get();
+		// dd($items);
 		$input = Input::except('_token', 'pending');
 		$pending = Input::get('pending');
 
@@ -104,8 +112,21 @@ class MatchController extends Controller
 	public function edit($id)
 	{
 		$match = Matches::find($id);
+		
+		// dd($league);
+		// dd($match);
+		
 		$teamObj = LeagueTeams::where('leagues_id', $match->leagues_id)->orderBy('id', 'asc')->lists('name', 'team_id');
-		return view('admin.match.edit')->with(compact('match', 'league', 'teamObj'));
+		
+		// $prefs = explode(",", $league->pref);
+		// $prefs[] = 0;
+		
+		$league_id = $match->leagues_id;
+		$league = Leagues::where('id', $league_id)->first();
+		$prefs = explode(",", $league->pref);
+		$prefs[] = 0;
+				
+		return view('admin.match.edit')->with(compact('match', 'league', 'teamObj', 'prefs'));
 	}
 
 	public function update()

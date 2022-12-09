@@ -11,6 +11,7 @@ use App\LeagueTeams;
 use App\Matches;
 use App\Comments;
 use App\Teams;
+use App\Pref;
 use App\Groups;
 
 use Input;
@@ -302,7 +303,7 @@ class LeagueController extends Controller
 
 	public function create()
 	{
-		$pref = Input::has('pref') ? Input::get('pref') : '*';
+		// $pref = Input::has('pref') ? Input::get('pref') : '*';
 
 		$group_sort = Groups::whereNotNull('order')->orderBy('order', 'asc')->lists('id')->toArray();
 		$group_ids = implode(',', $group_sort);
@@ -314,28 +315,32 @@ class LeagueController extends Controller
 		// })->orderByRaw("FIELD(group_id, " . $group_ids . ")")->get();
 
 		$_teams = Teams::get();
-
 		$teams = array();
 		foreach ($_teams as $team) {
 			$teams[$team->id] = $team->name;
 		}
-		// dd($teams);
-		return view('admin.league.create', compact('teams'));
+
+		$_prefs = pref::get();
+		$prefs = array();
+		foreach ($_prefs as $pref) {
+			$prefs[$pref->id] = $pref->name;
+		}
+		
+		return view('admin.league.create', compact('teams', 'prefs'));
 	}
 
 	public function store()
 	{
-		// dd(\Input::all());
-		$input = Input::except('_token', 'teams');
+		$input = Input::except('_token', 'teams', 'prefs');
 
 		$rules = array(
 			'year' => 'required',
-			'name' => 'required'
+			'name' => 'required',
 		);
 
 		$messages = array(
 			'name.required' => '名称を入力してください',
-			'year.required' => '年度を入力してください'
+			'year.required' => '年度を入力してください',
 		);
 
 		//バリデーション処理
@@ -347,16 +352,27 @@ class LeagueController extends Controller
 				->with('messages');
 		}
 
+		// $array = [1,2,3];
+
+// $array[] = 4;
+
+// $array['prefs'] = [1,2,3];
+
+		$prefs = Input::get('prefs');
+
+		foreach($prefs as $pref){
+		$ps[] = explode(':',$pref)[0];
+		$prefec = implode(",", $ps);
+		}
+		
+		$input['pref'] = $prefec;
 		$league = Leagues::create($input);
+
 
 		foreach (Input::get('teams') as $team) {
 			$tmp = explode(':', $team);
-			// チーム名@所属グループのようになっているので、チーム名だけ抜き出す
 			LeagueTeams::create(['leagues_id' => $league->id, 'team_id' => $tmp[0], 'name' => explode('@', $tmp[1])[0]]);
 		}
-		// foreach(explode('、',Input::get('team')) as $team){
-		//   LeagueTeams::create(['leagues_id'=>$league->id,'name'=>$team]);
-		// }
 
 		return redirect()->route('admin.league.index')->with('msg', '保存しました');
 	}
@@ -367,17 +383,29 @@ class LeagueController extends Controller
 		$_teams = Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy', $league->year)->orderBy('group_id', 'asc')->get();
 		$teams = array();
 		foreach ($_teams as $team) {
-			$teams[$team->id] = $team->name . '@' . $team->group->name;
+			$teams[$team->id] = $team->name;
+		}
+
+		$_prefs = pref::get();
+		// dd($_prefs);
+		$prefs = array();
+		foreach ($_prefs as $pref) {
+			$prefs[$pref->id] = $pref->name;
 		}
 		// $teams = Teams::all()->lists('name','id');
 
-		return view('admin.league.edit', compact('league', 'teams'));
+		return view('admin.league.edit', compact('league', 'teams', 'prefs'));
 	}
 
 	public function update()
 	{
 		// dd(Input::all());
-		$input = Input::except('_token', 'id', 'teams');
+		$input = Input::except('_token', 'id', 'teams','prefs');
+		$prefs = Input::get('prefs');
+		foreach($prefs as $pref){
+		$ps[] = explode(':',$pref)[0];
+	}
+		
 		$id = Input::get('id');
 
 		$rules = array(
@@ -400,16 +428,23 @@ class LeagueController extends Controller
 		}
 
 		Leagues::where('id', $id)->update($input);
-
+		
 		// TODO: 開始されたら変更できないようにしたい
 		// LeagueTeams::where('leagues_id',$id)->delete();
 		// foreach(Input::get('teams') as $team){
-		//   $tmp = explode(':',$team);
-		//   LeagueTeams::create(['leagues_id'=>$league->id,'team_id'=>$tmp[0], 'name'=>$tmp[1]]);      
-		// }
+			//   $tmp = explode(':',$team);
+			//   LeagueTeams::create(['leagues_id'=>$league->id,'team_id'=>$tmp[0], 'name'=>$tmp[1]]);      
+			// }
+			
+			// foreach(explode('/',Input::get('team')) as $team){
+				//   LeagueTeams::create(['leagues_id'=>$id,'name'=>$team]);
+				// }
+		// $league = Leagues::create($input);
 
-		// foreach(explode('/',Input::get('team')) as $team){
-		//   LeagueTeams::create(['leagues_id'=>$id,'name'=>$team]);
+		// foreach (Input::get('teams') as $team) {
+		// 	$tmp = explode(':', $team);
+		// 	// チーム名@所属グループのようになっているので、チーム名だけ抜き出す
+		// 	LeagueTeams::create(['leagues_id' => $league->id, 'team_id' => $tmp[0], 'name' => $tmp[1]]);
 		// }
 
 		return redirect()->route('admin.league.index')->with('msg', '保存しました');

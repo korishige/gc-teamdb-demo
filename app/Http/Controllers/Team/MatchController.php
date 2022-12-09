@@ -351,8 +351,14 @@ class MatchController extends Controller
 		$match = Matches::where(function ($q) {
 			$q->where('home_id', \Session::get('team_id'))->orWhere('away_id', \Session::get('team_id'));
 		})->findOrFail($id);
+		
+		
+		$league_id = $match->leagues_id;
+		$league = Leagues::where('id', $league_id)->first();
+		$prefs = explode(",", $league->pref);
+		$prefs[] = 0;
 
-		return view('team.match.venue_edit')->with(compact('match'));
+		return view('team.match.venue_edit')->with(compact('match', 'prefs'));
 	}
 
 	public function venue_update(Request $request)

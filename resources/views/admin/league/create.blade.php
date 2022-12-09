@@ -61,6 +61,22 @@
 		{!!Form::selectField('group_id','グループ',$gs, Input::old('group_id'),['style'=>'width:200px'])!!}
 
 		<!-- {!!Form::selectField('v_point_settings_id','勝ち点方式',$vpoints,old('v_point_settings_id',['style'=>'width:200px']))!!} -->
+
+		<div class="form-group">
+			<label class="control-label col-md-2 col-sm-2 col-xs-12">都道府県</label>
+			<div class="col-md-10 col-sm-10 col-xs-12">			
+				<?php
+				$data = old('prefs')?old('prefs'):[];
+				foreach($prefs as $key=>$val):
+				?>
+				<label class='checkbox-inline'>
+				{!!Form::checkbox('prefs[]',  $key.":".$val, (array_search($key,$data)!==false)?1:0, ['class'=>'field'])!!}{!!$val!!}
+				</label>
+				<?php
+				endforeach;
+				?>
+			</div>
+		</div>
 		
 		<div class="form-group">
 			<label class="control-label col-md-2 col-sm-2 col-xs-12">リーグ戦名称</label>

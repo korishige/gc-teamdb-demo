@@ -52,7 +52,12 @@
       </div>
     </div>
 
-    {!!Form::selectField('place_id','試合会場',\App\Venue::all()->lists('name','id'),old('place_id'),['style'=>'width:300px'])!!}
+    
+    {!!Form::selectField('place_id','試合会場',\App\Venue::whereIn('pref_id', $prefs)->lists('name','id'),old('place_id'),['style'=>'width:300px'])!!}
+    <?php 
+    // $place = \App\Venue::where('pref_id', $pref->organizations_id)->lists('name', 'id');
+     
+    ?>
 
 
     {!!Form::selectField('home_id','責任チーム',$teams,old('home_id'),['style'=>'width:300px'])!!}

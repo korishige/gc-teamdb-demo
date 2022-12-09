@@ -63,6 +63,23 @@
 		<!-- {!!Form::selectField('v_point_settings_id','勝ち点方式',$vpoints,$league->v_point_settings_id,['style'=>'width:200px'])!!} -->
 
 		<div class="form-group">
+			<label class="control-label col-md-2 col-sm-2 col-xs-12">都道府県</label>
+			<div class="col-md-10 col-sm-10 col-xs-12">			
+				<?php
+				$pref = $league->pref;
+				$data = explode(',',$pref);
+				foreach($prefs as $key=>$val):
+				?>
+				<label class='checkbox-inline'>
+				{!!Form::checkbox('pref[]',  $key, (array_search($key,$data)!==false)?1:0, ['class'=>'field', 'disabled'=>'disabled'])!!}{!!$val!!}
+				</label>
+				<?php
+				endforeach;
+				?>
+			</div>
+		</div>
+
+		<div class="form-group">
 			<label class="control-label col-md-2 col-sm-2 col-xs-12">リーグ戦名称</label>
 			<div class="col-md-10 col-sm-10 col-xs-12">
 				{!!Form::text('name',$league->name,['placeholder'=>'リーグ戦名称を入力','class'=>'form-control'])!!}

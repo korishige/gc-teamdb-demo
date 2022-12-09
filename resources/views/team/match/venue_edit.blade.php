@@ -47,7 +47,9 @@
             <div class="col row">
                 <h2>{{$match->venue->name}}</h2>
                 <span>　➡︎　</span>
-                {!!Form::selectField('place_id', null,\App\Venue::all()->lists('name','id'),$match->place_id,['style'=>'width:300px'])!!}
+                {{-- {!!Form::selectField('place_id', null,\App\Venue::all()->lists('name','id'),$match->place_id,['style'=>'width:300px'])!!} --}}
+                {!!Form::selectField('place_id', null,\App\Venue::whereIn('pref_id', $prefs)->lists('name','id'),old('place_id'),['style'=>'width:300px'])!!}
+
 
             </div><!-- /.col -->
             <div class="col">
