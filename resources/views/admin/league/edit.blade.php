@@ -72,7 +72,6 @@
 				?>
 				<label class='checkbox-inline'>
 				{!!Form::checkbox('prefs[]',  $key, (array_search($key,$data)!==false)?1:0, ['class'=>'field', 'disabled'=>'disabled'])!!}{!!$val!!}
-				</label>
 				<?php
 				endforeach;
 				?>
