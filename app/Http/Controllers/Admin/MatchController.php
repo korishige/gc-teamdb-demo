@@ -32,7 +32,7 @@ class MatchController extends Controller
 
 	public function create($league_id)
 	{
-		
+
 		// $pref = Leagues::where('id', $league_id)->select('pref')->first();
 		$league = Leagues::where('id', $league_id)->first();
 		// dd($league->pref);
@@ -44,8 +44,8 @@ class MatchController extends Controller
 	}
 
 	public function store()
-	{	
-		
+	{
+
 		// $items = \App\Leagues::select('pref')->get();
 		// dd($items);
 		$input = Input::except('_token', 'pending');
@@ -99,7 +99,7 @@ class MatchController extends Controller
 		// if($input['home_pk']=='') unset($input['home_pk']);
 		// if($input['away_pk']=='') unset($input['away_pk']);
 
-		if ($input['judge_id'] == '') $input['judge_id'] = NULL;
+		// if ($input['judge_id'] == '') $input['judge_id'] = NULL;
 		if ($input['section'] == '') $input['section'] = NULL;
 
 
@@ -112,20 +112,20 @@ class MatchController extends Controller
 	public function edit($id)
 	{
 		$match = Matches::find($id);
-		
+
 		// dd($league);
 		// dd($match);
-		
+
 		$teamObj = LeagueTeams::where('leagues_id', $match->leagues_id)->orderBy('id', 'asc')->lists('name', 'team_id');
-		
+
 		// $prefs = explode(",", $league->pref);
 		// $prefs[] = 0;
-		
+
 		$league_id = $match->leagues_id;
 		$league = Leagues::where('id', $league_id)->first();
 		$prefs = explode(",", $league->pref);
 		$prefs[] = 0;
-				
+
 		return view('admin.match.edit')->with(compact('match', 'league', 'teamObj', 'prefs'));
 	}
 
@@ -189,7 +189,7 @@ class MatchController extends Controller
 			}
 		}
 
-		if ($input['judge_id'] == '') $input['judge_id'] = NULL;
+		// if ($input['judge_id'] == '') $input['judge_id'] = NULL;
 		if ($input['section'] == '') $input['section'] = NULL;
 
 		Matches::where('id', $id)->update($input);

@@ -63,7 +63,7 @@
     {!!Form::selectField('home_id','責任チーム',$teams,old('home_id'),['style'=>'width:300px'])!!}
     {!!Form::selectField('away_id','非責任チーム',$teams,old('away_id'),['style'=>'width:300px'])!!}
 
-    {!!Form::selectField('judge_id','審判',\App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo_backend'))->get()->lists('name','id'),old('judge_id'),['style'=>'width:300px','placeholder'=>'その他'])!!}
+    {{-- {!!Form::selectField('judge_id','審判',\App\Teams::leftJoin('team_yearly_group', 'team_yearly_group.team_id', '=', 'teams.id')->where('yyyy',config('app.nendo_backend'))->get()->lists('name','id'),old('judge_id'),['style'=>'width:300px','placeholder'=>'その他'])!!} --}}
 
 		<div class="ln_solid"></div>
 		<div class="form-group">

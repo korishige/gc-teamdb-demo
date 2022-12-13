@@ -23,6 +23,22 @@
     background: white;
   }
 
+  #yellow{
+    background: #e9d678;
+    border: 1px solid #e9d678;
+    width: 20%;
+    padding: 1em;
+    border-radius: 5px;
+    letter-spacing: 10px;
+    color: #fff;
+    margin-left: 5px;
+  }
+
+  #yellow:hover {
+    color: #e9d678;
+    background: white;
+  }
+
 </style>
 @stop
 
@@ -77,6 +93,7 @@
           <div class="btn_reg">
               <!-- <input type="button" value="戻る"> -->
               <input type="submit" value="日時を変更">
+              <button id="yellow" type="submit" name="is_publish" value="1" class="btn btn-warning">日付又は時間未定で保存する</button>
               <button id="red" type="submit" name="is_publish" value="2">延期に設定</button>
           </div><!-- /.btn_reg -->
         {!!Form::close()!!}

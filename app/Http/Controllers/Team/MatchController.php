@@ -334,6 +334,11 @@ class MatchController extends Controller
 
 		if ($request->is_publish == 2) {
 			$match->is_publish = $request->is_publish;
+		} elseif ($request->is_publish == 1) {
+			$match->match_date = $request->match_date;
+			$match->match_time = $request->match_time;
+			$match->match_at = $request->match_date . ' ' . $request->match_time;
+			$match->is_publish = 3;
 		} else {
 			$match->match_date = $request->match_date;
 			$match->match_time = $request->match_time;
@@ -351,8 +356,8 @@ class MatchController extends Controller
 		$match = Matches::where(function ($q) {
 			$q->where('home_id', \Session::get('team_id'))->orWhere('away_id', \Session::get('team_id'));
 		})->findOrFail($id);
-		
-		
+
+
 		$league_id = $match->leagues_id;
 		$league = Leagues::where('id', $league_id)->first();
 		$prefs = explode(",", $league->pref);
