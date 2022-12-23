@@ -413,7 +413,7 @@ class LeagueController extends Controller
 		// 	$prefec = implode(",", $ps);
 		// }
 
-		
+
 		$id = Input::get('id');
 
 		$rules = array(
@@ -434,8 +434,8 @@ class LeagueController extends Controller
 				->withInput()
 				->with('messages');
 		}
-		
-		
+
+
 
 		Leagues::where('id', $id)->update($input);
 

@@ -111,7 +111,11 @@ class Main2Controller extends Controller
 					}
 				}
 			} else {
-				$pop = unserialize($stm->body);
+				//正規表現を用いて再計算
+				$data = preg_replace_callback('!s:(\d+):"([\s\S]*?)";!', function ($m) {
+					return 's:' . strlen($m[2]) . ':"' . $m[2] . '";';
+				}, $stm->body);
+				$pop = unserialize($data);
 			}
 		}
 
