@@ -93,7 +93,10 @@ class Main2Controller extends Controller
 		if ($starting_member_id != '') {
 			// 過去のスタメン情報を利用する場合
 			$stm = StartingMembers::where('match_id', $starting_member_id)->where('team_id', \Session::get('team_id'))->first();
-			$pop = unserialize($stm->body);
+			$data = preg_replace_callback('!s:(\d+):"([\s\S]*?)";!', function ($m) {
+				return 's:' . strlen($m[2]) . ':"' . $m[2] . '";';
+			}, $stm->body);
+			$pop = unserialize($data);
 		} else {
 			// 該当試合のスタメンを持ってくる。ないときは一旦空としておき、必要に応じてスタメン情報を引っ張ってもらって、保存してもらう
 			$stm = StartingMembers::where('match_id', $id)->where('team_id', \Session::get('team_id'))->first();
@@ -107,7 +110,10 @@ class Main2Controller extends Controller
 						// それでもなければ空で読み込み
 						$pop = unserialize(serialize(null));
 					} else {
-						$pop = unserialize($stm->body);
+						$data = preg_replace_callback('!s:(\d+):"([\s\S]*?)";!', function ($m) {
+							return 's:' . strlen($m[2]) . ':"' . $m[2] . '";';
+						}, $stm->body);
+						$pop = unserialize($data);
 					}
 				}
 			} else {
@@ -191,7 +197,10 @@ class Main2Controller extends Controller
 		if ($stm == null) {
 			$pop = unserialize(serialize(null));
 		} else {
-			$pop = unserialize($stm->body);
+			$data = preg_replace_callback('!s:(\d+):"([\s\S]*?)";!', function ($m) {
+				return 's:' . strlen($m[2]) . ':"' . $m[2] . '";';
+			}, $stm->body);
+			$pop = unserialize($data);
 		}
 
 		$team = Teams::findOrFail(\Session::get('team_id'));
