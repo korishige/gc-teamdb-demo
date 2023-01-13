@@ -93,12 +93,14 @@
             {!!Form::close()!!}
 
             &nbsp;&nbsp;
+            @if(\Session::get('admin'))
             {!!Form::open(['url'=>route('login.post'),'method'=>'post','class'=>'row form-inline', 'name' => 'form1'])!!}
               {!!Form::hidden('flag',1)!!}
               {!!Form::hidden('user_id',1)!!}
               {{-- <button type="submit" class="stamen"><i class="fa-solid fa-file-pen"></i> 管理者ページへ</button> --}}
               <a href="javascript:form1.submit()" class="stamen"><i class="fa-solid fa-file-pen"></i> 管理者ページへ</a>
             {!!Form::close()!!}
+            @endif
           @endif
       </div><!-- /.inner -->
   </div><!-- /.content_title -->

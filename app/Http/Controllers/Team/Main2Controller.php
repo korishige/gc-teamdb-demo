@@ -42,7 +42,7 @@ class Main2Controller extends Controller
 		if ($req->has('m'))
 			$matches = $matches->whereRaw('(DATE_FORMAT(match_date, "%m") = ' . $req->get('m') . ')');
 
-		$matches = $matches->orderBy('match_at', 'desc')->paginate(10);
+		$matches = $matches->orderBy('match_at', 'asc')->paginate(10);
 
 		$matches0 = Matches::with('leagueOne', 'home0', 'away0', 'place')->where('is_filled', 1)->where(function ($q) {
 			$q->where('home_id', \Session::get('team_id'))->orWhere('away_id', \Session::get('team_id'));
