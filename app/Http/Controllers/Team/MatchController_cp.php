@@ -306,6 +306,10 @@ class MatchController extends Controller
 
 		if ($request->is_publish == 2) {
 			$match->is_publish = $request->is_publish;
+		} elseif ($request->is_publish == 3) {
+			$match->is_publish = $request->is_publish;
+			$match->match_date = '2023-04-01';
+			$match->match_time = null;
 		} else {
 			$match->match_date = $request->match_date;
 			$match->match_time = $request->match_time;
