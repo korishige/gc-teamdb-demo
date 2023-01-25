@@ -59,6 +59,8 @@
                     <a href="{{route('team.news.show',['id'=>$news->id])}}"></a>
                   </li>
                 @endforeach
+              @else
+                  現在お知らせはありません
               @endif
             </ul>
             <div class="btn">
