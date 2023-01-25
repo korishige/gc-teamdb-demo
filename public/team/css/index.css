@@ -8,7 +8,7 @@ nav {
 
 /*news*/
 #news {
-  background: url(../img/index/news_bg.jpg);
+  /* background: url(../img/index/news_bg.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -69,6 +69,7 @@ nav {
   width: 84%;
   margin-left: auto;
   background: #fff;
+  border: 1px solid #c2c2c2;
 }
 
 @media screen and (max-width: 640px) {
