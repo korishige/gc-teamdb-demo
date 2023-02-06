@@ -41,13 +41,16 @@ class MatchController extends Controller
 		$sub_teams1 = \App\Teams::where('organizations_id', $team1->organizations_id)->lists('id');
 		$sub_teams2 = \App\Teams::where('organizations_id', $team2->organizations_id)->lists('id');
 
-		if ($match->match_at > config('app.nendo') . '-04-01') {
-			$players1 = Players::with('team')->whereIn('school_year', [1, 2, 3])->whereIn('team_id', $sub_teams1)->get();
-			$players2 = Players::with('team')->whereIn('school_year', [1, 2, 3])->whereIn('team_id', $sub_teams2)->get();
-		} else {
-			$players1 = Players::with('team')->whereIn('team_id', $sub_teams1)->withTrashed()->get();
-			$players2 = Players::with('team')->whereIn('team_id', $sub_teams2)->withTrashed()->get();
-		}
+		// if ($match->match_at > config('app.nendo') . '-04-01') {
+		// 	$players1 = Players::with('team')->whereIn('school_year', [1, 2, 3])->whereIn('team_id', $sub_teams1)->get();
+		// 	$players2 = Players::with('team')->whereIn('school_year', [1, 2, 3])->whereIn('team_id', $sub_teams2)->get();
+		// } else {
+		// 	$players1 = Players::with('team')->whereIn('team_id', $sub_teams1)->withTrashed()->get();
+		// 	$players2 = Players::with('team')->whereIn('team_id', $sub_teams2)->withTrashed()->get();
+		// }
+
+		$players1 = Players::where('team_id', $match->home_id)->get();
+		$players2 = Players::where('team_id', $match->away_id)->get();
 
 		// 選手が登録されていないと例外が発生する
 		$all_players_home['name'] = array();
