@@ -55,7 +55,7 @@
         width: 100%;
         border: 1px solid #67BD2C;
         padding: 0.2em !important;
-        border-radius: 5px !important;
+        border-radius: 10px !important;
         letter-spacing: 10px;
         background: #67BD2C;
         color: #fff;
@@ -67,7 +67,7 @@
       border: 1px solid #b84f45;
       width: 100%;
       padding: 0.2em;
-      border-radius: 5px;
+      border-radius: 10px;
       letter-spacing: 10px;
       color: #fff;
       margin-left: 5px;
@@ -78,7 +78,7 @@
       border: 1px solid #1784df;
       width: 100%;
       padding: 0.2em;
-      border-radius: 5px;
+      border-radius: 10px;
       letter-spacing: 10px;
       color: #fff;
       margin: 5px;
