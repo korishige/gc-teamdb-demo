@@ -43,8 +43,8 @@
     .btn_reg input[type="submit"] {
         width: 100%;
         border: 1px solid #67BD2C;
-        padding: 0em;
-        border-radius: 5px;
+        padding: 0.2em !important;
+        border-radius: 5px !important;
         letter-spacing: 10px;
         background: #67BD2C;
         color: #fff;
@@ -55,7 +55,7 @@
       background: #b84f45;
       border: 1px solid #b84f45;
       width: 100%;
-      padding: 0em;
+      padding: 0.2em;
       border-radius: 5px;
       letter-spacing: 10px;
       color: #fff;
@@ -66,7 +66,7 @@
       background: #1784df;
       border: 1px solid #1784df;
       width: 100%;
-      padding: 0em;
+      padding: 0.2em;
       border-radius: 5px;
       letter-spacing: 10px;
       color: #fff;
