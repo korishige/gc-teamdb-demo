@@ -7,6 +7,17 @@
 <link href="/team/css/form.css" rel="stylesheet" type="text/css" />
 <link href="/team/css/team.css" rel="stylesheet" type="text/css" />
 <style>
+  #green {
+    background: #67BD2C;
+    border: 1px solid #67BD2C;
+    width: 20%;
+    padding: 1em;
+    border-radius: 5px;
+    letter-spacing: 10px;
+    color: #fff;
+    margin-left: 5px;
+  }
+
   #red {
     background: #b84f45;
     border: 1px solid #b84f45;
@@ -40,7 +51,7 @@
   }
 
   @media screen and (max-width: 640px) {
-    .btn_reg input[type="submit"] {
+    #green {
         width: 100%;
         border: 1px solid #67BD2C;
         padding: 0.2em !important;
@@ -126,7 +137,7 @@
 
           <div class="btn_reg">
               <!-- <input type="button" value="戻る"> -->
-              <input type="submit" value="日時を変更">
+              <input id="green" type="submit" value="日時を変更">
               <button id="yellow" type="submit" name="is_publish" value="3" class="btn btn-warning">日付又は時間未定で保存する</button>
               <button id="red" type="submit" name="is_publish" value="2">延期に設定</button>
           </div><!-- /.btn_reg -->
