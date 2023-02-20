@@ -44,7 +44,7 @@
           font-size: 0.5em;
           line-height: 0.8em;
           text-decoration: none;
-          width: 50%;
+          width: 100%;
       }
   }
 </style>

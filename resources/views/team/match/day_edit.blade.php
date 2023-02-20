@@ -24,8 +24,8 @@
   }
 
   #yellow{
-    background: #e9d678;
-    border: 1px solid #e9d678;
+    background: #1784df;
+    border: 1px solid #1784df;
     width: 20%;
     padding: 1em;
     border-radius: 5px;
@@ -35,10 +35,44 @@
   }
 
   #yellow:hover {
-    color: #e9d678;
+    color: #1784df;
     background: white;
   }
 
+  @media screen and (max-width: 640px) {
+    .btn_reg input[type="submit"] {
+        width: 100%;
+        border: 1px solid #67BD2C;
+        padding: 0em;
+        border-radius: 5px;
+        letter-spacing: 10px;
+        background: #67BD2C;
+        color: #fff;
+        margin-left: 5px;
+    }
+
+    #red {
+      background: #b84f45;
+      border: 1px solid #b84f45;
+      width: 100%;
+      padding: 0em;
+      border-radius: 5px;
+      letter-spacing: 10px;
+      color: #fff;
+      margin-left: 5px;
+    }
+
+    #yellow{
+      background: #1784df;
+      border: 1px solid #1784df;
+      width: 100%;
+      padding: 0em;
+      border-radius: 5px;
+      letter-spacing: 10px;
+      color: #fff;
+      margin: 5px;
+    }
+  }
 </style>
 @stop
 
@@ -82,7 +116,7 @@
           <div class="col">
           </div><!-- /.col -->
           <div class="col row">
-              <h2>{{$match->match_time}}</h2>
+              <h2>{{$match->match_time == null ? '未設定':$match->match_time}}</h2>
               <span>　➡︎　</span>
               {!!Form::time('match_time',$match->match_time,['class'=>'form-control inputCal','style'=>'width:150px', 'step' => '600'])!!}
           </div><!-- /.col -->
