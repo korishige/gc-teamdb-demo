@@ -90,6 +90,7 @@ class MatchController extends Controller
 
 	public function update(Request $req)
 	{
+		// dd($req);
 		// dd(\Input::all());
 		$input_match = $req->only('home_pt', 'away_pt', 'home_pk', 'away_pk', 'note', 'home_comment', 'away_comment', 'mom_home', 'mom_away');
 		$input_goals = $req->only(['home_goals', 'away_goals']);
@@ -103,7 +104,6 @@ class MatchController extends Controller
 
 		if ($match->home_id == $req->session()->get('team_id')) {
 			$input_match = $req->only('home_pt', 'away_pt', 'home_pk', 'away_pk', 'note', 'home_comment', 'away_comment', 'mom_home', 'mom_away');
-
 
 			$rules = array(
 				'home_pt' => 'required|integer',
@@ -427,5 +427,45 @@ class MatchController extends Controller
 			$match->update($input);
 
 		return redirect()->route('team.match.mom_mov.edit', ['id' => $id])->with('msg', '保存しました');
+	}
+
+	public function clear_update($id)
+	{
+		// $input_goals['home_goals'] = null;
+		// $input_goals['away_goals'] = null;
+
+		// $input_cards['home_cards'] = null;
+		// $input_cards['home_cards'] = null;
+
+		// dd($input_match, $input_goals, $input_cards);
+		
+
+		// homeチームだけが、得点、ゴール、警告を記載可能
+		$match = Matches::find($id);
+
+		if ($match->home_id == \Session::get('team_id')) {
+			$input_match['home_pt'] = null;
+			$input_match['away_pt'] = null;
+			$input_match['home_pk'] = null;
+			$input_match['away_pk'] = null;
+			$input_match['note'] = null;
+			$input_match['home_comment'] = null;
+			$input_match['away_comment'] = null;
+			$input_match['mom_home'] = null;
+			$input_match['mom_away'] = null;
+			}
+			// TODO : 既存のデータを削除
+			Goals::where('match_id', $match->id)->delete();
+			Cards::where('match_id', $match->id)->delete();
+
+			// 入力済みフラグをリセット
+			$input_match['is_filled'] = 0;
+
+		// Cards::where('player_id', $p)->where('team_id', $player->team_id)->where('color', 'yellow')->where('is_cleared', 0)->update(['is_cleared' => 1]);
+
+		//$input_match
+		Matches::where('id', $id)->update($input_match);
+
+		return redirect()->route('team.top')->with('msg', '試合情報をリセットしました。');
 	}
 }

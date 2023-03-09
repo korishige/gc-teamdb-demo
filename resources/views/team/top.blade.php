@@ -228,6 +228,7 @@
                       @if($i==0)
                         <a href="{{route('team.starter.edit',['id'=>$match->id])}}">スタメン<span>登録・印刷</span></a>
                       @endif
+                      <a href="{{route('team.match.clear.update',['id'=>$match->id])}}" style="background-color: #ad3952;">試合情報リセット</a>
                     </div><!-- /.btn -->
                   </div><!-- /.txt -->
                 </div><!-- /.box -->

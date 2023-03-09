@@ -210,8 +210,9 @@ Route::get('cp/team/league/warning/match/{id}/{player_id}/{nendo}', ['uses' => '
 Route::post('cp/team/match', ['uses' => 'Team\MatchController@store', 'as' => 'team.match.store']);
 Route::get('cp/team/match/edit/{id}', ['uses' => 'Team\MatchController@edit', 'as' => 'team.match.edit']);
 Route::get('cp/team/match/day/edit/{id}', ['uses' => 'Team\MatchController@day_edit', 'as' => 'team.match.day.edit']);
-Route::post('cp/team/match/day/update/{id}', ['uses' => 'Team\MatchController@day_update', 'as' => 'team.match.day.update']);
+Route::get('cp/team/match/clear/update/{id}', ['uses' => 'Team\MatchController@clear_update', 'as' => 'team.match.clear.update']);
 Route::post('cp/team/match/update', ['uses' => 'Team\MatchController@update', 'as' => 'team.match.update']);
+Route::post('cp/team/match/day/update/{id}', ['uses' => 'Team\MatchController@day_update', 'as' => 'team.match.day.update']);
 Route::get('cp/team/match/venue/edit/{id}', ['uses' => 'Team\MatchController@venue_edit', 'as' => 'team.match.venue.edit']);
 Route::post('cp/team/match/venue/update/{id}', ['uses' => 'Team\MatchController@venue_update', 'as' => 'team.match.venue.update']);
 Route::get('cp/team/match/mom_mov/edit/{id}', ['uses' => 'Team\MatchController@mom_mov_edit', 'as' => 'team.match.mom_mov.edit']);
